@@ -1,101 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>『Conversation with Oneness God』 시리즈</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    h1 {
-      font-size: 24px;
-    }
-    .entry {
-      margin-bottom: 1.5em;
-    }
-    .entry-title {
-      font-weight: bold;
-    }
-    .pdf, .videos {
-      margin-left: 20px;
-    }
-    .videos li {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Series List</title>
 </head>
 <body>
-  
+
+    <p><i>Last updated: <span id="lastUpdated"></span></i></p>
+
+    <h3>📄 PDF Series</h3>
+    <ul class="pdf">
+        <li><a href="docs/01-1.pdf" target="_blank">01-1. Recommendation to Readers</a></li>
+        <li><a href="docs/02.pdf" target="_blank">02. Creationism vs. Evolutionism</a></li>
+        <li><a href="docs/03.pdf" target="_blank">03. Deluge and Exodus</a></li>
+        <li><a href="docs/04.pdf" target="_blank">04. Errors in Record-1</a></li>
+        <li><a href="docs/05.pdf" target="_blank">05. Errors in Record-2</a></li>
+        <li><a href="docs/06.pdf" target="_blank">06. Old Testament Ethical Issues – Brutality</a></li>
+    </ul>
+
+    <h3>🎬 Video Series</h3>
+    <ul class="videos">
+        <li><a href="https://www.youtube.com/watch?v=gsxrvhM1r24" target="_blank">001. Introduction of BY Kim and NCG</a></li>
+        <li><a href="https://www.youtube.com/watch?v=InIUQ3T9Qt&t=1s" target="_blank">002. Why do we need Religious Revolution</a></li>
+        <li><a href="https://www.youtube.com/watch?v=lnk4CYJ2Ye8&t=182s" target="_blank">003. Why a Religious Revolution – Beyond the Reformation</a></li>
+        <li><a href="https://www.youtube.com/watch?v=2o4DQ1qf5eJ" target="_blank">004. Why a Religious Revolution – Back to the Basics</a></li>
+        <li><a href="https://youtu.be/CCh15zqBUE" target="_blank">005. Letters Sent to the Christianity World</a></li>
+        <li><a href="https://youtu.be/dUE4oor84dI" target="_blank">006. Declaration of Religious Revolution</a></li>
+        <li><a href="https://youtu.be/R1Ly8dgOg0g" target="_blank">007. Nosome and Transmigration</a></li>
+        <li><a href="https://youtu.be/Im2Pf1xwRik" target="_blank">008. ENZ–Nosome and Quirk</a></li>
+        <li><a href="https://youtu.be/v9fF42xwwfE" target="_blank">009. Afterlife – Transmigration Field</a></li>
+    </ul>
+
+    <script>
+        const today = new Date();
+        const formattedDate = today.getFullYear() + '-' +
+            String(today.getMonth() + 1).padStart(2, '0') + '-' +
+            String(today.getDate()).padStart(2, '0');
+        document.getElementById("lastUpdated").textContent = formattedDate;
+    </script>
+
+</body>
 </html>
-
-<p><i>Last updated: 2025-07-20</i></p>
-
-<h3>📄 PDF Series</h3>
-<ul>
-  <li>📘 <a href="docs/01-1.pdf" target="_blank">01-1. Recommendation to Readers</a></li>
-  <li>📘 <a href="docs/02.pdf" target="_blank">02. Creationism vs. Evolutionism</a></li>
-  <li>📘 <a href="docs/03.pdf" target="_blank">03. Deluge and Exodus</a></li>
-  <li>📘 <a href="docs/04.pdf" target="_blank">04. Errors in Record-1</a></li>
-  <li>📘 <a href="docs/05.pdf" target="_blank">05. Errors in Record-2</a></li>
-</ul>
-
-<h3>📺 Video Series</h3>
-<ul>
-  <li>📺 <a href="https://www.youtube.com/watch?v=xgxrhM1r24" target="_blank">001. Introduction of BY Kim and NCG</a></li>
-  <li>📺 <a href="https://www.youtube.com/watch?v=InIWUG3T9Q&t=1s" target="_blank">002. Why do we need Religious Revolution</a></li>
-  <li>📺 <a href="https://www.youtube.com/watch?v=lnkN4CYJzeY&t=182s" target="_blank">003. Why a Religious Revolution – Beyond the Reformation</a></li>
-  <li>📺 <a href="https://www.youtube.com/watch?v=2o4DQlfseJE" target="_blank">004. Why a Religious Revolution – Back to the Basics</a></li>
-  <li>📺 <a href="https://youtu.be/CChiJ5zqBUE" target="_blank">005. Letters Sent to the Christianity World</a></li>
-</ul>
-
-<p><i>Last updated: 2025-07-20</i></p>
-<li><a href="docs/06.pdf" target="_blank">06. Old Testament Ethical Issues – Brutality</a></li>
-
-<p><i>Last updated: 2025-08-14</i></p>
-
-<h3>📄 PDF Series</h3>
-<ul class="pdf">
-  <li><a href="docs/01-1.pdf" target="_blank">01-1. Recommendation to Readers</a></li>
-  <li><a href="docs/02.pdf"   target="_blank">02. Creationism vs. Evolutionism</a></li>
-  <li><a href="docs/03.pdf"   target="_blank">03. Deluge and Exodus</a></li>
-  <li><a href="docs/04.pdf"   target="_blank">04. Errors in Record-1</a></li>
-  <li><a href="docs/05.pdf"   target="_blank">05. Errors in Record-2</a></li>
-  <!-- 새로 추가된 06번 PDF -->
-  <li><a href="docs/06.pdf"   target="_blank" title="Old Testament Ethical Issues – Brutality (PDF)">
-      06. Old Testament Ethical Issues – Brutality
-  </a></li>
-</ul>
-
-<h3>🎥 Video Series</h3>
-<ul class="videos">
-  <li><a href="https://www.youtube.com/watch?v=2o4DQl0fseJ" target="_blank" rel="noopener">
-      001. Introduction of BY Kim and NCG
-  </a></li>
-  <li><a href="https://www.youtube.com/watch?v=9VxF2Yf2d9c" target="_blank" rel="noopener">
-      002. Why do we need Religious Revolution
-  </a></li>
-  <li><a href="https://www.youtube.com/watch?v=sQzYqGm8rFY" target="_blank" rel="noopener">
-      003. Why a Religious Revolution – Beyond the Reformation
-  </a></li>
-  <li><a href="https://www.youtube.com/watch?v=2o4DQl0fseJ" target="_blank" rel="noopener">
-      004. Why a Religious Revolution – Back to the Basics
-  </a></li>
-  <li><a href="https://youtu.be/CCh15zqBUE"                target="_blank" rel="noopener">
-      005. Letters Sent to the Christianity World
-  </a></li>
-  <!-- 새로 추가된 006–009 -->
-  <li><a href="https://youtu.be/dUE4oor84dI" target="_blank" rel="noopener">
-      006. Declaration of Religious Revolution ▶
-  </a></li>
-  <li><a href="https://youtu.be/RJLy0bdgQoQ" target="_blank" rel="noopener">
-      007. Nosome and Transmigration ▶
-  </a></li>
-  <li><a href="https://youtu.be/NmZ9FxixN48" target="_blank" rel="noopener" title="ENZ-Nosome and Quark">
-      008. ENZ-Nosome and Quark ▶
-  </a></li>
-  <li><a href="https://youtu.be/v9fF42xvwWE" target="_blank" rel="noopener">
-      009. Afterlife – Transmigration Field ▶
-  </a></li>
-</ul>
