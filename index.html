@@ -112,3 +112,12 @@
   </section>
 </body>
 </html>
+
+<script>
+  document.querySelectorAll('a[href$=".pdf"]').forEach(a=>{
+    a.setAttribute('href', encodeURI(a.getAttribute('href')));
+    a.setAttribute('target','_blank'); // 새 탭에서 열기
+    a.setAttribute('rel','noopener');
+  });
+</script>
+
