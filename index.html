@@ -1,70 +1,123 @@
-<!-- English area (PDF + Video) -->
-<section>
-  <h2>English PDF Series</h2>
-  <ul class="grid" style="margin-top:10px">
-    <!-- ⬇️ 여기의 <li> 목록을 현재 영문 페이지에 있던 6개 PDF 링크로 교체해 주세요.
-         기존에 쓰시던 링크 그대로 복사/붙여넣기하면 됩니다. 예시는 아래처럼 -->
-    <li class="card">
-      <div class="title">01-1. Recommendation to Readers</div>
-      <a class="link" href="01-1_Recommendation_to_Readers.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
-    </li>
-    <li class="card">
-      <div class="title">02. Creationism vs. Evolutionism</div>
-      <a class="link" href="02_Creationism_vs_Evolutionism.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
-    </li>
-    <li class="card">
-      <div class="title">03. Deluge and Exodus</div>
-      <a class="link" href="03_Deluge_and_Exodus.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
-    </li>
-    <li class="card">
-      <div class="title">04. Errors in Record-1</div>
-      <a class="link" href="04_Errors_in_Record_1.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
-    </li>
-    <li class="card">
-      <div class="title">05. Errors in Record-2</div>
-      <a class="link" href="05_Errors_in_Record_2.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
-    </li>
-    <li class="card">
-      <div class="title">06. Old Testament Ethical Issues — Brutality</div>
-      <a class="link" href="06_OT_Ethical_Issues_Brutality.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
-    </li>
-    <!-- ⬆️ 위 6개를 실제 파일/링크로 바꿔주세요 -->
-  </ul>
-</section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Religious Revolution — English</title>
+  <meta name="description" content="English hub for the Religious Revolution series. English PDFs & videos, plus quick links to the Korean video series and the 36-part PDF archive.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕊️</text></svg>">
+  <style>
+    :root{
+      --bg:#0b0b10;--panel:#12131a;--muted:#9aa3b2;--text:#eaf0ff;
+      --accent:#4ea1ff;--accent2:#8bd1ff;--border:#1f2230;--shadow:0 10px 26px rgba(0,0,0,.35)
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Apple SD Gothic Neo,Noto Sans KR,Malgun Gothic,sans-serif;background:#0b0b10;color:var(--text);line-height:1.65}
+    .wrap{max-width:1080px;margin:0 auto;padding:28px 18px 80px}
+    header{background:linear-gradient(180deg, rgba(78,161,255,.12), transparent);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+    h1{margin:0 0 8px;font-size:28px}
+    .sub{color:var(--muted);margin:0 0 16px}
+    /* Language switch */
+    .lang{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 16px}
+    .chip{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:10px;border:1px solid #2b3150;background:#12131a;color:#eaf0ff;text-decoration:none;font-weight:600}
+    .chip.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06121f;border-color:transparent;font-weight:800}
+    /* Buttons row */
+    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 0}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--panel);color:var(--text);text-decoration:none;font-weight:600}
+    .btn:hover{transform:translateY(-1px);border-color:#2b3150}
+    .btn.accent{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06121f;border-color:transparent}
+    section{background:rgba(18,19,26,.55);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);padding:18px 20px;margin-top:20px}
+    h2{margin:4px 0 10px;font-size:20px}
+    .grid{list-style:none;padding:0;margin:10px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .card{background:#15161d;border:1px solid var(--border);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:110px}
+    .title{font-weight:700}
+    .link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#a7c8ff}
+    .link:hover{opacity:.92;text-decoration:underline}
+    .muted{color:var(--muted);font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Religious Revolution — English</h1>
+      <p class="sub">English PDFs & video series. Quick access to the <b>Korean videos</b> and the <b>36-part Korean PDF archive</b> of “Dialogue with God”.</p>
 
-<section>
-  <h2>English Video Series</h2>
-  <ul class="grid" style="margin-top:10px">
-    <li class="card"><div class="title">001. Introduction of BY Kim and NCG</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
-    <li class="card"><div class="title">002. Why do we need Religious Revolution</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
-    <li class="card"><div class="title">003. Why a Religious Revolution — Beyond the Reformation</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
-    <li class="card"><div class="title">004. Why a Religious Revolution — Back to the Basics</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
-    <li class="card"><div class="title">005. Letters Sent to the Christianity World</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
-    <li class="card"><div class="title">006. Declaration of Religious Revolution</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
-    <li class="card"><div class="title">007. Nosome and Transmigration</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
-    <li class="card"><div class="title">008. ENZ — Nosome and Quirk</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
-    <li class="card"><div class="title">009. Afterlife — Transmigration Field</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
-    <li class="card"><div class="title">010. Oneness</div><a class="link" href="https://youtu.be/uTzE24vYqco" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
-  </ul>
-  <p class="muted">※ Ep.1–9의 정확한 YouTube URL을 넣어주시면 카드에 반영됩니다. Ep.10(Oneness)은 이미 추가했습니다.</p>
-</section>
+      <!-- Language switch -->
+      <nav class="lang">
+        <a class="chip active" href="/series/">English</a>
+        <a class="chip" href="/series.kr/">한국어 (Korean)</a>
+      </nav>
 
-<!-- Korean Resources (quick links to the Korean site) -->
-<section style="border:1px solid #2b3150;border-radius:14px;padding:16px;margin:22px 0;background:rgba(18,19,26,.55)">
-  <h2 style="margin:4px 0 12px;font-size:20px;color:#eaf0ff;">Korean Resources (한국어 자료)</h2>
-  <div style="display:flex;flex-wrap:wrap;gap:10px">
-    <a href="https://bykim5710.github.io/series.kr/#videos" target="_blank" rel="noopener"
-       style="text-decoration:none;padding:10px 14px;border-radius:12px;border:1px solid #2b3150;background:#12131a;color:#eaf0ff;font-weight:600;">
-      ▶️ 한국어 동영상 보러가기
-    </a>
-    <a href="https://bykim5710.github.io/series.kr/#archive" target="_blank" rel="noopener"
-       style="text-decoration:none;padding:10px 14px;border-radius:12px;border:1px solid #2b3150;background:#12131a;color:#eaf0ff;font-weight:600;">
-      📚 「하나님과의 대화」 연재물 (36 PDFs)
-    </a>
-    <a href="https://www.youtube.com/channel/UCxd8XnqtIjPmbQLNB1cG0xQ" target="_blank" rel="noopener"
-       style="text-decoration:none;padding:10px 14px;border-radius:12px;border:1px solid transparent;background:linear-gradient(135deg,#4ea1ff,#8bd1ff);color:#06121f;font-weight:800;">
-      📺 유튜브 채널 (@김병윤-c2s)
-    </a>
+      <div class="btnrow">
+        <a class="btn" href="https://bykim5710.github.io/series.kr/#videos" target="_blank" rel="noopener">▶️ Korean Videos</a>
+        <a class="btn" href="https://bykim5710.github.io/series.kr/#archive" target="_blank" rel="noopener">📚 Korean Archive (36 PDFs)</a>
+        <a class="btn" href="https://www.youtube.com/channel/UCxd8XnqtIjPmbQLNB1cG0xQ" target="_blank" rel="noopener">📺 YouTube Channel (@김병윤-c2s)</a>
+      </div>
+      <p class="muted" style="margin-top:8px">Tip: Links jump to the Korean site sections. No duplicate files are stored here.</p>
+    </header>
+
+    <!-- ==================== ENGLISH PDF ==================== -->
+    <section>
+      <h2>English PDF Series</h2>
+      <ul class="grid" style="margin-top:10px">
+        <!-- TODO: 아래 href 값을 현재 사용 중인 정확한 PDF 경로로 교체하세요 -->
+        <li class="card">
+          <div class="title">01-1. Recommendation to Readers</div>
+          <a class="link" href="01-1_Recommendation_to_Readers.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
+        </li>
+        <li class="card">
+          <div class="title">02. Creationism vs. Evolutionism</div>
+          <a class="link" href="02_Creationism_vs_Evolutionism.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
+        </li>
+        <li class="card">
+          <div class="title">03. Deluge and Exodus</div>
+          <a class="link" href="03_Deluge_and_Exodus.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
+        </li>
+        <li class="card">
+          <div class="title">04. Errors in Record-1</div>
+          <a class="link" href="04_Errors_in_Record_1.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
+        </li>
+        <li class="card">
+          <div class="title">05. Errors in Record-2</div>
+          <a class="link" href="05_Errors_in_Record_2.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
+        </li>
+        <li class="card">
+          <div class="title">06. Old Testament Ethical Issues — Brutality</div>
+          <a class="link" href="06_OT_Ethical_Issues_Brutality.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== ENGLISH VIDEOS ==================== -->
+    <section>
+      <h2>English Video Series</h2>
+      <ul class="grid" style="margin-top:10px">
+        <!-- TODO: Ep.1~9의 정확한 YouTube URL로 교체하세요 -->
+        <li class="card"><div class="title">001. Introduction of BY Kim and NCG</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+        <li class="card"><div class="title">002. Why do we need Religious Revolution</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+        <li class="card"><div class="title">003. Why a Religious Revolution — Beyond the Reformation</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+        <li class="card"><div class="title">004. Why a Religious Revolution — Back to the Basics</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+        <li class="card"><div class="title">005. Letters Sent to the Christianity World</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+        <li class="card"><div class="title">006. Declaration of Religious Revolution</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+        <li class="card"><div class="title">007. Nosome and Transmigration</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+        <li class="card"><div class="title">008. ENZ — Nosome and Quirk</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+        <li class="card"><div class="title">009. Afterlife — Transmigration Field</div><a class="link" href="https://youtu.be/xxxxxxxxxxx" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+        <!-- Ep.10은 실제 링크 반영됨 -->
+        <li class="card"><div class="title">010. Oneness</div><a class="link" href="https://youtu.be/uTzE24vYqco" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+      </ul>
+      <p class="muted">※ Add new cards here for Ep.11, Ep.12, … as they are released.</p>
+    </section>
+
+    <!-- ==================== KOREAN LINKS ==================== -->
+    <section>
+      <h2>Korean Resources (한국어 자료)</h2>
+      <div class="btnrow">
+        <a class="btn" href="https://bykim5710.github.io/series.kr/#videos" target="_blank" rel="noopener">▶️ 한국어 동영상</a>
+        <a class="btn" href="https://bykim5710.github.io/series.kr/#archive" target="_blank" rel="noopener">📚 「하나님과의 대화」 연재물 (36 PDFs)</a>
+        <a class="btn accent" href="https://www.youtube.com/channel/UCxd8XnqtIjPmbQLNB1cG0xQ" target="_blank" rel="noopener">📺 유튜브 채널 (@김병윤-c2s)</a>
+      </div>
+      <p class="muted" style="margin-top:8px">Links jump to the Korean site sections. No duplicate files are stored here.</p>
+    </section>
   </div>
-  <p style="margin:10px 0 0;color:#9aa3b2;font-size:12px;">Links jump to the Korean site sections. No duplicate files are stored here.</p>
-</section>
+</body>
+</html>
