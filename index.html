@@ -1,92 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Youtube Videos and Series of "Conversation with Oneness God"</title>
+
   <style>
-    body { font-family: Arial, sans-serif; background:#0f1117; color:white; margin:0; padding:0; }
-    .tabs { display:flex; flex-wrap:wrap; gap:10px; padding:20px; }
-    .tab-button { background:#1e2230; color:white; border:none; padding:10px 16px; border-radius:8px; cursor:pointer; font-size:14px; }
-    .tab-button:hover { background:#2e3245; }
-    .tab-button.active { background:#3b82f6; }
-    .section { display:none; padding:20px; }
-    .section.active { display:block; }
-    .list { list-style:none; padding:0; }
-    .item { background:#1e2230; margin-bottom:10px; padding:10px; border-radius:6px; }
-    .item a { color:#3b82f6; text-decoration:none; margin-left:10px; }
-    .title { font-weight:bold; margin-bottom:5px; }
-  </style>
-  <script>
-    function openTab(tabId, btn) {
-      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+    :root{
+      --bg:#0f1117; --panel:#1b2030; --panel2:#232a40; --text:#e6eaf2; --muted:#9aa3b2; --link:#7bb0ff;
+      --accent:#3b82f6; --card:#151a28; --border:#2a324a;
     }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui, -apple-system, Segoe UI, Roboto, Apple SD Gothic Neo, Malgun Gothic, Helvetica, Arial, sans-serif;line-height:1.55}
+    header{padding:28px 20px 10px;max-width:980px;margin:0 auto}
+    h1{font-size:clamp(22px,3.3vw,32px);margin:0 0 8px}
+    .tabs{display:flex;flex-wrap:wrap;gap:10px;padding:14px 20px 22px;max-width:980px;margin:0 auto}
+    .tab-btn{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--border);
+      background:var(--panel);color:var(--text);border-radius:12px;cursor:pointer;font-weight:700
+    }
+    .tab-btn:hover{background:var(--panel2)}
+    .tab-btn.active{outline:2px solid var(--accent)}
+    .flag{width:18px;height:18px;vertical-align:-3px}
+    main{max-width:980px;margin:0 auto;padding:0 20px 40px}
+    .section{display:none}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;margin-top:14px;padding:16px}
+    h2{font-size:18px;margin:0 0 14px}
+    ul.list{list-style:none;margin:0;padding:0}
+    .item{display:flex;justify-content:space-between;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:10px 0}
+    .title{font-weight:700}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .note{color:var(--muted);font-size:14px}
+  </style>
+
+  <script>
+    // 탭 열기
+    function openTab(id, el){
+      // 섹션 숨김
+      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+      // 해당 섹션 표시
+      const sec = document.getElementById(id);
+      if(sec) sec.style.display = 'block';
+      // 버튼 active
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      if(el) el.classList.add('active');
+      // 맨 위로 스크롤(모바일 가독성)
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    // 초기엔 탭만 보이게: 섹션 전부 숨김
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+    });
   </script>
 </head>
 <body>
+  <header>
+    <h1>Youtube Videos and Series of “Conversation with Oneness God”</h1>
+    <p class="note">Choose a tab below. Only the selected content will appear.</p>
+  </header>
 
-  <h2 style="padding:20px;">Youtube Videos and Series of "Conversation with Oneness God"</h2>
-
+  <!-- Tabs -->
   <div class="tabs">
-    <button class="tab-button" onclick="openTab('kr-videos', this)">🇰🇷 Korean Videos</button>
-    <button class="tab-button" onclick="openTab('en-videos', this)">🇺🇸 English Videos</button>
-    <button class="tab-button" onclick="openTab('channel', this)">📺 Total YouTube Channel (@김병윤-c2s)</button>
-    <button class="tab-button" onclick="openTab('en-pdf', this)">📄 Series of "Conversation with Oneness God"</button>
-    <button class="tab-button" onclick="openTab('kr-pdf', this)">📄 Korean Series (PDF)</button>
+    <button class="tab-btn" onclick="openTab('kr-videos', this)">
+      <img class="flag" src="https://twemoji.maxcdn.com/v/latest/svg/1f1f0-1f1f7.svg" alt="KR" /> Korean Videos
+    </button>
+    <button class="tab-btn" onclick="openTab('en-videos', this)">
+      <img class="flag" src="https://twemoji.maxcdn.com/v/latest/svg/1f1fa-1f1f8.svg" alt="US" /> English Videos
+    </button>
+    <button class="tab-btn" onclick="openTab('channel', this)">
+      📺 Total YouTube Channel (@김병윤-c2s)
+    </button>
+    <button class="tab-btn" onclick="openTab('en-pdf', this)">
+      📄 Series of “Conversation with Oneness God”
+    </button>
+    <button class="tab-btn" onclick="openTab('kr-pdf', this)">
+      📄 Korean Series (PDF)
+    </button>
   </div>
 
-  <!-- 한국어 영상 -->
-  <section id="kr-videos" class="section">
-    <h2>🇰🇷 한국어 영상</h2>
-    <ul class="list">
-      <li class="item"><div class="title">제1회: 저자 책 및 신통신통회 소개</div><a href="https://youtu.be/o9kSstxgDaw" target="_blank">▶ YouTube</a></li>
-      <li class="item"><div class="title">제2회: 왜 종교혁명이 필요한가? - 기독교민주주의</div><a href="https://youtu.be/gylO_88pDuc" target="_blank">▶ YouTube</a></li>
-      <li class="item"><div class="title">제3회: 왜 종교혁명인가? - 종교개혁의 미완성</div><a href="https://youtu.be/udOK740VFU8" target="_blank">▶ YouTube</a></li>
-      <li class="item"><div class="title">제4회: 왜 종교혁명인가? - 기본으로 돌아가자</div><a href="https://youtu.be/JK5RTxrVzPw" target="_blank">▶ YouTube</a></li>
-      <li class="item"><div class="title">제5회: 기독교계에 보낸 편지</div><a href="https://youtu.be/KtU5ww--3kg" target="_blank">▶ YouTube</a></li>
-    </ul>
-  </section>
+  <main>
 
-  <!-- 영어 영상 -->
-  <section id="en-videos" class="section">
-    <h2>🇺🇸 English Videos</h2>
-    <ul class="list">
-      <li class="item"><div class="title">Ep.1 Introduction of BY Kim and NCG</div><a href="https://youtu.be/xqgxrhM1r24" target="_blank">▶ Watch on YouTube</a></li>
-      <li class="item"><div class="title">Ep.2 Why do we need Religious Revolution - Christian Democracy</div><a href="https://youtu.be/IniMUGC3T9Q" target="_blank">▶ Watch on YouTube</a></li>
-      <li class="item"><div class="title">Ep.3 Why a Religious Revolution beyond the Reformation</div><a href="https://youtu.be/lWkN4CYJzeY" target="_blank">▶ Watch on YouTube</a></li>
-      <li class="item"><div class="title">Ep.4 Why a Religious Revolution - Back to the Basics</div><a href="https://youtu.be/2o4DQlfseJE" target="_blank">▶ Watch on YouTube</a></li>
-      <li class="item"><div class="title">Ep.5 Letters sent to the Christianity World</div><a href="https://youtu.be/CChiJ5zqBUE" target="_blank">▶ Watch on YouTube</a></li>
-    </ul>
-  </section>
+    <!-- KR Videos -->
+    <section id="kr-videos" class="section">
+      <div class="card">
+        <h2>🇰🇷 한국어 영상</h2>
+        <ul class="list">
+          <li class="item"><span class="title">제1회: 저자 책 및 신통신통회 소개</span><a href="https://youtu.be/o9kSstxgDaw" target="_blank" rel="noopener">▶ YouTube</a></li>
+          <li class="item"><span class="title">제2회: 왜 종교혁명이 필요한가? — 기독교민주주의</span><a href="https://youtu.be/gylO_88pDuc" target="_blank" rel="noopener">▶ YouTube</a></li>
+          <li class="item"><span class="title">제3회: 왜 종교혁명인가? — 종교개혁의 미완성</span><a href="https://youtu.be/udOK740VFU8" target="_blank" rel="noopener">▶ YouTube</a></li>
+          <li class="item"><span class="title">제4회: 왜 종교혁명인가? — 기본으로 돌아가자</span><a href="https://youtu.be/JK5RTxrVzPw" target="_blank" rel="noopener">▶ YouTube</a></li>
+          <li class="item"><span class="title">제5회: 기독교계에 보낸 편지</span><a href="https://youtu.be/KtU5ww--3kg" target="_blank" rel="noopener">▶ YouTube</a></li>
+          <li class="item"><span class="title">제6회: 종교혁명선언서</span><a href="https://youtu.be/l-Cw7woND8I" target="_blank" rel="noopener">▶ YouTube</a></li>
+          <li class="item"><span class="title">제7회: 무유와 전이</span><a href="https://youtu.be/1PmZOU5kS48" target="_blank" rel="noopener">▶ YouTube</a></li>
+          <li class="item"><span class="title">제8회: 공·무·영 — 무유와 쿼크</span><a href="https://youtu.be/Dw-fekBj8Z8" target="_blank" rel="noopener">▶ YouTube</a></li>
+          <li class="item"><span class="title">제9회: 사후세계 대. 전이계</span><a href="https://youtu.be/8xgmPHNJ1g8" target="_blank" rel="noopener">▶ YouTube</a></li>
+          <li class="item"><span class="title">제10회: 하나임 (Oneness)</span><a href="https://youtu.be/vxlGrY75sXQ" target="_blank" rel="noopener">▶ YouTube</a></li>
+        </ul>
+      </div>
+    </section>
 
-  <!-- 유튜브 채널 -->
-  <section id="channel" class="section">
-    <h2>📺 전체 유튜브 채널</h2>
-    <p><a href="https://www.youtube.com/@김병윤-c2s/videos" target="_blank">▶ Visit YouTube Channel</a></p>
-  </section>
+    <!-- EN Videos -->
+    <section id="en-videos" class="section">
+      <div class="card">
+        <h2>🇺🇸 us English Videos</h2>
+        <ul class="list">
+          <li class="item"><span class="title">Ep.1 Introduction of BY Kim and NCG</span><a href="https://youtu.be/xqgxrhM1r24" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+          <li class="item"><span class="title">Ep.2 Why do we need Religious Revolution — Christian Democracy</span><a href="https://youtu.be/IniMUGC3T9Q" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+          <li class="item"><span class="title">Ep.3 Why a Religious Revolution beyond the Reformation</span><a href="https://youtu.be/lWkN4CYJzeY" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+          <li class="item"><span class="title">Ep.4 Why a Religious Revolution — Back to the Basics</span><a href="https://youtu.be/2o4DQlfseJE" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+          <li class="item"><span class="title">Ep.5 Letters sent to the Christianity World</span><a href="https://youtu.be/CChiJ5zqBUE" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+          <li class="item"><span class="title">Ep.6 Declaration of Religious Revolution</span><a href="https://youtu.be/dUE4oor84dI" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+          <li class="item"><span class="title">Ep.7 Nosome and Transmigration</span><a href="https://youtu.be/RJLy0bdgQoQ" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+          <li class="item"><span class="title">Ep.8 – ENZ: Nosome and Quark</span><a href="https://youtu.be/NmZ9FxixN48" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+          <li class="item"><span class="title">Ep.9 – Afterlife vs. Transmigration Field</span><span class="note"> (link pending)</span></li>
+          <li class="item"><span class="title">Ep.10 Oneness</span><a href="https://youtu.be/uTzE24vYqco" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
+        </ul>
+      </div>
+    </section>
 
-  <!-- 영어 PDF -->
-  <section id="en-pdf" class="section">
-    <h2>📄 Series of "Conversation with Oneness God" (English PDFs)</h2>
-    <ul class="list">
-      <li class="item"><div class="title">01. Book Review and Author</div><a href="01.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
-      <li class="item"><div class="title">01-1. Recommendation</div><a href="01-1.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
-      <li class="item"><div class="title">02. Creationism vs. Evolutionism</div><a href="02.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
-      <li class="item"><div class="title">03. Deluge and Exodus</div><a href="03.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
-      <li class="item"><div class="title">04. Errors in Record — 1</div><a href="04.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
-      <li class="item"><div class="title">05. Errors in Record — 2</div><a href="05.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
-      <li class="item"><div class="title">06. Ethical Matters — Brutality</div><a href="06.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
-    </ul>
-  </section>
+    <!-- Channel -->
+    <section id="channel" class="section">
+      <div class="card">
+        <h2>📺 Total YouTube Channel (@김병윤-c2s)</h2>
+        <p><a href="https://www.youtube.com/@김병윤-c2s/videos" target="_blank" rel="noopener">▶ Visit the full channel</a></p>
+      </div>
+    </section>
 
-  <!-- 한국어 PDF -->
-  <section id="kr-pdf" class="section">
-    <h2>📄 Korean Series (PDF)</h2>
-    <p>전체 한국어 PDF는 <a href="https://series.kr" target="_blank">series.kr</a> 에서 확인하세요.</p>
-  </section>
+    <!-- English PDFs (files in repository root) -->
+    <section id="en-pdf" class="section">
+      <div class="card">
+        <h2>📄 Series of “Conversation with Oneness God” (English PDFs)</h2>
+        <ul class="list">
+          <li class="item"><span class="title">01. Book Review and Author</span><a href="01.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
+          <li class="item"><span class="title">01-1. Recommendation</span><a href="01-1.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
+          <li class="item"><span class="title">02. Creationism vs. Evolutionism</span><a href="02.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
+          <li class="item"><span class="title">03. Deluge and Exodus</span><a href="03.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
+          <li class="item"><span class="title">04. Errors in Record — 1</span><a href="04.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
+          <li class="item"><span class="title">05. Errors in Record — 2</span><a href="05.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
+          <li class="item"><span class="title">06. Ethical matters — brutality</span><a href="06.pdf" target="_blank" rel="noopener">📄 Open PDF</a></li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- Korean PDFs (external central page) -->
+    <section id="kr-pdf" class="section">
+      <div class="card">
+        <h2>📄 Korean Series (PDF)</h2>
+        <p class="note">전체 한국어 PDF는 한 곳에서 관리됩니다.</p>
+        <p><a href="https://bykim5710.github.io/series.kr/#kr-pdf" target="_blank" rel="noopener">▶ Open Korean Series (PDF)</a></p>
+      </div>
+    </section>
+
+  </main>
 </body>
 </html>
