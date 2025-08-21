@@ -18,6 +18,7 @@
     .actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}
     .btn{display:inline-block;padding:8px 12px;border:1px solid var(--border);border-radius:10px;background:#fff;text-decoration:none;color:var(--fg)}
     .btn:hover{background:var(--card)}
+    .btn.active{border-color:#0a58ca; box-shadow:0 0 0 2px rgba(10,88,202,.15)}
     .section{padding:16px 14px;border:1px solid var(--border);border-radius:12px;background:#fff;margin:18px 0}
     .list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
     .list li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px;background:var(--card);border:1px solid var(--border);border-radius:10px}
@@ -25,6 +26,7 @@
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
     footer{color:var(--muted);font-size:14px;margin-top:28px;text-align:center}
+    .hidden{display:none !important}
     @media (max-width:640px){.list li{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
@@ -34,77 +36,55 @@
   <!-- Header -->
   <h1>Conversation with Oneness God — Series & YouTube Archive</h1>
 
-  <!-- Top Tabs (EN → KR → Channel → EN Series → KR Series) -->
-  <div class="actions">
-    <!-- 영상 탭은 series.kr의 해당 섹션으로 연결 (유지보수 최소화) -->
-    <a class="btn" href="https://bykim5710.github.io/series.kr/#videos-en" target="_blank" rel="noopener">🇺🇸 English Videos</a>
-    <a class="btn" href="https://bykim5710.github.io/series.kr/#videos-kr" target="_blank" rel="noopener">🇰🇷 Korean Videos</a>
+  <!-- Top Tabs (5) -->
+  <div class="actions" id="top-tabs">
+    <!-- 영상 탭은 series.kr의 섹션으로도 바로가기 제공(새 탭) -->
+    <a class="btn" href="#videos-en" data-target="#videos-en">🇺🇸 English Videos</a>
+    <a class="btn" href="#videos-kr" data-target="#videos-kr">🇰🇷 Korean Videos</a>
     <a class="btn" href="https://www.youtube.com/@김병윤-c2s/videos" target="_blank" rel="noopener">📺 Total YouTube Channel (@김병윤-c2s)</a>
-    <a class="btn" href="#en-pdf">📄 Series of “Conversation with Oneness God”</a>
-    <a class="btn" href="#kr-pdf">📄 Korean Series (PDF)</a>
+    <a class="btn" href="#en-pdf" data-target="#en-pdf">📄 Series of “Conversation with Oneness God”</a>
+    <a class="btn" href="#kr-pdf" data-target="#kr-pdf">📄 Korean Series (PDF)</a>
   </div>
 
-  <!-- English Videos: 안내 카드만, 실제 목록은 series.kr에서 관리 -->
-  <section id="videos-en" class="section">
+  <!-- 🇺🇸 English Videos : 안내 카드 + series.kr 바로가기 -->
+  <section id="videos-en" class="section tab-section">
     <h2>🇺🇸 English Videos</h2>
-    <p>All English videos are maintained centrally. Open the live list:</p>
-    <p>
+    <p>All English videos are centrally maintained. Open the live list:</p>
+    <p style="display:flex;gap:8px;flex-wrap:wrap;">
       <a class="btn" href="https://bykim5710.github.io/series.kr/#videos-en" target="_blank" rel="noopener">▶ Open English Videos on series.kr</a>
+      <a class="btn" href="https://www.youtube.com/@김병윤-c2s/videos" target="_blank" rel="noopener">▶ Open on YouTube</a>
     </p>
   </section>
 
-  <!-- Korean Videos: 안내 카드만, 실제 목록은 series.kr에서 관리 -->
-  <section id="videos-kr" class="section">
+  <!-- 🇰🇷 Korean Videos : 안내 카드 + series.kr 바로가기 -->
+  <section id="videos-kr" class="section tab-section">
     <h2>🇰🇷 Korean Videos</h2>
     <p>모든 한국어 영상은 series.kr에서 최신으로 관리됩니다. 아래에서 바로 열기:</p>
-    <p>
+    <p style="display:flex;gap:8px;flex-wrap:wrap;">
       <a class="btn" href="https://bykim5710.github.io/series.kr/#videos-kr" target="_blank" rel="noopener">▶ series.kr에서 한국어 영상 열기</a>
+      <a class="btn" href="https://www.youtube.com/@김병윤-c2s/videos" target="_blank" rel="noopener">▶ YouTube에서 열기</a>
     </p>
   </section>
 
-  <!-- English Series PDFs (01~06만 현재 제공) -->
-  <!-- 모바일/PC에서 즉시 열람을 위해 Google Docs Viewer 사용 -->
-  <section id="en-pdf" class="section">
+  <!-- 📄 English Series PDFs (01~06만 현재 제공) -->
+  <section id="en-pdf" class="section tab-section">
     <h2>📄 Series of “Conversation with Oneness God” (English PDFs)</h2>
     <ul class="list">
-      <li>
-        <div class="title">01. Book Review and Author</div>
-        <a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/01.pdf" target="_blank" rel="noopener">📄 View English PDF</a>
-      </li>
-      <li>
-        <div class="title">01-1. Recommendation</div>
-        <a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/01-1.pdf" target="_blank" rel="noopener">📄 View English PDF</a>
-      </li>
-      <li>
-        <div class="title">02. Creationism vs. Evolutionism</div>
-        <a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/02.pdf" target="_blank" rel="noopener">📄 View English PDF</a>
-      </li>
-      <li>
-        <div class="title">03. Deluge and Exodus</div>
-        <a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/03.pdf" target="_blank" rel="noopener">📄 View English PDF</a>
-      </li>
-      <li>
-        <div class="title">04. Errors in Record — 1</div>
-        <a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/04.pdf" target="_blank" rel="noopener">📄 View English PDF</a>
-      </li>
-      <li>
-        <div class="title">05. Errors in Record — 2</div>
-        <a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/05.pdf" target="_blank" rel="noopener">📄 View English PDF</a>
-      </li>
-      <li>
-        <div class="title">06. Ethical Matters — Brutality</div>
-        <a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/06.pdf" target="_blank" rel="noopener">📄 View English PDF</a>
-      </li>
-      <!-- 07~34는 준비되는 대로 아래와 같은 형식으로 한 줄씩 추가하세요
-      <li><div class="title">07. …</div><a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/07.pdf" target="_blank" rel="noopener">📄 View English PDF</a></li>
-      -->
+      <li><div class="title">01. Book Review and Author</div><a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/01.pdf" target="_blank" rel="noopener">📄 View English PDF</a></li>
+      <li><div class="title">01-1. Recommendation</div><a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/01-1.pdf" target="_blank" rel="noopener">📄 View English PDF</a></li>
+      <li><div class="title">02. Creationism vs. Evolutionism</div><a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/02.pdf" target="_blank" rel="noopener">📄 View English PDF</a></li>
+      <li><div class="title">03. Deluge and Exodus</div><a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/03.pdf" target="_blank" rel="noopener">📄 View English PDF</a></li>
+      <li><div class="title">04. Errors in Record — 1</div><a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/04.pdf" target="_blank" rel="noopener">📄 View English PDF</a></li>
+      <li><div class="title">05. Errors in Record — 2</div><a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/05.pdf" target="_blank" rel="noopener">📄 View English PDF</a></li>
+      <li><div class="title">06. Ethical Matters — Brutality</div><a href="https://docs.google.com/gview?embedded=1&url=https://bykim5710.github.io/series/06.pdf" target="_blank" rel="noopener">📄 View English PDF</a></li>
+      <!-- 07~34는 준비되는 대로 같은 형식으로 한 줄씩 추가 -->
     </ul>
   </section>
 
-  <!-- Korean Series PDFs (series.kr로 점프: 단일 소스) -->
-  <section id="kr-pdf" class="section">
+  <!-- 📄 Korean Series PDFs : series.kr로 점프(단일 소스 유지) -->
+  <section id="kr-pdf" class="section tab-section">
     <h2>📄 Korean Series (PDF)</h2>
-    <p>Go to the Korean archive → <a href="https://bykim5710.github.io/series.kr/#kr-pdf" target="_blank" rel="noopener">Open Korean Series (PDF)</a></p>
+    <p>Go to the Korean archive → <a class="btn" href="https://bykim5710.github.io/series.kr/#kr-pdf" target="_blank" rel="noopener">Open Korean Series (PDF)</a></p>
   </section>
 
   <footer>
@@ -114,13 +94,58 @@
 </main>
 
 <script>
-  // simple timestamp
+  // Timestamp
   const ts = document.getElementById('ts');
   if (ts) {
     const d = new Date();
     const pad = n => String(n).padStart(2,'0');
     ts.textContent = d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
   }
+
+  // Tab behavior: when clicking a hash tab, show only that section, hide others
+  const sections = Array.from(document.querySelectorAll('.tab-section'));
+  const tabButtons = Array.from(document.querySelectorAll('#top-tabs .btn[data-target]'));
+
+  function setActiveTab(hash) {
+    // normalize
+    if (!hash || hash === '#') {
+      // 기본: 아무 섹션도 강제 노출하지 않음 (원하시면 여기서 기본 섹션 지정 가능)
+      sections.forEach(s => s.classList.add('hidden'));
+      tabButtons.forEach(b => b.classList.remove('active'));
+      return;
+    }
+    const target = document.querySelector(hash);
+    // 섹션 표시/숨김
+    sections.forEach(s => {
+      if (s === target) s.classList.remove('hidden');
+      else s.classList.add('hidden');
+    });
+    // 버튼 active 표시
+    tabButtons.forEach(b => {
+      const t = b.getAttribute('data-target');
+      if (t === hash) b.classList.add('active'); else b.classList.remove('active');
+    });
+    // 스크롤 이동(섹션 상단)
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // 해시 변경 시 적용
+  window.addEventListener('hashchange', () => setActiveTab(location.hash));
+
+  // 탭 버튼 클릭 시 기본 스크롤 대신 탭 전환만 (외부 링크는 제외)
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = btn.getAttribute('data-target');
+      if (target && target.startsWith('#')) {
+        e.preventDefault();
+        history.pushState(null, '', target); // URL hash 변경
+        setActiveTab(target);
+      }
+    });
+  });
+
+  // 초기 로드 시 해시 반영
+  setActiveTab(location.hash);
 </script>
 
 </body>
