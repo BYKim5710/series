@@ -11,146 +11,124 @@
   <meta property="og:title" content="Youtube Videos and Series of 'Conversation with Oneness God'" />
   <meta property="og:description" content="Religious Revolution series: Books, PDFs, and YouTube videos by Byung Youn Kim and New Consilience Group." />
 
-  <!-- 대표 이미지(한 세트만) -->
+  <!-- 대표 이미지 (한 세트만) -->
   <meta property="og:image" content="https://bykim5710.github.io/series/bookcovers_1200x630.jpg?v=2" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="NCG Religious Revolution Series Cover" />
 
-<!-- 트위터 카드 (카카오도 참조하는 경우가 있어 같이 넣어두면 안전) -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://bykim5710.github.io/series/bookcovers_1200x630.jpg?v=2">
- <style>
-:root{
-  --bg:#0f1117; --panel:#1b2030; --panel2:#232a40;
-  --text:#e6eaf2; --muted:#9aa3b2; --link:#7bb0ff;
-  --accent:#3b82f6; --card:#151a28; --border:#2a324a;
-}
-*{box-sizing:border-box;}
-html{font-size:16px;}
-body{
-  margin:0; background:var(--bg); color:var(--text);
-  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo",Malgun Gothic,Helvetica,Arial,sans-serif;
-  line-height:1.7;
-}
+  <!-- 트위터 카드 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://bykim5710.github.io/series/bookcovers_1200x630.jpg?v=2" />
 
-/* 헤더/타이틀 */
-header{padding:28px 20px 8px; max-width:980px; margin:0 auto;}
-h1{margin:0 0 10px; font-weight:800;
-   font-size:clamp(1.8rem, 1.2rem + 2.2vw, 2.4rem);}
-h2{margin:8px 0 0; color:var(--muted); font-weight:600;
-   font-size:clamp(1.05rem, 0.9rem + .7vw, 1.25rem);}
+  <style>
+    :root {
+      --bg:#0f1117; --panel:#1b2030; --panel2:#232a40;
+      --text:#e6eaf2; --muted:#9aa3b2; --link:#7bb0ff;
+      --accent:#3b82f6; --card:#151a28; --border:#2a324a;
+    }
+    *{box-sizing:border-box;}
+    html{font-size:16px;}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo",Malgun Gothic,Helvetica,Arial,sans-serif;
+      line-height:1.7;
+    }
+    header{padding:28px 20px 8px; max-width:980px; margin:0 auto;}
+    h1{margin:0 0 10px; font-weight:800; font-size:clamp(1.8rem,1.2rem + 2.2vw,2.4rem);}
+    p.note{color:var(--muted); font-size:14px;}
 
-/* 탭: 가운데 + 크게 */
-.tabs{
-  display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
-  gap:12px; margin:26px auto 24px; padding:0 12px; max-width:980px;
-}
-.tab-btn{
-  display:inline-flex; align-items:center; gap:8px;
-  padding:12px 18px; border:1px solid var(--border); border-radius:999px;
-  background:var(--panel); color:#fff; cursor:pointer; font-weight:800;
-  font-size:clamp(1.05rem, 1rem + 1vw, 1.25rem);  /* 더 크게 */
-  box-shadow:0 2px 10px rgba(0,0,0,.25);
-}
-.tab-btn:hover{background:var(--panel2);}
-.tab-btn.active{outline:2px solid var(--accent);}
-.flag{width:18px; height:18px;}
+    /* Tabs */
+    .tabs{display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+      gap:12px; margin:26px auto 24px; padding:0 12px; max-width:980px;}
+    .tab-btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:12px 18px; border:1px solid var(--border); border-radius:999px;
+      background:var(--panel); color:#fff; cursor:pointer; font-weight:800;
+      font-size:clamp(1.05rem,1rem + 1vw,1.25rem);
+      box-shadow:0 2px 10px rgba(0,0,0,.25); text-decoration:none;
+    }
+    .tab-btn:hover{background:var(--panel2);}
+    .tab-btn.active{outline:2px solid var(--accent);}
+    
+    /* Sections */
+    main{max-width:980px; margin:0 auto; padding:0 20px 44px;}
+    .section{display:none;}
+    .section.is-open{display:block;}
+    .card{background:var(--panel); border:1px solid var(--border); border-radius:14px;
+      margin-top:16px; padding:18px; box-shadow:0 6px 18px rgba(0,0,0,.25);}
+    h2{font-size:18px; margin:0 0 14px;}
+    ul.list{list-style:none; margin:0; padding:0;}
+    .item{display:flex; justify-content:space-between; align-items:center;
+      background:var(--card); border:1px solid var(--border); border-radius:12px;
+      padding:16px 18px; margin:12px 0;}
+    .title{font-weight:800; font-size:1.05rem;}
+    a{color:var(--link); text-decoration:none;}
+    a:hover{text-decoration:underline;}
 
-/* 본문/카드 */
-main{max-width:980px; margin:0 auto; padding:0 20px 44px;}
-.section{display:none;}
-.card{
-  background:var(--panel); border:1px solid var(--border); border-radius:14px;
-  margin-top:16px; padding:18px; box-shadow:0 6px 18px rgba(0,0,0,.25);
-}
-ul.list{list-style:none; margin:0; padding:0;}
-.item{
-  display:flex; justify-content:space-between; align-items:center;
-  background:var(--card); border:1px solid var(--border); border-radius:12px;
-  padding:16px 18px; margin:12px 0;
-}
-.title{font-weight:800; font-size:1.05rem;}
-a{color:var(--link); text-decoration:none;}
-a:hover{text-decoration:underline;}
-.note{color:var(--muted); font-size:14px;}
-
-/* 모바일 강화 */
-@media (max-width:820px){
-  html{font-size:18px;}                    /* 기본 폰트 크게 */
-  .tabs{gap:12px; margin:22px auto 22px;}
-  .tab-btn{font-size:clamp(1.1rem, 1.02rem + 1.2vw, 1.35rem); padding:12px 16px;}
-  .title{font-size:1.1rem;}
-}
-@media (max-width:480px){
-  html{font-size:19px;}                    /* 아주 작을 때 더 크게 */
-  .tab-btn{padding:12px 14px;}
-}
-</style>
-
-  <script>
-// 탭 로직: .tab-btn(anchor) 클릭 시 섹션 토글 + 해시 동기화
-const tabs = document.querySelectorAll('.tab-btn');
-const sections = document.querySelectorAll('.section');
-
-function showTab(key) {
-  // 섹션 토글
-  sections.forEach(s => s.style.display = (s.id === key) ? 'block' : 'none');
-  // 활성 탭 표시
-  tabs.forEach(t => t.classList.remove('active'));
-  const active = document.querySelector('.tab-btn[data-tab="' + key + '"]');
-  if (active) active.classList.add('active');
-  // URL 해시 동기화 (뒤로가기 동작 안정화)
-  if (location.hash.replace('#','') !== key) {
-    history.replaceState(null, '', '#' + key);
-  }
-}
-
-// 탭 클릭 핸들러
-tabs.forEach(a => {
-  a.addEventListener('click', (e) => {
-    e.preventDefault();
-    const key = a.dataset.tab;
-    if (key) showTab(key);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-});
-
-// 초기 표시: 해시 우선, 없으면 en-videos
-const initial = location.hash ? location.hash.replace('#','') : 'en-videos';
-const valid = Array.from(sections).map(s => s.id);
-showTab(valid.includes(initial) ? initial : 'en-videos');
-</script>
+    /* 모바일 폰트 크기 조정 */
+    @media (max-width:820px){
+      html{font-size:18px;}
+      .tabs{gap:12px; margin:22px auto 22px;}
+      .title{font-size:1.1rem;}
+    }
+    @media (max-width:480px){
+      html{font-size:19px;}
+      .tab-btn{padding:12px 14px;}
+    }
+  </style>
+</head>
 <body>
-  <header>
-    <h1>Youtube Videos and Series of “Conversation with Oneness God”</h1>
-    <p class="note">Choose a tab below. Only the selected content will appear.</p>
-  </header>
+<header>
+  <h1>Youtube Videos and Series of “Conversation with Oneness God”</h1>
+  <p class="note">Choose a tab below. Only the selected content will appear.</p>
+</header>
 
 <!-- Tabs -->
 <div class="tabs">
-
-  <!-- English Videos -->
-  <a href="#en-videos" class="tab-btn active" data-tab="en-videos">🇬🇧 English Videos</a>
-
-  <!-- Korean Videos -->
+  <a href="#en-videos" class="tab-btn active" data-tab="en-videos">🇺🇸 English Videos</a>
   <a href="#kr-videos" class="tab-btn" data-tab="kr-videos">🇰🇷 한국어 영상</a>
-
-  <!-- Channel -->
-  <a href="#channel" class="tab-btn" data-tab="channel">📺 Total YouTube Channel (@김병윤-c2s)</a>
-
-  <!-- English PDFs -->
-  <a href="#en-pdf" class="tab-btn" data-tab="en-pdf">📘 Series of “Conversation with Oneness God”</a>
-
-  <!-- Korean PDFs -->
-  <a href="#kr-pdf" class="tab-btn" data-tab="kr-pdf">📖 Korean Series (PDF)</a>
-
+  <a href="#channel"   class="tab-btn" data-tab="channel">📺 Total YouTube Channel (@김병윤-c2s)</a>
+  <a href="#en-pdf"    class="tab-btn" data-tab="en-pdf">📘 Series of “Conversation with Oneness God”</a>
 </div>
- 
-  <main>
 
-<!-- EN Videos -->
-<section id="en-videos" class="section active">
+<main>
+  <!-- 여기에 en-videos, kr-videos, channel, en-pdf 섹션들 계속... -->
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const sections = document.querySelectorAll('.section');
+
+  function showTab(key){
+    sections.forEach(s => s.classList.toggle('is-open', s.id === key));
+    tabs.forEach(t => t.classList.remove('active'));
+    const active = document.querySelector('.tab-btn[data-tab="'+key+'"]');
+    if (active) active.classList.add('active');
+    if (location.hash.replace('#','') !== key) {
+      history.replaceState(null,'','#'+key);
+    }
+  }
+
+  tabs.forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const key = a.dataset.tab;
+      if (key) showTab(key);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+ const initial = location.hash ? location.hash.replace('#','') : 'en-videos';
+  const valid   = Array.from(sections).map(s => s.id);
+  showTab(valid.includes(initial) ? initial : 'en-videos');
+});
+</script>
+
+<main>
+  <!-- EN Videos ... -->
+ <section id="en-videos" class="section active">
   <div class="card">
     <h2>🇺🇸 English Videos</h2>
     <ul class="list">
@@ -166,7 +144,7 @@ showTab(valid.includes(initial) ? initial : 'en-videos');
           <li class="item"><span class="title">Ep.10 Oneness</span><a href="https://youtu.be/uTzE24vYqco" target="_blank" rel="noopener">▶ Watch on YouTube</a></li>
           <li class="item"><span class="title">Ep. 11: Rebuttal to Roman Curia and Christianity</span> <a href="https://youtu.be/ROc29mrzC8w" target="_blank" rel="noopener">▶ YouTube</a></li>
         </ul>
-      </div>
+      </div>D
     </section>
 
     
@@ -253,22 +231,20 @@ showTab(valid.includes(initial) ? initial : 'en-videos');
       </div>
     </section>
 
-  </main>
+ </main>
+
+<!-- PDF 링크를 Google Docs Viewer로 열도록 변환 -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href$=".pdf"]').forEach(a => {
+      const absolute = new URL(a.getAttribute('href'), location.href).href;
+      const gview = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(absolute);
+      a.setAttribute('href', gview);
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener');
+    });
+  });
+</script>
+
 </body>
 </html>
-
-<script>
-/* 모든 .pdf 링크를 Google Docs Viewer로 열도록 변환 */
-(function () {
-  // pdf 링크만 선택 (한국/영문 PDF 섹션 모두 자동 처리)
-  document.querySelectorAll('a[href$=".pdf"]').forEach(function (a) {
-    // 상대경로를 절대경로로 변환
-    var absolute = new URL(a.getAttribute('href'), location.href).href;
-    // gview URL로 치환
-    var gview = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(absolute);
-    a.setAttribute('href', gview);
-    a.setAttribute('target', '_blank');
-    a.setAttribute('rel', 'noopener');
-  });
-})();
-</script>
