@@ -34,20 +34,44 @@
       font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo",Malgun Gothic,Helvetica,Arial,sans-serif;
       line-height:1.7;
     }
-    header{padding:28px 20px 8px; max-width:980px; margin:0 auto;}
-    h1{margin:0 0 10px; font-weight:800; font-size:clamp(1.8rem,1.2rem + 2.2vw,2.4rem);}
-    p.note{color:var(--muted); font-size:14px;}
+   h1 {
+  margin: 0 0 10px;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.8rem);  /* 기존보다 축소 */
+}
 
-    /* Tabs */
-    .tabs{display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
-      gap:12px; margin:26px auto 24px; padding:0 12px; max-width:980px;}
-    .tab-btn{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:12px 18px; border:1px solid var(--border); border-radius:999px;
-      background:var(--panel); color:#fff; cursor:pointer; font-weight:800;
-      font-size:clamp(1.05rem,1rem + 1vw,1.25rem);
-      box-shadow:0 2px 10px rgba(0,0,0,.25); text-decoration:none;
-    }
+p.note {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 18px auto 18px;   /* 위아래 여백 줄임 */
+  padding: 0 10px;
+  max-width: 980px;
+}
+
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;  /* 기존 12px 18px → 축소 */
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: clamp(0.95rem, 1rem + 0.5vw, 1.15rem); /* 기존보다 축소 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+}
     .tab-btn:hover{background:var(--panel2);}
     .tab-btn.active{outline:2px solid var(--accent);}
     
