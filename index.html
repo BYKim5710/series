@@ -154,7 +154,7 @@
 
   <!-- Tabs -->
   <div class="tabs">
-    <a href="#en-videos" class="tab-btn active" data-tab="en-videos">us English Videos</a>
+    <a href="#en-videos" class="tab-btn" data-tab="en-videos">us English Videos</a>
     <a href="#kr-videos" class="tab-btn" data-tab="kr-videos">KR 한국어 영상</a>
     <a href="#channel" class="tab-btn" data-tab="channel">📘 Total YouTube Channel (@김병윤-c2s)</a>
     <a href="#en-pdf" class="tab-btn" data-tab="en-pdf">📘 Series of “Conversation with Oneness God”</a>
@@ -200,8 +200,11 @@
         const hash = location.hash.replace('#','');
         const valid = Array.from(sections).map(s => s.id);
         if (hash && valid.includes(hash)) showTab(hash);
-        else if (sections[0]) showTab(sections[0].id);
-      });
+        } else {
+        // 초기엔 전부 닫힌 상태
+       sections.forEach(s => s.classList.remove('is-open'));
+        tabs.forEach(t => t.classList.remove('active'));
+        }
     </script>
 
     <!-- 자동 목록 데이터(JSON) -->
