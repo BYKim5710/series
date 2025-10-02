@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- 모바일 최적화 -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Open Graph 기본 -->
-  <meta property="og:url" content="https://bykim5710.github.io/series/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://bykim5710.github.io/series/default-og.png" />
+  <!-- 기본 OG (목록 페이지 공유용) -->
+  <meta property="og:url" content="https://bykim5710.github.io/series/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Conversation with Oneness God · Series">
+  <meta property="og:description" content="Youtube Videos and Series of “Conversation with Oneness God”">
+  <meta property="og:image" content="https://bykim5710.github.io/series/default-og.png">
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://bykim5710.github.io/series/" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://bykim5710.github.io/series/">
+
+  <title>Conversation with Oneness God · Series</title>
 
   <style>
     :root{
@@ -32,7 +35,7 @@
     h1{font-size:clamp(1.25rem,1.05rem + .8vw,1.8rem);margin:0 0 10px;letter-spacing:.2px}
     .note{margin:6px 0 0;color:var(--muted);font-size:.95rem}
 
-    /* 탭 */
+    /* 탭 바 */
     .tabs{max-width:980px;margin:22px auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:14px}
     .tab-btn{
       display:inline-flex;align-items:center;gap:6px;
@@ -44,14 +47,10 @@
     .tab-btn:hover{background:var(--panel2)}
     .tab-btn.active{outline:2px solid var(--accent)}
 
-    /* 메인 */
+    /* 본문 공통 스타일(섹션, 리스트 등) */
     main{max-width:980px;margin:0 auto;padding:0 20px 44px}
-
-    /* 수동 섹션 표시/숨김 */
     .section{display:none}
     .section.is-open{display:block}
-
-    /* 카드/리스트 공통 */
     .card{background:var(--panel1);border:1px solid var(--border);border-radius:14px;margin-top:16px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
     h2{font-size:18px;margin:0 0 14px}
     ul.list{list-style:none;margin:0;padding:0}
@@ -67,6 +66,43 @@
     @media (max-width:820px){ .tabs{gap:12px;margin:22px auto} .title{font-size:1rem} }
     @media (max-width:480px){ .tab-btn{font-size:.9rem;padding:6px 10px} .item{padding:12px 14px} .title{font-size:.95rem} }
   </style>
+
+  <!-- 탭 전환 스크립트(해시 없으면 모두 닫힌 상태로 시작) -->
+  <script>
+    (function(){
+      if (window.__tabs_init__) return;  // 중복 방지
+      window.__tabs_init__ = true;
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const tabs = Array.from(document.querySelectorAll('.tab-btn'));
+        const sections = Array.from(document.querySelectorAll('section.section')); // 수동 섹션만
+
+        const showTab = (key) => {
+          sections.forEach(s => s.classList.toggle('is-open', s.id === key));
+          tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === key));
+          history.replaceState(null, '', '#' + key);
+        };
+
+        tabs.forEach(a => {
+          a.addEventListener('click', (e) => {
+            e.preventDefault();
+            const key = a.dataset.tab;
+            if (key) showTab(key);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        });
+
+        const hash = location.hash.replace('#','');
+        const valid = sections.map(s => s.id);
+        if (hash && valid.includes(hash)) {
+          showTab(hash);
+        } else {
+          sections.forEach(s => s.classList.remove('is-open'));
+          tabs.forEach(t => t.classList.remove('active'));
+        }
+      });
+    })();
+  </script>
 </head>
 
 <body>
@@ -75,7 +111,6 @@
     <p class="note">Choose a tab below. Only the selected content will appear.</p>
   </header>
 
-  <!-- Tabs -->
   <div class="tabs">
     <a href="#en-videos" class="tab-btn" data-tab="en-videos">🇺🇸 us English Videos</a>
     <a href="#kr-videos" class="tab-btn" data-tab="kr-videos">🇰🇷 KR 한국어 영상</a>
@@ -83,51 +118,7 @@
     <a href="#en-pdf" class="tab-btn" data-tab="en-pdf">📘 Series of “Conversation with Oneness God”</a>
   </div>
 
-  <main>
-    <!-- ✅ 자동 섹션은 지금은 숨깁니다. 필요해지면 주석 해제 -->
-    <!--
-    <section id="auto-area">
-      <h2 id="h-ko">📺 한국어 영상 목록</h2>
-      <ul id="auto-ko" class="list episode-list"></ul>
-
-      <h2 id="h-en">🌐 English Episodes</h2>
-      <ul id="auto-en" class="list episode-list"></ul>
-    </section>
-    -->
-
-    <!-- ── 탭 전환 스크립트 (수동 섹션 제어) ── -->
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const tabs = Array.from(document.querySelectorAll('.tab-btn'));
-      const sections = Array.from(document.querySelectorAll('section.section')); // 수동 섹션만
-
-      const showTab = (key) => {
-        sections.forEach(s => s.classList.toggle('is-open', s.id === key));
-        tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === key));
-        history.replaceState(null, '', '#' + key);
-      };
-
-      tabs.forEach(a => {
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          const key = a.dataset.tab;
-          if (key) showTab(key);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      });
-
-      // 초기: 해시 있으면 해당 탭, 없으면 모두 닫기
-      const hash = location.hash.replace('#','');
-      const valid = sections.map(s => s.id);
-      if (hash && valid.includes(hash)) {
-        showTab(hash);
-      } else {
-        sections.forEach(s => s.classList.remove('is-open'));
-        tabs.forEach(t => t.classList.remove('active'));
-      }
-    });
-    </script>
-
+  
 <main>
   <!-- EN Videos ... -->
  <section id="en-videos" class="section">
