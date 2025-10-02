@@ -13,136 +13,59 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="https://bykim5710.github.io/series/" />
 
-  <!-- (선택) Facebook App ID -->
-  <!-- <meta property="fb:app_id" content="여기에_앱ID" /> -->
-
   <style>
-    :root {
-      --bg: #0e1628;
-      --panel1: #141a2a;
-      --panel2: #1b2336;
-      --text: #e6eaf2;
-      --muted: #9aa3b2;
-      --border: #263042;
-      --link: #7bb0ff;
-      --accent: #3b82f6;
-      --card: #111827;
+    :root{
+      --bg:#0e1628; --panel1:#141a2a; --panel2:#1b2336;
+      --text:#e6eaf2; --muted:#9aa3b2; --border:#263042;
+      --link:#7bb0ff; --accent:#3b82f6; --card:#111827;
+    }
+    *{box-sizing:border-box}
+    html{font-size:16px}
+    body{
+      margin:0; color:var(--text);
+      background:linear-gradient(180deg,#0b1222 0%,#0e1628 35%,#0e1628 100%);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","맑은 고딕",sans-serif;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
 
-    * { box-sizing: border-box; }
-    html { font-size: 16px; }
-    body {
-      margin: 0;
-      color: var(--text);
-      background: linear-gradient(180deg, #0b1222 0%, #0e1628 35%, #0e1628 100%);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    header {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 22px 20px 0;
-    }
-    h1 {
-      font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.8rem);
-      margin: 0 0 10px;
-      letter-spacing: 0.2px;
-    }
-    .note {
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+    header{max-width:980px;margin:0 auto;padding:22px 20px 0}
+    h1{font-size:clamp(1.25rem,1.05rem + .8vw,1.8rem);margin:0 0 10px;letter-spacing:.2px}
+    .note{margin:6px 0 0;color:var(--muted);font-size:.95rem}
 
     /* 탭 */
-    .tabs {
-      max-width: 980px;
-      margin: 22px auto 22px;
-      padding: 0 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
+    .tabs{max-width:980px;margin:22px auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:14px}
+    .tab-btn{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:10px 14px;border:1px solid var(--border);border-radius:999px;
+      background:var(--panel1);color:#fff;cursor:pointer;
+      font-weight:800;font-size:clamp(.9rem,.85rem + .25vw,1.05rem);
+      box-shadow:0 2px 10px rgba(0,0,0,.25);text-decoration:none
     }
-    .tab-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 10px 14px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--panel1);
-      color: #fff;
-      cursor: pointer;
-      font-weight: 800;
-      font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1.05rem);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-      text-decoration: none;
+    .tab-btn:hover{background:var(--panel2)}
+    .tab-btn.active{outline:2px solid var(--accent)}
+
+    /* 메인 */
+    main{max-width:980px;margin:0 auto;padding:0 20px 44px}
+
+    /* 수동 섹션 표시/숨김 */
+    .section{display:none}
+    .section.is-open{display:block}
+
+    /* 카드/리스트 공통 */
+    .card{background:var(--panel1);border:1px solid var(--border);border-radius:14px;margin-top:16px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+    h2{font-size:18px;margin:0 0 14px}
+    ul.list{list-style:none;margin:0;padding:0}
+    .item{
+      color:#fff;display:flex;justify-content:space-between;align-items:center;
+      background:var(--card);border:1px solid var(--border);border-radius:12px;
+      padding:16px 18px;margin:12px 0
     }
-    .tab-btn:hover { background: var(--panel2); }
-    .tab-btn.active { outline: 2px solid var(--accent); }
+    .title{font-weight:800;font-size:1rem}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
 
-    /* 메인 레이아웃 */
-    main {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 20px 44px;
-    }
-
-    /* 섹션(탭 대상) */
-    .section { display: none; }
-    .section.is-open { display: block; }
-
-    /* 카드 */
-    .card {
-      background: var(--panel1);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      margin-top: 16px;
-      padding: 18px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-    }
-
-    /* 소제목 */
-    h2 {
-      font-size: 18px;
-      margin: 0 0 14px;
-    }
-
-    /* 리스트 공통 */
-    ul.list { list-style: none; margin: 0; padding: 0; }
-
-    /* 아이템 */
-    .item {
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px 18px;
-      margin: 12px 0;
-    }
-    /* 제목(아이템 내) */
-    .title { font-weight: 800; font-size: 1rem; }
-
-    /* 링크 */
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* 반응형 */
-    @media (max-width: 820px) {
-      html { font-size: 16px; }
-      .tabs { gap: 12px; margin: 22px auto 22px; }
-      .title { font-size: 1rem; }
-    }
-    @media (max-width: 480px) {
-      .tab-btn { font-size: 0.9rem; padding: 6px 10px; }
-      .item { padding: 12px 14px; }
-      .title { font-size: 0.95rem; }
-    }
+    @media (max-width:820px){ .tabs{gap:12px;margin:22px auto} .title{font-size:1rem} }
+    @media (max-width:480px){ .tab-btn{font-size:.9rem;padding:6px 10px} .item{padding:12px 14px} .title{font-size:.95rem} }
   </style>
 </head>
 
@@ -154,27 +77,29 @@
 
   <!-- Tabs -->
   <div class="tabs">
-    <a href="#en-videos" class="tab-btn" data-tab="en-videos">us English Videos</a>
-    <a href="#kr-videos" class="tab-btn" data-tab="kr-videos">KR 한국어 영상</a>
+    <a href="#en-videos" class="tab-btn" data-tab="en-videos">🇺🇸 us English Videos</a>
+    <a href="#kr-videos" class="tab-btn" data-tab="kr-videos">🇰🇷 KR 한국어 영상</a>
     <a href="#channel" class="tab-btn" data-tab="channel">📘 Total YouTube Channel (@김병윤-c2s)</a>
     <a href="#en-pdf" class="tab-btn" data-tab="en-pdf">📘 Series of “Conversation with Oneness God”</a>
   </div>
 
   <main>
-    <!-- ✅ 자동 생성되는 영상 목록 (비우면 감추도록 id 부여) -->
+    <!-- ✅ 자동 섹션은 지금은 숨깁니다. 필요해지면 주석 해제 -->
+    <!--
     <section id="auto-area">
-      <h2>📺 한국어 영상 목록</h2>
+      <h2 id="h-ko">📺 한국어 영상 목록</h2>
       <ul id="auto-ko" class="list episode-list"></ul>
 
-      <h2>🌐 English Episodes</h2>
+      <h2 id="h-en">🌐 English Episodes</h2>
       <ul id="auto-en" class="list episode-list"></ul>
     </section>
+    -->
 
     <!-- ── 탭 전환 스크립트 (수동 섹션 제어) ── -->
     <script>
     document.addEventListener('DOMContentLoaded', () => {
       const tabs = Array.from(document.querySelectorAll('.tab-btn'));
-      const sections = Array.from(document.querySelectorAll('section.section')); // 수동 섹션만 확실히 집기
+      const sections = Array.from(document.querySelectorAll('section.section')); // 수동 섹션만
 
       const showTab = (key) => {
         sections.forEach(s => s.classList.toggle('is-open', s.id === key));
@@ -191,7 +116,7 @@
         });
       });
 
-      // 초기 상태: 해시가 있으면 해당 탭, 없으면 모두 닫기
+      // 초기: 해시 있으면 해당 탭, 없으면 모두 닫기
       const hash = location.hash.replace('#','');
       const valid = sections.map(s => s.id);
       if (hash && valid.includes(hash)) {
@@ -201,47 +126,6 @@
         tabs.forEach(t => t.classList.remove('active'));
       }
     });
-    </script>
-
-    <!-- ── 자동 목록 데이터(JSON) ── -->
-    <script type="application/json" id="ep-numbers">
-    {
-      "ko": [],   // 당장 표시 안 하려면 빈 배열 유지
-      "en": []
-    }
-    </script>
-
-    <!-- ── 자동 목록 렌더러 ── -->
-    <script>
-    (function(){
-      const json = document.getElementById('ep-numbers');
-      if (!json) return;
-      const data = JSON.parse(json.textContent);
-
-      const makeItem = (n, lang) => {
-        const nn = String(n).padStart(2,'0');                  // 01, 02, ...
-        const page = (lang === 'ko') ? `ep${nn}.html` : `ep${nn}-en.html`;
-        const img  = (lang === 'ko') ? `ep${nn}-ko.png` : `ep${nn}-en.png`;
-
-        return `
-          <li class="item">
-            <a class="thumb" href="${page}">
-              <img src="./${img}" alt="Ep.${n}"
-                   style="max-width:160px;height:auto;border-radius:8px;margin-right:12px;">
-            </a>
-            <div class="meta"><span class="title">Ep.${n}</span></div>
-          </li>`;
-      };
-
-      const ko = document.getElementById('auto-ko');
-      const en = document.getElementById('auto-en');
-      if (ko && Array.isArray(data.ko)) ko.innerHTML = data.ko.map(n => makeItem(n,'ko')).join('');
-      if (en && Array.isArray(data.en)) en.innerHTML = data.en.map(n => makeItem(n,'en')).join('');
-
-      // 두 배열 모두 비어 있으면 자동 섹션 감추기 (선택)
-      const auto = document.getElementById('auto-area');
-      if (auto && (!data.ko?.length && !data.en?.length)) auto.style.display = 'none';
-    })();
     </script>
 
 <main>
