@@ -1,123 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YouTube Videos & Series of “Conversation with Oneness God”</title>
 
-  <!-- 기본 OG (목록 페이지 공유용) -->
-  <meta property="og:url" content="https://bykim5710.github.io/series/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Conversation with Oneness God · Series">
-  <meta property="og:description" content="Youtube Videos and Series of “Conversation with Oneness God”">
-  <meta property="og:image" content="https://bykim5710.github.io/series/default-og.png">
+  <!-- Open Graph (Facebook/카카오) -->
+  <meta property="og:url" content="https://bykim5710.github.io/series/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="YouTube Videos & Series of “Conversation with Oneness God”" />
+  <meta property="og:description" content="English/Korean episode links and related materials" />
+  <meta property="og:image" content="https://bykim5710.github.io/series/ep.16-enor.png?v=20251003" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://bykim5710.github.io/series/">
-
-  <title>Conversation with Oneness God · Series</title>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://bykim5710.github.io/series/ep.16-enor.png?v=20251003" />
 
   <style>
     :root{
-      --bg:#0e1628; --panel1:#141a2a; --panel2:#1b2336;
-      --text:#e6eaf2; --muted:#9aa3b2; --border:#263042;
-      --link:#7bb0ff; --accent:#3b82f6; --card:#111827;
+      --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2; --link:#78b7ff; --border:#27305e; --card:#1a1f34;
     }
     *{box-sizing:border-box}
-    html{font-size:16px}
-    body{
-      margin:0; color:var(--text);
-      background:linear-gradient(180deg,#0b1222 0%,#0e1628 35%,#0e1628 100%);
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","맑은 고딕",sans-serif;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-    }
+    body{margin:0;background:var(--bg);color:var(--text);
+         font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,Helvetica,Arial,sans-serif;
+         line-height:1.6}
+    .wrap{max-width:980px;margin:28px auto;padding:0 16px}
 
-    header{max-width:980px;margin:0 auto;padding:22px 20px 0}
-    h1{font-size:clamp(1.25rem,1.05rem + .8vw,1.8rem);margin:0 0 10px;letter-spacing:.2px}
-    .note{margin:6px 0 0;color:var(--muted);font-size:.95rem}
+    .tab-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
+             background:var(--panel);border:1px solid var(--border);color:#def9ff;text-decoration:none;
+             cursor:pointer;font-weight:700;}
+    .tab-btn.active,.tab-btn:hover{outline:1px solid #3952e8}
 
-    /* 탭 바 */
-    .tabs{max-width:980px;margin:22px auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:14px}
-    .tab-btn{
-      display:inline-flex;align-items:center;gap:6px;
-      padding:10px 14px;border:1px solid var(--border);border-radius:999px;
-      background:var(--panel1);color:#fff;cursor:pointer;
-      font-weight:800;font-size:clamp(.9rem,.85rem + .25vw,1.05rem);
-      box-shadow:0 2px 10px rgba(0,0,0,.25);text-decoration:none
-    }
-    .tab-btn:hover{background:var(--panel2)}
-    .tab-btn.active{outline:2px solid var(--accent)}
+    section{display:none}
+    section.is-open{display:block}
 
-    /* 본문 공통 스타일(섹션, 리스트 등) */
-    main{max-width:980px;margin:0 auto;padding:0 20px 44px}
-    .section{display:none}
-    .section.is-open{display:block}
-    .card{background:var(--panel1);border:1px solid var(--border);border-radius:14px;margin-top:16px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
-    h2{font-size:18px;margin:0 0 14px}
-    ul.list{list-style:none;margin:0;padding:0}
-    .item{
-      color:#fff;display:flex;justify-content:space-between;align-items:center;
-      background:var(--card);border:1px solid var(--border);border-radius:12px;
-      padding:16px 18px;margin:12px 0
-    }
-    .title{font-weight:800;font-size:1rem}
+    .card{background:var(--panel);border:1px solid #21274d;border-radius:10px;padding:14px;margin:16px 0}
+    ul.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:760px){ ul.list{grid-template-columns:1fr} }
+    li.item{background:#0f1328;border:1px solid #1e274a;border-radius:10px;padding:12px}
+    .title{font-weight:700;margin-right:6px}
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
-
-    @media (max-width:820px){ .tabs{gap:12px;margin:22px auto} .title{font-size:1rem} }
-    @media (max-width:480px){ .tab-btn{font-size:.9rem;padding:6px 10px} .item{padding:12px 14px} .title{font-size:.95rem} }
+    .lead{color:var(--muted);margin:8px 0 14px;}
   </style>
-
-  <!-- 탭 전환 스크립트(해시 없으면 모두 닫힌 상태로 시작) -->
-  <script>
-    (function(){
-      if (window.__tabs_init__) return;  // 중복 방지
-      window.__tabs_init__ = true;
-
-      document.addEventListener('DOMContentLoaded', () => {
-        const tabs = Array.from(document.querySelectorAll('.tab-btn'));
-        const sections = Array.from(document.querySelectorAll('section.section')); // 수동 섹션만
-
-        const showTab = (key) => {
-          sections.forEach(s => s.classList.toggle('is-open', s.id === key));
-          tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === key));
-          history.replaceState(null, '', '#' + key);
-        };
-
-        tabs.forEach(a => {
-          a.addEventListener('click', (e) => {
-            e.preventDefault();
-            const key = a.dataset.tab;
-            if (key) showTab(key);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          });
-        });
-
-        const hash = location.hash.replace('#','');
-        const valid = sections.map(s => s.id);
-        if (hash && valid.includes(hash)) {
-          showTab(hash);
-        } else {
-          sections.forEach(s => s.classList.remove('is-open'));
-          tabs.forEach(t => t.classList.remove('active'));
-        }
-      });
-    })();
-  </script>
 </head>
 
 <body>
-  <header>
-    <h1>Youtube Videos and Series of “Conversation with Oneness God”</h1>
-    <p class="note">Choose a tab below. Only the selected content will appear.</p>
-  </header>
+  <!-- ====== 여기부터는 '현재 사용 중인 <main> 내용'을 그대로 유지하세요 ====== -->
+  <main class="wrap">
 
-  <div class="tabs">
-    <a href="#en-videos" class="tab-btn" data-tab="en-videos">🇺🇸 us English Videos</a>
-    <a href="#kr-videos" class="tab-btn" data-tab="kr-videos">🇰🇷 KR 한국어 영상</a>
-    <a href="#channel" class="tab-btn" data-tab="channel">📘 Total YouTube Channel (@김병윤-c2s)</a>
-    <a href="#en-pdf" class="tab-btn" data-tab="en-pdf">📘 Series of “Conversation with Oneness God”</a>
-  </div>
+    <!-- ✅ 여기에 “현재 가지고 계신 <main> … </main> 전체 내용”을 그대로 붙여두시면 됩니다. -->
+    <!-- 이미 올려두신 EN/KR 리스트, 채널, PDF 섹션 등은 수정 없이 재사용됩니다. -->
 
+  </main>
+  <!-- ====== 여기까지 유지 ====== -->
+
+  <!-- ✅ 탭 전환 스크립트: 파일 하단, </body> 바로 위에 1회만 존재해야 합니다 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = Array.from(document.querySelectorAll('.tab-btn[data-tab]'));
+      const sections = Array.from(document.querySelectorAll('section[id]'));
+
+      function showTab(key){
+        sections.forEach(s => s.classList.toggle('is-open', s.id === key));
+        tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === key));
+        history.replaceState(null, '', '#' + key);
+      }
+
+      const hash = location.hash.replace('#','');
+      if (hash && sections.some(s => s.id === hash)) showTab(hash);
+      else showTab(sections[0]?.id || 'en-videos');
+
+      tabs.forEach(btn => btn.addEventListener('click', e => {
+        e.preventDefault();
+        showTab(btn.dataset.tab);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }));
+    });
+  </script>
+</body>
+</html>
   
 <main>
   <!-- EN Videos ... -->
