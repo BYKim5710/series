@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>YouTube Videos and Series of “Conversation with Oneness God”</title>
 
-  <!-- Open Graph / Twitter (썸네일은 향후 파일만 올려 바꾸세요) -->
+  <!-- OG/Twitter (썸네일 캐시 무효화를 원하면 v=날짜 값만 바꾸세요) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bykim5710.github.io/">
   <meta property="og:title" content="YouTube Videos and Series of “Conversation with Oneness God”">
@@ -17,7 +17,7 @@
   <style>
     :root{
       --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2;
-      --link:#78b7ff; --border:#27305e; --card:#1a1f34;
+      --link:#78b7ff; --border:#27305e;
     }
     *{box-sizing:border-box}
     body{
@@ -29,7 +29,7 @@
     h1{font-size:clamp(22px,3.8vw,30px);margin:0 0 10px}
     .lead{color:var(--muted);margin:8px 0 14px}
 
-    /* tabs */
+    /* 탭 버튼 */
     .tabs{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
     .tab-btn{
       display:inline-flex;align-items:center;gap:8px;
@@ -40,7 +40,7 @@
     .tab-btn.active,.tab-btn:hover{outline:1px solid #3952e8}
     .flag{font-size:18px;line-height:1}
 
-    /* cards & list */
+    /* 카드/리스트 공통(본문에서 사용 중) */
     .card{background:var(--panel);border:1px solid #21274d;border-radius:10px;padding:14px;margin:16px 0}
     .title-left{font-weight:700;margin-bottom:8px}
     ul.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -49,7 +49,7 @@
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* show/hide : 페이지 어디에 있든 .section 섹션만 제어 */
+    /* 섹션 토글 (JS가 is-open을 붙임) */
     section.section{display:none}
     section.section.is-open{display:block}
   </style>
@@ -61,12 +61,13 @@
       <h1>YouTube Videos and Series of “Conversation with Oneness God”</h1>
       <p class="lead">Choose a tab below. Only the selected content will appear.</p>
 
-      <!-- Tabs (기본: English Videos) -->
+      <!-- 탭: 기본 English Videos. data-tab 값은 본문 섹션 id와 1:1 매칭 -->
       <div class="tabs">
         <a class="tab-btn" data-tab="en-videos"><span class="flag">🇺🇸</span> English Videos</a>
         <a class="tab-btn" data-tab="kr-videos"><span class="flag">🇰🇷</span> KR 한국어 영상</a>
         <a class="tab-btn" data-tab="channel">📺 Total YouTube Channel (@김병윤-c2s)</a>
         <a class="tab-btn" data-tab="en-pdf">📄 Series PDFs (English)</a>
+        <a class="tab-btn" data-tab="kr-pdf">📄 KR 한국어 PDF</a>
       </div>
     </header>
   </div>
