@@ -1,97 +1,92 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>유튜브 동영상과 “하나님과의 대화 (Conversation with Oneness God)” 연재물</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>유튜브 동영상과 “하나님과의 대화 (Conversation with Oneness God)” 연재물</title>
 
-<!-- Open Graph / Twitter (섬네일) -->
-<meta property="og:url" content="https://bykim5710.github.io/series.kr/" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="유튜브 동영상과 “하나님과의 대화” 연재물" />
-<meta property="og:description" content="연재물 안내와 한국어/영문 영상 링크 모음" />
-<meta property="og:image" content="https://bykim5710.github.io/series.kr/ep.16-enor.png?v=20251003" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://bykim5710.github.io/series.kr/ep.16-enor.png?v=20251003" />
+  <!-- 기본 공유(OG/Twitter) 이미지(선택) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="유튜브 동영상과 “하나님과의 대화” 연재물" />
+  <meta property="og:image" content="https://bykim5710.github.io/series.kr/default-og.png?v=20251005" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://bykim5710.github.io/series.kr/default-og.png?v=20251005" />
 
-<style>
-:root{
-  --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2;
-  --link:#78b7ff; --border:#27305e; --card:#1a1f34;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,Helvetica,Arial,sans-serif;line-height:1.6}
-.wrap{max-width:980px;margin:28px auto;padding:0 16px}
-header{margin:8px 0 18px}
-h1{font-size:clamp(22px,3.8vw,30px);margin:0 0 10px}
-.lead{color:var(--muted);margin:8px 0 14px}
+  <style>
+    :root{
+      --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2; --link:#78b7ff; --border:#27305e;
+      --card:#1a1f34; --accent:#1e274a;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,Helvetica,Arial,sans-serif}
+    .wrap{max-width:980px;margin:28px auto;padding:0 16px}
+    header{margin:0 0 18px}
+    h1{font-size:clamp(22px,3.8vw,30px);margin:0 0 10px}
+    .lead{color:var(--muted);margin:8px 0 14px}
 
-.tabs{display:flex;flex-wrap:wrap;gap:8px;padding:10px 0}
-.tab-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
-  background:var(--panel);border:1px solid var(--border);color:#def9ff;text-decoration:none;cursor:pointer;font-weight:700}
-.tab-btn.active,.tab-btn:hover{outline:1px solid #3952e8}
-.flag{width:22px;height:16px;display:inline-block;vertical-align:middle}
+    /* 탭 버튼 */
+    .tabs{display:flex;flex-wrap:wrap;gap:8px}
+    .tab-btn{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
+      background:var(--panel);border:1px solid var(--border);color:#def9ff;font-weight:700;text-decoration:none;cursor:pointer;
+    }
+    .tab-btn.active,.tab-btn:hover{outline:1px solid #3952e8}
+    .flag{width:22px;height:16px;display:inline-block;vertical-align:middle}
 
-.card{background:var(--panel);border:1px solid #21274d;border-radius:10px;padding:14px;margin:16px 0}
-.title-left{font-weight:700;margin-bottom:8px}
+    /* 카드/리스트 기본 */
+    .card{background:var(--panel);border:1px solid #21274d;border-radius:10px;padding:14px;margin:16px 0}
+    .title-left{font-weight:700;margin-bottom:8px}
+    ul.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:760px){ul.list{grid-template-columns:1fr}}
+    .list li{background:#0f1328;border:1px solid var(--accent);border-radius:10px;padding:12px}
+    .item .title{font-weight:700;margin-right:6px}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    footer{color:var(--muted);font-size:12px;margin:24px 0 10px;text-align:right}
 
-ul.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media (max-width:760px){ul.list{grid-template-columns:1fr}}
-li.item{background:#0f1328;border:1px solid #1e274a;border-radius:10px;padding:12px}
-.item .title{font-weight:700;margin-right:6px}
-a{color:var(--link);text-decoration:none}
-a:hover{text-decoration:underline}
-footer{color:var(--muted);font-size:12px;margin:24px 0 10px;text-align:right}
-
-/* ✅ 핵심: 탭 토글 (없으면 모든 섹션이 다 보입니다) */
-section.section{display:none}
-section.section.is-open{display:block}
-</style>
+    /* ✅ 탭 토글(핵심) — 기본은 전부 감춤, 선택된 섹션만 노출 */
+    section.section{display:none !important;}
+    section.section.is-open{display:block !important;}
+  </style>
 </head>
 
 <body>
 <div class="wrap">
   <header>
-    <h1>YouTube Videos and Series of “Conversation with Oneness God”</h1>
-    <p class="lead">Choose a tab below. Only the selected content will appear.</p>
+    <h1>유튜브 동영상과 “하나님과의 대화 (Conversation with Oneness God)” 연재물</h1>
+    <p class="lead">아래 탭을 눌러 보실 내용을 선택하세요. 선택된 항목만 표시됩니다.</p>
 
     <div class="tabs">
-      <a class="tab-btn" data-tab="en-videos" href="#en-videos">
-        <img class="flag" src="./americanflag.jpg?v=20251005" alt="USA flag" /> English Videos
-      </a>
-      <a class="tab-btn" data-tab="kr-videos" href="#kr-videos">
-        <img class="flag" src="./koreanflag.jpg?v=20251005" alt="Korean flag" /> KR 한국어 영상
-      </a>
-      <a class="tab-btn" data-tab="channel" href="#channel">
-        📺 Total YouTube Channel (@2BYKIM-c2s)
-      </a>
-      <a class="tab-btn" data-tab="en-pdf" href="#en-pdf">
-        📄 Series of “Conversation with Oneness God” (English PDFs)
-      </a>
+      <a class="tab-btn" data-tab="kr-videos" href="#kr-videos"><img class="flag" src="./koreanflag.jpg?v=20251005" alt="Korean flag" /> KR 한국어 영상</a>
+      <a class="tab-btn" data-tab="en-videos" href="#en-videos"><img class="flag" src="./americanflag.jpg?v=20251005" alt="USA flag" /> English Videos</a>
     </div>
+    <div class="tabs">
+      <a class="tab-btn" data-tab="channel" href="#channel">📁 Total YouTube Channel (@2BYKIM-c2s)</a>
+    </div>
+    <div class="tabs">
+      <a class="tab-btn" data-tab="en-pdf" href="#en-pdf">📄 Series of “Conversation with Oneness God” (English PDFs)</a>
+    </div>
+    <!-- ✅ KR PDF 탭은 사용하지 않음 -->
   </header>
 
-  <!-- ▼▼ 여기서부터가 main 입니다. 아래 JS가 섹션을 열고 닫습니다. -->
-html
-코드 복사
-  <!-- 🔽 이 스크립트는 파일 안에 단 1개만 있어야 합니다 -->
+  <!-- ✅ 스크립트는 파일 안에 딱 1개만 있어야 합니다 -->
   <script>
   (function(){
     function toArray(nl){ return Array.prototype.slice.call(nl); }
 
     document.addEventListener('DOMContentLoaded', function(){
-      var tabs = toArray(document.querySelectorAll('.tab-btn[data-tab]'));
+      var tabs     = toArray(document.querySelectorAll('.tab-btn[data-tab]'));
       var sections = toArray(document.querySelectorAll('section.section'));
-      var valid = sections.map(function(s){ return s.id; });
+      var valid    = sections.map(function(s){ return s.id; });
 
       function show(id){
+        // 섹션 토글
         sections.forEach(function(s){ s.classList.toggle('is-open', s.id===id); });
+        // 탭 활성화 표시
         tabs.forEach(function(a){ a.classList.toggle('active', a.dataset.tab===id); });
-
-        if(location.hash.replace('#','')!==id){
-          history.replaceState(null,'','#'+id);
-        }
+        // 주소 해시 동기화
+        if(location.hash.replace('#','')!==id){ history.replaceState(null,'','#'+id); }
+        // 상단으로 스크롤(살짝)
         var m=document.querySelector('main');
         if(m){
           var y=m.getBoundingClientRect().top + window.pageYOffset - 8;
@@ -99,28 +94,28 @@ html
         }
       }
 
-      // 해시가 유효하면 해당 탭, 아니면 en-videos를 기본으로
+      // 초기: 해시가 유효하면 해당 탭 열기, 아니면 모두 닫힘(아무것도 안 열림)
       var fromHash = location.hash.replace('#','');
-      show(valid.indexOf(fromHash)>-1 ? fromHash : 'en-videos');
+      if(valid.indexOf(fromHash)>-1){ show(fromHash); }
 
       // 탭 클릭
       tabs.forEach(function(a){
         a.addEventListener('click', function(e){
           e.preventDefault();
-          var id=this.dataset.tab;
+          var id = this.dataset.tab;
           if(valid.indexOf(id)>-1) show(id);
           return false;
         });
       });
 
-      // (선택) en-pdf 섹션 안의 .pdf 링크만 Google Docs Viewer로 열도록 변환
+      // (선택) en-pdf 섹션 내부 .pdf 링크만 Google Docs Viewer로 열도록 변환
       var pdfLinks = toArray(document.querySelectorAll('#en-pdf a[href$=".pdf"]'));
       pdfLinks.forEach(function(a){
-        var absolute = new URL(a.getAttribute('href'), location.href).href;
-        var gview = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(absolute);
+        var absolute = (new URL(a.getAttribute('href'), location.href)).href;
+        var gview = 'https://docs.google.com/gview?embedded=1&url='+encodeURIComponent(absolute);
         a.setAttribute('href', gview);
-        a.setAttribute('target','_blank');
-        a.setAttribute('rel','noopener');
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener');
       });
     });
   })();
