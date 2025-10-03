@@ -1,125 +1,101 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>유튜브 동영상과 “하나님과의 대화 (Conversation with Oneness God)” 연재물</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NCG Series (EN) — Mirrors KR index</title>
 
-  <!-- 기본 공유(OG/Twitter) 이미지(선택) -->
+  <!-- 기본 메타 (원하시면 KR과 동일하게 수정) -->
+  <meta name="description" content="NCG English page auto-mirroring the Korean index." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="유튜브 동영상과 “하나님과의 대화” 연재물" />
-  <meta property="og:image" content="https://bykim5710.github.io/series.kr/default-og.png?v=20251005" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://bykim5710.github.io/series.kr/default-og.png?v=20251005" />
-
+  <meta property="og:title" content="NCG Series" />
+  <meta property="og:description" content="English page mirrors the Korean index automatically." />
+  <meta property="og:image" content="https://bykim5710.github.io/series/og-default.jpg" />
   <style>
-    :root{
-      --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2; --link:#78b7ff; --border:#27305e;
-      --card:#1a1f34; --accent:#1e274a;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,Helvetica,Arial,sans-serif}
-    .wrap{max-width:980px;margin:28px auto;padding:0 16px}
-    header{margin:0 0 18px}
-    h1{font-size:clamp(22px,3.8vw,30px);margin:0 0 10px}
-    .lead{color:var(--muted);margin:8px 0 14px}
-
-    /* 탭 버튼 */
-    .tabs{display:flex;flex-wrap:wrap;gap:8px}
-    .tab-btn{
-      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
-      background:var(--panel);border:1px solid var(--border);color:#def9ff;font-weight:700;text-decoration:none;cursor:pointer;
-    }
-    .tab-btn.active,.tab-btn:hover{outline:1px solid #3952e8}
-    .flag{width:22px;height:16px;display:inline-block;vertical-align:middle}
-
-    /* 카드/리스트 기본 */
-    .card{background:var(--panel);border:1px solid #21274d;border-radius:10px;padding:14px;margin:16px 0}
-    .title-left{font-weight:700;margin-bottom:8px}
-    ul.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    @media (max-width:760px){ul.list{grid-template-columns:1fr}}
-    .list li{background:#0f1328;border:1px solid var(--accent);border-radius:10px;padding:12px}
-    .item .title{font-weight:700;margin-right:6px}
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
-    footer{color:var(--muted);font-size:12px;margin:24px 0 10px;text-align:right}
-
-    /* ✅ 탭 토글(핵심) — 기본은 전부 감춤, 선택된 섹션만 노출 */
-    section.section{display:none !important;}
-    section.section.is-open{display:block !important;}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;margin:0;color:#111}
+    header,footer{padding:16px 20px}
+    header{background:#fafafa;border-bottom:1px solid #eee}
+    h1{margin:0 0 6px 0;font-size:22px}
+    main{padding:16px 20px;max-width:960px;margin:0 auto}
+    .note{font-size:14px;color:#666}
+    ul.list{list-style:none;padding:0;margin:0}
+    li.item{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed #eee}
+    .title{flex:1}
+    .spinner{display:inline-block;width:16px;height:16px;border:2px solid #ccc;border-top-color:#444;border-radius:50%;animation:spin 1s linear infinite;margin-right:6px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .error{color:#b00020}
   </style>
 </head>
-
 <body>
-<div class="wrap">
   <header>
-    <h1>유튜브 동영상과 “하나님과의 대화 (Conversation with Oneness God)” 연재물</h1>
-    <p class="lead">아래 탭을 눌러 보실 내용을 선택하세요. 선택된 항목만 표시됩니다.</p>
-
-    <div class="tabs">
-      <a class="tab-btn" data-tab="kr-videos" href="#kr-videos"><img class="flag" src="./koreanflag.jpg?v=20251005" alt="Korean flag" /> KR 한국어 영상</a>
-      <a class="tab-btn" data-tab="en-videos" href="#en-videos"><img class="flag" src="./americanflag.jpg?v=20251005" alt="USA flag" /> English Videos</a>
-    </div>
-    <div class="tabs">
-      <a class="tab-btn" data-tab="channel" href="#channel">📁 Total YouTube Channel (@2BYKIM-c2s)</a>
-    </div>
-    <div class="tabs">
-      <a class="tab-btn" data-tab="en-pdf" href="#en-pdf">📄 Series of “Conversation with Oneness God” (English PDFs)</a>
-    </div>
-    <!-- ✅ KR PDF 탭은 사용하지 않음 -->
+    <h1>NCG Series — English</h1>
+    <div class="note">This page <strong>auto-mirrors</strong> the Korean index from <code>/series.kr/</code>.</div>
   </header>
 
-  <!-- ✅ 스크립트는 파일 안에 딱 1개만 있어야 합니다 -->
+  <main>
+    <section aria-label="English list (auto-mirrored)">
+      <h2>Videos (Mirrored from KR)</h2>
+      <div id="status" class="note"><span class="spinner"></span> Loading from /series.kr/…</div>
+      <ul class="list" id="en-list"></ul>
+
+      <h3 style="margin-top:20px">Documents / PDF (Mirrored from KR)</h3>
+      <ul class="list" id="en-docs"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://bykim5710.github.io/series.kr/" target="_blank" rel="noopener">Open Korean index</a> ·
+    <a href="https://bykim5710.github.io/series/" target="_blank" rel="noopener">English mirror</a>
+  </footer>
+
   <script>
-  (function(){
-    function toArray(nl){ return Array.prototype.slice.call(nl); }
+  (async function mirrorKR(){
+    const STATUS = document.getElementById('status');
+    const enList = document.getElementById('en-list');
+    const enDocs = document.getElementById('en-docs');
 
-    document.addEventListener('DOMContentLoaded', function(){
-      var tabs     = toArray(document.querySelectorAll('.tab-btn[data-tab]'));
-      var sections = toArray(document.querySelectorAll('section.section'));
-      var valid    = sections.map(function(s){ return s.id; });
+    // 1) KR 인덱스 불러오기 (캐시 회피용 타임스탬프)
+    const KR_URL = 'https://bykim5710.github.io/series.kr/index.html?nocache=' + Date.now();
 
-      function show(id){
-        // 섹션 토글
-        sections.forEach(function(s){ s.classList.toggle('is-open', s.id===id); });
-        // 탭 활성화 표시
-        tabs.forEach(function(a){ a.classList.toggle('active', a.dataset.tab===id); });
-        // 주소 해시 동기화
-        if(location.hash.replace('#','')!==id){ history.replaceState(null,'','#'+id); }
-        // 상단으로 스크롤(살짝)
-        var m=document.querySelector('main');
-        if(m){
-          var y=m.getBoundingClientRect().top + window.pageYOffset - 8;
-          window.scrollTo(0,y);
-        }
+    try {
+      const res = await fetch(KR_URL, { mode: 'cors', credentials: 'omit' });
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      const html = await res.text();
+
+      // 2) 오프스크린 DOM으로 파싱
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+
+      // 3) KR 쪽 목록(상단: 동영상, 하단: 문서) 추출
+      //    가장 안전하게: 메인 영역의 모든 UL.list 중 앞의 2개를 사용
+      const lists = doc.querySelectorAll('main ul.list, #main ul.list, .panel ul.list');
+      const videos = lists[0];
+      const docs   = lists[1];
+
+      if (!videos) throw new Error('Could not find KR video list');
+      enList.innerHTML = videos.innerHTML;
+
+      if (docs) {
+        enDocs.innerHTML = docs.innerHTML;
       }
 
-      // 초기: 해시가 유효하면 해당 탭 열기, 아니면 모두 닫힘(아무것도 안 열림)
-      var fromHash = location.hash.replace('#','');
-      if(valid.indexOf(fromHash)>-1){ show(fromHash); }
-
-      // 탭 클릭
-      tabs.forEach(function(a){
-        a.addEventListener('click', function(e){
-          e.preventDefault();
-          var id = this.dataset.tab;
-          if(valid.indexOf(id)>-1) show(id);
-          return false;
-        });
+      // 4) 영어판 버튼 라벨 정리(선택)
+      document.querySelectorAll('#en-list a, #en-docs a').forEach(a=>{
+        const t = a.textContent.trim();
+        if (t.includes('유튜브') || t.includes('▶')) a.textContent = '▶ YouTube';
+        if (t.includes('열기')) a.textContent = '▶ Open';
+        if (/시청|보기/.test(t)) a.textContent = '▶ Watch';
       });
 
-      // (선택) en-pdf 섹션 내부 .pdf 링크만 Google Docs Viewer로 열도록 변환
-      var pdfLinks = toArray(document.querySelectorAll('#en-pdf a[href$=".pdf"]'));
-      pdfLinks.forEach(function(a){
-        var absolute = (new URL(a.getAttribute('href'), location.href)).href;
-        var gview = 'https://docs.google.com/gview?embedded=1&url='+encodeURIComponent(absolute);
-        a.setAttribute('href', gview);
-        a.setAttribute('target', '_blank');
-        a.setAttribute('rel', 'noopener');
-      });
-    });
+      // 5) 완료 표시
+      STATUS.textContent = 'Mirrored from /series.kr/ successfully.';
+    } catch (err) {
+      STATUS.innerHTML = '<span class="error">Failed to mirror from /series.kr/: ' + (err.message||err) + '</span>';
+    }
   })();
   </script>
+</body>
+</html>
   
   <main>
     <!-- EN Videos -->
