@@ -21,7 +21,7 @@
   <style>
     :root{
       --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2;
-      --link:#78b7ff; --border:#27305e; --card:#1a1f34;
+      --link:#78b7ff; --border:#27305e;
     }
     *{box-sizing:border-box}
     body{
@@ -45,19 +45,7 @@
     .tab-btn.active,.tab-btn:hover{outline:1px solid #3952e8}
     .flag{width:22px;height:16px;display:inline-block;vertical-align:middle}
 
-    /* Cards / Lists (for sections below) */
-    .card{background:var(--panel);border:1px solid #21274d;border-radius:10px;padding:14px;margin:16px 0}
-    .title-left{font-weight:700;margin-bottom:8px}
-    ul.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    @media (max-width:760px){ul.list{grid-template-columns:1fr}}
-    li.item{background:#0f1328;border:1px solid #1e274a;border-radius:10px;padding:12px}
-    .item .title{font-weight:700;margin-right:6px}
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    footer{color:var(--muted);font-size:12px;margin:24px 0 10px;text-align:right}
-
-    /* Tab sections (아래 main 안의 섹션용) */
+    /* 섹션은 기본 숨김, 선택된 것만 표시 */
     section.section{display:none}
     section.section.is-open{display:block}
   </style>
@@ -71,10 +59,10 @@
 
     <div class="tabs">
       <a class="tab-btn" data-tab="en-videos" href="#en-videos">
-        <img class="flag" src="./americanflag.jpg?v=20251005" alt="USA flag" /> English Videos
+        <img class="flag" src="https://bykim5710.github.io/series.kr/americanflag.jpg?v=20251005" alt="USA flag" /> English Videos
       </a>
       <a class="tab-btn" data-tab="kr-videos" href="#kr-videos">
-        <img class="flag" src="./koreanflag.jpg?v=20251005" alt="Korean flag" /> KR 한국어 영상
+        <img class="flag" src="https://bykim5710.github.io/series.kr/koreanflag.jpg?v=20251005" alt="Korean flag" /> KR 한국어 영상
       </a>
       <a class="tab-btn" data-tab="channel" href="#channel">
         📺 Total YouTube Channel (@2BYKIM-c2s)
@@ -85,6 +73,42 @@
       <!-- 한국어 PDF 탭은 의도적으로 제외 -->
     </div>
   </header>
+
+  <!-- 탭 스크립트: 파일 내 단 1개만 있어야 합니다 -->
+  <script>
+  (function(){
+    function $all(sel, ctx=document){ return Array.from(ctx.querySelectorAll(sel)); }
+
+    function show(id){
+      const sections = $all('section.section');
+      const tabs = $all('.tab-btn[data-tab]');
+      sections.forEach(s => s.classList.toggle('is-open', s.id === id));
+      tabs.forEach(a => a.classList.toggle('active', a.dataset.tab === id));
+      history.replaceState(null, '', '#' + id);
+      const main = document.querySelector('main');
+      if(main){ const r = main.getBoundingClientRect(); window.scrollTo({top: window.pageYOffset + r.top - 8, behavior:'smooth'}); }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = $all('.tab-btn[data-tab]');
+      const valid = $all('section.section').map(s => s.id);
+
+      // 최초 진입: 해시가 유효하면 그 해시, 아니면 en-videos
+      const fromHash = location.hash.replace('#','');
+      show(valid.includes(fromHash) ? fromHash : 'en-videos');
+
+      // 클릭 이벤트
+      tabs.forEach(a => {
+        a.addEventListener('click', e => {
+          e.preventDefault();
+          const id = a.dataset.tab;
+          if(valid.includes(id)) show(id);
+        });
+      });
+    });
+  })();
+  </script>
+
 
   
   <main>
