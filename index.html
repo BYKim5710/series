@@ -3,25 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>YouTube Videos and Series of “Conversation with Oneness God”</title>
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://bykim5710.github.io/" />
-
-  <!-- Open Graph -->
-  <meta property="og:url" content="https://bykim5710.github.io/"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="YouTube Videos and Series of ‘Conversation with Oneness God’"/>
-  <meta property="og:description" content="Quick links to English/Korean videos and PDFs"/>
-  <!-- 영문 썸네일 -->
-  <meta property="og:image" content="https://bykim5710.github.io/ep.16-enor.png?v=20251003"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:image" content="https://bykim5710.github.io/ep.16-enor.png?v=20251003"/>
+  <!-- Open Graph / Twitter (썸네일은 향후 파일만 올려 바꾸세요) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bykim5710.github.io/">
+  <meta property="og:title" content="YouTube Videos and Series of “Conversation with Oneness God”">
+  <meta property="og:description" content="Quick links to English/Korean videos and PDFs">
+  <meta property="og:image" content="https://bykim5710.github.io/ep.16-enor.png?v=20251003">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bykim5710.github.io/ep.16-enor.png?v=20251003">
 
   <style>
     :root{
@@ -35,6 +26,8 @@
       line-height:1.6;
     }
     .wrap{max-width:980px;margin:28px auto;padding:0 16px}
+    h1{font-size:clamp(22px,3.8vw,30px);margin:0 0 10px}
+    .lead{color:var(--muted);margin:8px 0 14px}
 
     /* tabs */
     .tabs{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
@@ -45,12 +38,10 @@
       color:#def9ff;text-decoration:none;font-weight:700;
     }
     .tab-btn.active,.tab-btn:hover{outline:1px solid #3952e8}
-    .flag{width:22px;height:16px;border-radius:2px;display:inline-block}
+    .flag{font-size:18px;line-height:1}
 
     /* cards & list */
     .card{background:var(--panel);border:1px solid #21274d;border-radius:10px;padding:14px;margin:16px 0}
-    h1{font-size:clamp(22px,3.8vw,30px);margin:0 0 10px}
-    .lead{color:var(--muted);margin:8px 0 14px}
     .title-left{font-weight:700;margin-bottom:8px}
     ul.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
     @media (max-width:760px){ ul.list{grid-template-columns:1fr} }
@@ -58,9 +49,9 @@
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* show/hide — main 안의 섹션만 제어 */
-    main > section{display:none}
-    main > section.is-open{display:block}
+    /* show/hide : 페이지 어디에 있든 .section 섹션만 제어 */
+    section.section{display:none}
+    section.section.is-open{display:block}
   </style>
 </head>
 
@@ -70,16 +61,10 @@
       <h1>YouTube Videos and Series of “Conversation with Oneness God”</h1>
       <p class="lead">Choose a tab below. Only the selected content will appear.</p>
 
-      <!-- Tabs: EN first -->
+      <!-- Tabs (기본: English Videos) -->
       <div class="tabs">
-        <a class="tab-btn" data-tab="en-videos">
-          <img class="flag" src="./americanflag.jpg" alt="US flag" />
-          us English Videos
-        </a>
-        <a class="tab-btn" data-tab="kr-videos">
-          <img class="flag" src="./koreanflag.jpg" alt="Korean flag" />
-          KR 한국어 영상
-        </a>
+        <a class="tab-btn" data-tab="en-videos"><span class="flag">🇺🇸</span> English Videos</a>
+        <a class="tab-btn" data-tab="kr-videos"><span class="flag">🇰🇷</span> KR 한국어 영상</a>
         <a class="tab-btn" data-tab="channel">📺 Total YouTube Channel (@김병윤-c2s)</a>
         <a class="tab-btn" data-tab="en-pdf">📄 Series PDFs (English)</a>
       </div>
