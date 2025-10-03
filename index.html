@@ -51,10 +51,10 @@ section.section.is-open{display:block}
     <p class="lead">Choose a tab below. Only the selected content will appear.</p>
 
     <div class="tabs">
-      <a class="tab-btn" data-tab="en-videos" href="#en-videos"><img class="flag" src="americanflag.jpg" alt="USA flag" /> English Videos</a>
-      <a class="tab-btn" data-tab="kr-videos" href="#kr-videos"><img class="flag" src="koreanflag.jpg" alt="Korean flag" /> KR 한국어 영상</a>
-      <a class="tab-btn" data-tab="channel" href="#channel">📺 Total YouTube Channel (@김병윤-c2s)</a>
-      <a class="tab-btn" data-tab="en-pdf" href="#en-pdf">📄 Series of “Conversation with Oneness God” (English PDFs)</a>
+    <a class="tab-btn" data-tab="en-videos" href="#en-videos"> <img class="flag" src="https://bykim5710.github.io/series/americanflag.jpg?v=20251004" alt="USA flag" /> English Videos </a> 
+    <a class="tab-btn" data-tab="kr-videos" href="#kr-videos"> <img class="flag" src="https://bykim5710.github.io/series/koreanflag.jpg?v=20251004" alt="Korean flag" /> KR 한국어 영상</a>
+    <a class="tab-btn" data-tab="channel" href="#channel">📺 Total YouTube Channel (@김병윤-c2s)</a>
+    <a class="tab-btn" data-tab="en-pdf" href="#en-pdf">📄 Series of “Conversation with Oneness God” (English PDFs)</a>
       <!-- ✅ 한국어 PDF 탭(kr-pdf) 제거 -->
     </div>
   </header>
@@ -171,54 +171,64 @@ section.section.is-open{display:block}
 
 <!-- ✅ 탭 스크립트: 파일 내 단 1개만 있어야 합니다 -->
 <script>
-(function(){
-  function toArray(nl){ return Array.prototype.slice.call(nl); }
-  document.addEventListener('DOMContentLoaded', function(){
-    var tabs = toArray(document.querySelectorAll('.tab-btn[data-tab]'));
+(function () {
+  function toArray(nl) { return Array.prototype.slice.call(nl); }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var tabs     = toArray(document.querySelectorAll('.tab-btn[data-tab]'));
     var sections = toArray(document.querySelectorAll('section.section'));
-    var valid = sections.map(function(s){return s.id;});
+    var valid    = sections.map(function (s) { return s.id; });
 
-    function show(id){
-      for(var i=0;i<sections.length;i++){
-        if(sections[i].id===id){ sections[i].classList.add('is-open'); }
-        else{ sections[i].classList.remove('is-open'); }
-      }
-      for(var j=0;j<tabs.length;j++){
-        if(tabs[j].dataset.tab===id){ tabs[j].classList.add('active'); }
-        else{ tabs[j].classList.remove('active'); }
-      }
-      if(location.hash.slice(1)!==id){ history.replaceState(null,'','#'+id); }
-      var m=document.querySelector('main');
-      if(m){
-        var y=m.getBoundingClientRect().top + window.pageYOffset - 8;
-        window.scrollTo(0,y);
-      }
-    }
-
-    var fromHash=location.hash.replace('#','');
-    show(valid.indexOf(fromHash)>-1 ? fromHash : 'en-videos');
-
-    for(var k=0;k<tabs.length;k++){
-      tabs[k].addEventListener('click',function(e){
-        e.preventDefault();
-        var id=this.dataset.tab;
-        if(valid.indexOf(id)>-1) show(id);
-        return false;
+    function show(id) {
+      // 섹션 열기/닫기
+      sections.forEach(function (s) {
+        if (s.id === id) s.classList.add('is-open');
+        else             s.classList.remove('is-open');
       });
+      // 탭 active 표시
+      tabs.forEach(function (t) {
+        if (t.dataset.tab === id) t.classList.add('active');
+        else                      t.classList.remove('active');
+      });
+      // 해시 업데이트
+      if (location.hash.replace('#', '') !== id) {
+        history.replaceState(null, '', '#' + id);
+      }
+      // main 상단으로 스크롤
+      var m = document.querySelector('main');
+      if (m) {
+        var y = m.getBoundingClientRect().top + window.pageYOffset - 8;
+        window.scrollTo(0, y);
+      }
     }
 
-    // PDF 링크를 Google Docs Viewer로 변환 (옵션)
+    // 초기 상태: 해시가 유효할 때만 열기, 없으면 전부 닫힌 상태 유지
+    var fromHash = location.hash.replace('#', '');
+    if (valid.indexOf(fromHash) > -1) {
+      show(fromHash);           // ex) #en-videos, #kr-videos, #en-pdf ...
+    }                           // 유효하지 않으면 아무것도 열지 않음(초기 빈 화면)
+
+    // 탭 클릭 이벤트
+    tabs.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var id = this.dataset.tab;
+        if (valid.indexOf(id) > -1) show(id);
+      });
+    });
+
+    // (옵션) PDF 링크를 Google Docs Viewer로 열도록 변환
     var pdfLinks = toArray(document.querySelectorAll('a[href$=".pdf"]'));
-    for(var p=0;p<pdfLinks.length;p++){
-      var a=pdfLinks[p];
-      var absolute=(new URL(a.getAttribute('href'), location.href)).href;
-      var gview='https://docs.google.com/gview?embedded=1&url='+encodeURIComponent(absolute);
+    pdfLinks.forEach(function (a) {
+      var absolute = new URL(a.getAttribute('href'), location.href).href;
+      var gview = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(absolute);
       a.setAttribute('href', gview);
-      a.setAttribute('target','_blank');
-      a.setAttribute('rel','noopener');
-    }
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener');
+    });
   });
 })();
 </script>
+
 </body>
 </html>
