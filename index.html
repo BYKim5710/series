@@ -1,160 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NCG Series (EN) — Mirrors KR index</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YouTube Videos & “Conversation with Oneness God” Series</title>
 
-  <!-- 기본 메타 (원하시면 KR과 동일하게 수정) -->
-  <meta name="description" content="NCG English page auto-mirroring the Korean index." />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="NCG Series" />
-  <meta property="og:description" content="English page mirrors the Korean index automatically." />
-  <meta property="og:image" content="https://bykim5710.github.io/series/og-default.jpg" />
+  <!-- Open Graph (Facebook/Kakao) -->
+  <meta property="og:url" content="https://bykim5710.github.io/series/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="YouTube Videos & “Conversation with Oneness God” Series">
+  <meta property="og:description" content="Series hub with English/Korean video links">
+  <!-- 필요 시 영어판 썸네일로 교체 가능 -->
+  <meta property="og:image" content="https://bykim5710.github.io/series.kr/ep.16-koor.png?v=20251003">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://bykim5710.github.io/series.kr/ep.16-koor.png?v=20251003" />
+
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;margin:0;color:#111}
-    header,footer{padding:16px 20px}
-    header{background:#fafafa;border-bottom:1px solid #eee}
-    h1{margin:0 0 6px 0;font-size:22px}
-    main{padding:16px 20px;max-width:960px;margin:0 auto}
-    .note{font-size:14px;color:#666}
-    ul.list{list-style:none;padding:0;margin:0}
-    li.item{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed #eee}
-    .title{flex:1}
-    .spinner{display:inline-block;width:16px;height:16px;border:2px solid #ccc;border-top-color:#444;border-radius:50%;animation:spin 1s linear infinite;margin-right:6px}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    .error{color:#b00020}
+    :root{
+      --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2; --link:#78b7ff; --border:#27305e;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,Helvetica,Arial,sans-serif;
+      line-height:1.6}
+    .wrap{max-width:980px;margin:28px auto;padding:0 16px}
+    header{margin:0 0 18px}
+    h1{font-size:clamp(22px,3.8vw,30px);margin:0 0 10px}
+    .lead{color:var(--muted);margin:8px 0 14px}
+
+    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+    .tab-btn{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
+      background:#1a1f34;border:1px solid var(--border);color:#dfe9ff;text-decoration:none;cursor:pointer;font-weight:700;
+    }
+    .tab-btn.active,.tab-btn:hover{outline:1px solid #39528e}
+    .flag{width:22px;height:16px;display:inline-block;vertical-align:middle}
+
+    section.section{display:none}
+    section.section.active{display:block}
+
+    .section{background:var(--panel);border:1px solid #212744;border-radius:10px;padding:14px;margin:16px 0}
+    .title-left{font-weight:700;margin-bottom:8px}
+    ul.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:760px){ ul.list{grid-template-columns:1fr} }
+    li.item{background:#0f1328;border:1px solid #1e274a;border-radius:10px;padding:12px}
+    .item .title{font-weight:700;margin-bottom:6px;display:block}
+    .item a{color:var(--link);text-decoration:none}
+    .item a:hover{text-decoration:underline}
+    footer{color:var(--muted);font-size:12px;margin:24px 0 10px;text-align:right}
   </style>
 </head>
+
 <body>
+<div class="wrap">
   <header>
-    <h1>NCG Series — English</h1>
-    <div class="note">This page <strong>auto-mirrors</strong> the Korean index from <code>/series.kr/</code>.</div>
+    <h1>YouTube Videos & “Conversation with Oneness God” Series</h1>
+    <p class="lead">Choose a tab below. Only the selected content will be shown.</p>
+
+    <!-- Tabs (EN → KR → Channel → PDF) -->
+    <div class="tabs">
+      <!-- English Videos -->
+      <button class="tab-btn" onclick="openTab('videos-en', this)">
+        <img class="flag" src="americanflag.jpg" alt="United States flag" />
+        English Videos
+      </button>
+
+      <!-- Korean Videos -->
+      <button class="tab-btn" onclick="openTab('videos-kr', this)">
+        <img class="flag" src="koreanflag.jpg" alt="Korean flag" />
+        한국어 영상
+      </button>
+
+      <!-- Channel -->
+      <button class="tab-btn" onclick="openTab('channel', this)">
+        📺 Full YouTube Channel (@BYIM-c2s)
+      </button>
+
+      <!-- PDF (Korean) -->
+      <button class="tab-btn" onclick="openTab('kr-pdf', this)">
+        📄 “하나님과의 대화” 연재물 (PDF)
+      </button>
+    </div>
   </header>
 
-  <main>
-    <section aria-label="English list (auto-mirrored)">
-      <h2>Videos (Mirrored from KR)</h2>
-      <div id="status" class="note"><span class="spinner"></span> Loading from /series.kr/…</div>
-      <ul class="list" id="en-list"></ul>
+  <!-- English Videos -->
+  <section id="videos-en" class="section">
+    <div class="title-left">🇺🇸 English Videos</div>
+    <ul class="list">
+      <li class="item"><span class="title">Ep.1 — Introduction of BY Kim and NCG</span><a href="https://youtu.be/xqgxrhM1r24" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.2 — Why do we need Religious Revolution — Christian Democracy</span><a href="https://youtu.be/IniMUGC3T9Q" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.3 — Why a Religious Revolution beyond the Reformation</span><a href="https://youtu.be/lWkN4CYJzeY" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.4 — Why a Religious Revolution — Back to the Basics</span><a href="https://youtu.be/2o4DQlfseJE" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.5 — Letters sent to the Christian World</span><a href="https://youtu.be/CChiJ5zqBUE" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.6 — Declaration of Religious Revolution</span><a href="https://youtu.be/dUE4oor84dI" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.7 — Nosome and Transmigration</span><a href="https://youtu.be/RJLy0bdgQoQ" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.8 — ENZ: Nosome and Quark</span><a href="https://youtu.be/NmZ9FxixN48" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.9 — Afterlife vs. Transmigration Field</span><a href="https://youtu.be/v9fF42xvwWE" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.10 — Oneness</span><a href="https://youtu.be/uTzE24vYqco" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.11 — Rebuttal to Roman Curia and Christianity</span><a href="https://youtu.be/ROc29mrzC8w" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.12 — Yahweh vs. Jesus' God(hood)</span><a href="https://youtu.be/4zlMaEBqaNU" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.13 — Tithe</span><a href="https://youtu.be/gMURqKiDlEk" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.14 — The Afterlife</span><a href="https://youtu.be/X9QygC6bXqE" target="_blank" rel="noopener">▶ Watch</a></li>
+      <li class="item"><span class="title">Ep.15 — Moses' Exodus</span><a href="https://youtu.be/7tGGKBsqghk" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">Ep.16 — Illusion of David and Solomon's Empire</span><a href="https://youtu.be/WiTOupqxrfw" target="_blank" rel="noopener">▶ YouTube</a></li>
+    </ul>
+  </section>
 
-      <h3 style="margin-top:20px">Documents / PDF (Mirrored from KR)</h3>
-      <ul class="list" id="en-docs"></ul>
-    </section>
-  </main>
+  <!-- Korean Videos -->
+  <section id="videos-kr" class="section">
+    <div class="title-left">🇰🇷 한국어 영상</div>
+    <ul class="list">
+      <li class="item"><span class="title">제1회: 저자 책 및 신통신통회 소개</span><a href="https://youtu.be/o9kSstxgDaw" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제2회: 왜 종교혁명이 필요한가? — 기독교민주주의</span><a href="https://youtu.be/gylO_88pDuc" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제3회: 왜 종교혁명인가? — 종교개혁의 미완성</span><a href="https://youtu.be/udOK740VFU8" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제4회: 왜 종교혁명인가? — 기본으로 돌아가자</span><a href="https://youtu.be/JK5RTxrVzPw" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제5회: 기독교계에 보낸 편지</span><a href="https://youtu.be/KtU5ww--3kg" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제6회: 종교혁명선언서</span><a href="https://youtu.be/l-Cw7woND8I" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제7회: 무유와 전이</span><a href="https://youtu.be/1PmZOU5kS48" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제8회: 공·무·영 — 무유와 쿼크</span><a href="https://youtu.be/Dw-fekBj8Z8" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제9회: 사후세계 — 전이계</span><a href="https://youtu.be/8xgmPHNJ1g8" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제10회: 하나임 (Oneness)</span><a href="https://youtu.be/vxlGrY75sXQ" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제11회: 교황청과 기독교계에 대한 반박</span><a href="https://youtu.be/xWXteiQq25E" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제12회: 여호와 vs. 예수의 신(성)</span><a href="https://youtu.be/iUudpAtrj9o" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제13회: 십일조</span><a href="https://youtu.be/XKuveyzkE3Q" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제14회: 사후세계</span><a href="https://youtu.be/GBHfoJ5WEO4" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제15회: 모세의 출애굽</span><a href="https://youtu.be/ut7s66h2FZs" target="_blank" rel="noopener">▶ YouTube</a></li>
+      <li class="item"><span class="title">제16회: 다윗과 솔로몬 제국의 허상</span><a href="https://youtu.be/hPeLXPMlhA4" target="_blank" rel="noopener">▶ YouTube</a></li>
+    </ul>
+  </section>
 
-  <footer>
-    <a href="https://bykim5710.github.io/series.kr/" target="_blank" rel="noopener">Open Korean index</a> ·
-    <a href="https://bykim5710.github.io/series/" target="_blank" rel="noopener">English mirror</a>
-  </footer>
-
-  <script>
-  (async function mirrorKR(){
-    const STATUS = document.getElementById('status');
-    const enList = document.getElementById('en-list');
-    const enDocs = document.getElementById('en-docs');
-
-    // 1) KR 인덱스 불러오기 (캐시 회피용 타임스탬프)
-    const KR_URL = 'https://bykim5710.github.io/series.kr/index.html?nocache=' + Date.now();
-
-    try {
-      const res = await fetch(KR_URL, { mode: 'cors', credentials: 'omit' });
-      if(!res.ok) throw new Error('HTTP ' + res.status);
-      const html = await res.text();
-
-      // 2) 오프스크린 DOM으로 파싱
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-
-      // 3) KR 쪽 목록(상단: 동영상, 하단: 문서) 추출
-      //    가장 안전하게: 메인 영역의 모든 UL.list 중 앞의 2개를 사용
-      const lists = doc.querySelectorAll('main ul.list, #main ul.list, .panel ul.list');
-      const videos = lists[0];
-      const docs   = lists[1];
-
-      if (!videos) throw new Error('Could not find KR video list');
-      enList.innerHTML = videos.innerHTML;
-
-      if (docs) {
-        enDocs.innerHTML = docs.innerHTML;
-      }
-
-      // 4) 영어판 버튼 라벨 정리(선택)
-      document.querySelectorAll('#en-list a, #en-docs a').forEach(a=>{
-        const t = a.textContent.trim();
-        if (t.includes('유튜브') || t.includes('▶')) a.textContent = '▶ YouTube';
-        if (t.includes('열기')) a.textContent = '▶ Open';
-        if (/시청|보기/.test(t)) a.textContent = '▶ Watch';
-      });
-
-      // 5) 완료 표시
-      STATUS.textContent = 'Mirrored from /series.kr/ successfully.';
-    } catch (err) {
-      STATUS.innerHTML = '<span class="error">Failed to mirror from /series.kr/: ' + (err.message||err) + '</span>';
-    }
-  })();
-  </script>
-</body>
-</html>
-  
-  <main>
-    <!-- EN Videos -->
-    <section id="en-videos" class="section">
-      <div class="card">
-        <h2 class="title-left">us English Videos</h2> 
-        <ul class="list">
-          <li class="item"><span class="title">Ep.1 Introduction of BY Kim and NCG</span><a href="https://youtu.be/xqgxrhM1r24" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.2 Why do we need Religious Revolution — Christian Democracy</span><a href="https://youtu.be/IniMUGC3T9Q" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.3 Why a Religious Revolution beyond the Reformation</span><a href="https://youtu.be/1WkN4CYJzeY" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.4 Why a Religious Revolution — Back to the Basics</span><a href="https://youtu.be/2o4DQlFseJE" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.5 Letters sent to the Christianity World</span><a href="https://youtu.be/CChj53zQBU8" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.6 Declaration of Religious Revolution</span><a href="https://youtu.be/dUE4oor84dI" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.7 Nosome and Transmigration</span><a href="https://youtu.be/RJLy0bdgQOQ" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.8 – ENZ: Nosome and Quark</span><a href="https://youtu.be/NmZ9FsixN48" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.9 – Afterlife vs. Transmigration Field</span><a href="https://youtu.be/v9FF42xvwWE" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.10 Oneness</span><a href="https://youtu.be/UtZfE24yYqc0" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.11 Rebuttal to Roman Curia and Christianity</span><a href="https://youtu.be/ROc29mrzC8w" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.12 Yahweh vs. Jesus' God(hood)</span><a href="https://youtu.be/4ZlMaEBqaNU" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.13 Tithe</span><a href="https://youtu.be/gMURqK1DIEk" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.14 Afterlife</span><a href="https://youtu.be/X9Qy6CbkXqE" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.15 Moses’ Exodus</span><a href="https://youtu.be/7tGfGKBsqhk" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">Ep.16 The Illusion of David and Solomons’ Empire</span><a href="https://youtu.be/WlTOupqrxfw" target="_blank" rel="noopener">► YouTube</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- KR Videos -->
-    <section id="kr-videos" class="section">
-      <div class="card">
-        <h2 class="title-left">KR 한국어 영상</h2>
-        <ul class="list">
-          <li class="item"><span class="title">제1회: 저자 책 및 신통신통회 소개</span><a href="https://youtu.be/o9kSstxgDaw" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제2회: 왜 종교혁명이 필요한가? – 기독교민주주의</span><a href="https://youtu.be/gy10_88pDuc" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제3회: 왜 종교혁명인가? – 종교개혁의 미완성</span><a href="https://youtu.be/u0dXQ74OVFU8" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제4회: 왜 종교혁명인가? – 기본으로 돌아가자</span><a href="https://youtu.be/JK5RTxVzPw" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제5회: 기독교계에 보낸 편지</span><a href="https://youtu.be/KtU5ww--3kg" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제6회: 종교혁명선언서</span><a href="https://youtu.be/1-Cw7w0NDBI" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제7회: 공·무·영 — 무무와 퀘크</span><a href="https://youtu.be/1PmZ0UkS548" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제8회: ENZ — 무무와 퀘크</span><a href="https://youtu.be/Dw-fek8jBZ8" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제9회: 사후세계 대. 전이체</span><a href="https://youtu.be/8xgmPHN1j88" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제10회: 하나님 (Oneness)</span><a href="https://youtu.be/vxlG7Y5SX0" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제11회: 교황청과 기독교계에 대한 반박</span><a href="https://youtu.be/xXItieQq25E" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제12회: 여호와 vs. 예수의 신(성)</span><a href="https://youtu.be/iUdupAtr9j0" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제13회: 십일조</span><a href="https://youtu.be/XKvuyexE3Q0" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제14회: 사후세계</span><a href="https://youtu.be/GBHf0J5WE04" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제15회: 모세의 출애굽</span><a href="https://youtu.be/7tGfGKBsqhk" target="_blank" rel="noopener">► YouTube</a></li>
-          <li class="item"><span class="title">제16회: 다윗과 솔로몬 제국의 허상</span><a href="https://youtu.be/hPeLXPMIhA4" target="_blank" rel="noopener">► YouTube</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Channel -->
-    <section id="channel" class="section">
-      <div class="card">
-        <h2 class="title-left">📺 Total YouTube Channel (@BYKIM-c2s)</h2>
-        <p><a href="https://www.youtube.com/@BYKIM-c2s/videos" target="_blank" rel="noopener">► Visit the full channel</a></p>
-      </div>
-    </section>
+  <!-- Channel -->
+  <section id="channel" class="section">
+    <div class="title-left">📺 Full YouTube Channel (@BYKIM-c2s)</div>
+    <ul class="list">
+      <li class="item">
+        <span class="title">@BYKIM-c2s channel</span>
+        <a href="https://www.youtube.com/@BYKIM-c2s/videos" target="_blank" rel="noopener">▶ Open on YouTube</a>
+      </li>
+    </ul>
+  </section>
 
     <!-- English PDFs -->
     <section id="en-pdf" class="section">
@@ -202,71 +190,55 @@
         </ul>
       </div>
     </section>
-  </main>
-
-  <footer>Last updated: 2025-10-03</footer>
+  
+  <footer>Last updated: <span id="ts">—</span></footer>
 </div>
 
-<!-- ✅ 탭 스크립트: 파일 내 단 1개만 있어야 합니다 -->
+<script>
+  function hideAll(){
+    document.querySelectorAll('section.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  }
+  function openTab(id, btn){
+    hideAll();
+    const sec = document.getElementById(id);
+    if(sec) sec.classList.add('active');
+    if(btn) btn.classList.add('active');
+    history.replaceState(null,'','#'+id);
+  }
+
+  // 초기 로드: 해시가 있으면 그 섹션, 없으면 'videos-en'을 기본으로 염
+  (function(){
+    hideAll();
+    const h = location.hash && location.hash.replace('#','');
+    if (h) {
+      const btn = document.querySelector('.tab-btn[onclick*="'+h+'"]');
+      openTab(h, btn);
+    } else {
+      const btn = document.querySelector('.tab-btn[onclick*="videos-en"]');
+      openTab('videos-en', btn);
+    }
+  })();
+
+  // 간단한 날짜
+  (function(){
+    const d = new Date(); const z = n => String(n).padStart(2,'0');
+    document.getElementById('ts').textContent =
+      d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate());
+  })();
+</script>
+
+<!-- 모든 .pdf 링크를 Google Docs Viewer로 열도록 변환 -->
 <script>
 (function () {
-  function toArray(nl) { return Array.prototype.slice.call(nl); }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var tabs     = toArray(document.querySelectorAll('.tab-btn[data-tab]'));
-    var sections = toArray(document.querySelectorAll('section.section'));
-    var valid    = sections.map(function (s) { return s.id; });
-
-    function show(id) {
-      // 섹션 열기/닫기
-      sections.forEach(function (s) {
-        if (s.id === id) s.classList.add('is-open');
-        else             s.classList.remove('is-open');
-      });
-      // 탭 active 표시
-      tabs.forEach(function (t) {
-        if (t.dataset.tab === id) t.classList.add('active');
-        else                      t.classList.remove('active');
-      });
-      // 해시 업데이트
-      if (location.hash.replace('#', '') !== id) {
-        history.replaceState(null, '', '#' + id);
-      }
-      // main 상단으로 스크롤
-      var m = document.querySelector('main');
-      if (m) {
-        var y = m.getBoundingClientRect().top + window.pageYOffset - 8;
-        window.scrollTo(0, y);
-      }
-    }
-
-    // 초기 상태: 해시가 유효할 때만 열기, 없으면 전부 닫힌 상태 유지
-    var fromHash = location.hash.replace('#', '');
-    if (valid.indexOf(fromHash) > -1) {
-      show(fromHash);           // ex) #en-videos, #kr-videos, #en-pdf ...
-    }                           // 유효하지 않으면 아무것도 열지 않음(초기 빈 화면)
-
-    // 탭 클릭 이벤트
-    tabs.forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        var id = this.dataset.tab;
-        if (valid.indexOf(id) > -1) show(id);
-      });
-    });
-
-    // (옵션) PDF 링크를 Google Docs Viewer로 열도록 변환
-    var pdfLinks = toArray(document.querySelectorAll('a[href$=".pdf"]'));
-    pdfLinks.forEach(function (a) {
-      var absolute = new URL(a.getAttribute('href'), location.href).href;
-      var gview = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(absolute);
-      a.setAttribute('href', gview);
-      a.setAttribute('target', '_blank');
-      a.setAttribute('rel', 'noopener');
-    });
+  document.querySelectorAll('a[href$=".pdf"]').forEach(function (a) {
+    var absolute = new URL(a.getAttribute('href'), location.href).href;
+    var gview = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(absolute);
+    a.setAttribute('href', gview);
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener');
   });
 })();
 </script>
-
 </body>
 </html>
