@@ -5,53 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>YouTube Videos & “Conversation with Oneness God” Series</title>
 
-  <!-- Open Graph (Facebook/Kakao) -->
   <meta property="og:url" content="https://bykim5710.github.io/series/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="YouTube Videos & “Conversation with Oneness God” Series">
-  <meta property="og:description" content="Series hub with English/Korean video links">
-  <!-- 필요 시 영어판 썸네일로 교체 가능 -->
-  <meta property="og:image" content="https://bykim5710.github.io/series.kr/ep.16-koor.png?v=20251003">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://bykim5710.github.io/series.kr/ep.16-koor.png?v=20251003" />
+  <meta property="og:description" content="English & Korean video archive with PDF series.">
+  <meta property="og:image" content="https://bykim5710.github.io/series.kr/ep.16-koor.png" />
 
   <style>
-    :root{
+    :root {
       --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2; --link:#78b7ff; --border:#27305e;
     }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,Helvetica,Arial,sans-serif;
-      line-height:1.6}
-    .wrap{max-width:980px;margin:28px auto;padding:0 16px}
-    header{margin:0 0 18px}
-    h1{font-size:clamp(22px,3.8vw,30px);margin:0 0 10px}
-    .lead{color:var(--muted);margin:8px 0 14px}
-
-    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
-    .tab-btn{
-      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
-      background:#1a1f34;border:1px solid var(--border);color:#dfe9ff;text-decoration:none;cursor:pointer;font-weight:700;
+    body {
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:system-ui, -apple-system, Segoe UI, Roboto, Apple SD Gothic Neo, Malgun Gothic, Helvetica, Arial, sans-serif;
+      line-height:1.6;
     }
-    .tab-btn.active,.tab-btn:hover{outline:1px solid #39528e}
-    .flag{width:22px;height:16px;display:inline-block;vertical-align:middle}
+    .wrap { max-width:980px; margin:28px auto; padding:0 16px; }
+    header { margin:0 0 18px; }
+    h1 { font-size:clamp(22px,3.8vw,30px); margin:0 0 10px; }
+    .lead { color:var(--muted); margin:8px 0 14px; }
 
-    section.section{display:none}
-    section.section.active{display:block}
+    .tabs { display:flex; gap:10px; flex-wrap:wrap; margin:18px 0; }
+    .tab-btn {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px; border-radius:12px;
+      background:#1a1f34; border:1px solid var(--border); color:#dfe9ff;
+      text-decoration:none; cursor:pointer; font-weight:700;
+    }
+    .tab-btn.active, .tab-btn:hover { outline:1px solid #39528e; }
+    .flag { width:22px; height:16px; display:inline-block; vertical-align:middle; }
 
-    .section{background:var(--panel);border:1px solid #212744;border-radius:10px;padding:14px;margin:16px 0}
-    .title-left{font-weight:700;margin-bottom:8px}
-    ul.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    @media (max-width:760px){ ul.list{grid-template-columns:1fr} }
-    li.item{background:#0f1328;border:1px solid #1e274a;border-radius:10px;padding:12px}
-    .item .title{font-weight:700;margin-bottom:6px;display:block}
-    .item a{color:var(--link);text-decoration:none}
-    .item a:hover{text-decoration:underline}
-    footer{color:var(--muted);font-size:12px;margin:24px 0 10px;text-align:right}
+    section.section { display:none; }
+    section.section.active { display:block; }
+
+    .section {
+      background:var(--panel); border:1px solid #212744;
+      border-radius:10px; padding:14px; margin:16px 0;
+    }
+    .title-left { font-weight:700; margin-bottom:8px; }
+    ul.list { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    @media (max-width:760px){ ul.list { grid-template-columns:1fr; } }
+    li.item { background:#0f1328; border:1px solid #1e274a; border-radius:10px; padding:12px; }
+    .item .title { font-weight:700; margin-bottom:6px; display:block; }
+    .item a { color:var(--link); text-decoration:none; }
+    .item a:hover { text-decoration:underline; }
+    footer { color:var(--muted); font-size:12px; margin:24px 0 10px; text-align:right; }
   </style>
 </head>
 
@@ -61,32 +59,22 @@
     <h1>YouTube Videos & “Conversation with Oneness God” Series</h1>
     <p class="lead">Choose a tab below. Only the selected content will be shown.</p>
 
-    <!-- Tabs (EN → KR → Channel → PDF) -->
+    <!-- Tabs -->
     <div class="tabs">
-      <!-- English Videos -->
       <button class="tab-btn" onclick="openTab('videos-en', this)">
-        <img class="flag" src="americanflag.jpg" alt="United States flag" />
-        English Videos
+        <img class="flag" src="americanflag.jpg" alt="US Flag" /> English Videos
       </button>
 
-      <!-- Korean Videos -->
       <button class="tab-btn" onclick="openTab('videos-kr', this)">
-        <img class="flag" src="koreanflag.jpg" alt="Korean flag" />
-        한국어 영상
+        <img class="flag" src="koreanflag.jpg" alt="Korean Flag" /> 한국어 영상
       </button>
 
-      <!-- Channel -->
-      <button class="tab-btn" onclick="openTab('channel', this)">
-        📺 Full YouTube Channel (@BYIM-c2s)
-      </button>
+      <button class="tab-btn" onclick="openTab('channel', this)">📺 Full YouTube Channel (@BYIM-c2s)</button>
 
-      <!-- PDF (Korean) -->
-      <button class="tab-btn" onclick="openTab('kr-pdf', this)">
-        📄 “하나님과의 대화” 연재물 (PDF)
-      </button>
+      <button class="tab-btn" onclick="openTab('kr-pdf', this)">📄 Conversation with Oneness God Series (PDF)</button>
     </div>
   </header>
-
+  
   <!-- English Videos -->
   <section id="videos-en" class="section">
     <div class="title-left">🇺🇸 English Videos</div>
@@ -202,38 +190,22 @@
     history.replaceState(null,'','#'+id);
   }
 
-  // 초기 로드: 해시가 있으면 그 섹션, 없으면 'videos-en'을 기본으로 염
+  // 첫 로드시 아무 섹션도 열리지 않게 → 클릭 시만 열림
   (function(){
     hideAll();
-    const h = location.hash && location.hash.replace('#','');
-    if (h) {
-      const btn = document.querySelector('.tab-btn[onclick*="'+h+'"]');
-      openTab(h, btn);
-    } else {
-      const btn = document.querySelector('.tab-btn[onclick*="videos-en"]');
-      openTab('videos-en', btn);
-    }
+    document.getElementById('ts').textContent = new Date().toISOString().split('T')[0];
   })();
 
-  // 간단한 날짜
-  (function(){
-    const d = new Date(); const z = n => String(n).padStart(2,'0');
-    document.getElementById('ts').textContent =
-      d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate());
+  // PDF 링크를 Google Docs Viewer로 자동 변환
+  (function () {
+    document.querySelectorAll('a[href$=".pdf"]').forEach(function (a) {
+      var absolute = new URL(a.getAttribute('href'), location.href).href;
+      var gview = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(absolute);
+      a.setAttribute('href', gview);
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener');
+    });
   })();
-</script>
-
-<!-- 모든 .pdf 링크를 Google Docs Viewer로 열도록 변환 -->
-<script>
-(function () {
-  document.querySelectorAll('a[href$=".pdf"]').forEach(function (a) {
-    var absolute = new URL(a.getAttribute('href'), location.href).href;
-    var gview = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(absolute);
-    a.setAttribute('href', gview);
-    a.setAttribute('target', '_blank');
-    a.setAttribute('rel', 'noopener');
-  });
-})();
 </script>
 </body>
 </html>
