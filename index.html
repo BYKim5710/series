@@ -35,7 +35,8 @@
       text-decoration:none; cursor:pointer; font-weight:700;
     }
     .tab-btn.active,.tab-btn:hover{ outline:1px solid #39528e; }
-    .flag{ height:16px; width:auto; display:inline-block; vertical-align:middle; border-radius:2px; }
+    .flag{ height:16px; width:auto; display:inline-block; vertical-align:middle; border-radius:2px; visibility:hidden; }
+    /* onload에서 visible로 바뀜. 로드 실패 시 remove()로 완전히 삭제 */
 
     section.section{ display:none; }
     section.section.active{ display:block; }
@@ -63,15 +64,17 @@
     <div class="tabs">
       <!-- English Videos -->
       <button class="tab-btn" onclick="openTab('videos-en', this)">
-        <img class="flag" src="flag_of_the_united_states.jpg" alt="🇺🇸" /> English Videos
+        <img class="flag" src="flag_of_the_united_states.jpg" alt="" onload="this.style.visibility='visible'" onerror="this.remove()" />
+        English Videos
       </button>
 
       <!-- 한국어 영상 -->
       <button class="tab-btn" onclick="openTab('videos-kr', this)">
-        <img class="flag" src="flag_of_south_korea.jpg" alt="🇰🇷" /> 한국어 영상
+        <img class="flag" src="flag_of_south_korea.jpg" alt="" onload="this.style.visibility='visible'" onerror="this.remove()" />
+        한국어 영상
       </button>
 
-      <!-- 전체 채널 -->
+      <!-- Full YouTube Channel -->
       <button class="tab-btn" onclick="openTab('channel', this)">
         📺 Full YouTube Channel (@BYKIM-c2s)
       </button>
@@ -129,7 +132,7 @@
     </ul>
   </section>
 
-  <!-- 채널 -->
+  <!-- Full YouTube Channel -->
   <section id="channel" class="section">
     <div class="title-left">📺 Full YouTube Channel (@BYKIM-c2s)</div>
     <ul class="list">
@@ -141,8 +144,9 @@
   <section id="en-pdf" class="section">
     <div class="title-left">📄 Conversation with Oneness God — English PDF Series</div>
     <ul class="list" id="en-pdf-list">
-      <!-- 회차당 한 줄 (00~34) -->
+      <!-- 회차당 한 줄 (01~34) — 00은 제거 -->
       <li class="item"><span class="title">01. Author & Book Introduction</span><a data-ep="1" href="#" target="_blank" rel="noopener">📄 View English PDF</a></li>
+      <li class="item"><span class="title">01-1. Foreword by Prof. Jongrok Lee, Biblical Scholar</span><a data-ep="1" href="#" target="_blank" rel="noopener">📄 View English PDF</a></li>
       <li class="item"><span class="title">02. The Great Flood & Exodus</span><a data-ep="2" href="#" target="_blank" rel="noopener">📄 View English PDF</a></li>
       <li class="item"><span class="title">03. Creation vs. Evolution</span><a data-ep="3" href="#" target="_blank" rel="noopener">📄 View English PDF</a></li>
       <li class="item"><span class="title">04. Errors in the Old Testament – Part I</span><a data-ep="4" href="#" target="_blank" rel="noopener">📄 View English PDF</a></li>
@@ -195,20 +199,31 @@
     history.replaceState(null,'','#'+id);
   }
 
-  // 최초 진입 시 섹션 닫기 + 날짜 스탬프
+  // 초기화: 날짜, 해시가 없으면 'channel'을 기본으로 오픈
   (function(){
-    hideAll();
     const d = new Date(); const z = n => String(n).padStart(2,'0');
     const ts = document.getElementById('ts'); if (ts) ts.textContent = d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate());
-    // 해시가 있으면 해당 탭 열기
-    if (location.hash){
-      const id = location.hash.replace('#','');
+
+    if (location.hash) {
+      const id = location.hash.slice(1);
       const sec = document.getElementById(id);
-      if (sec) sec.classList.add('active');
+      if (sec) {
+        // 해시 지정된 경우 해당 탭만
+        sec.classList.add('active');
+        // 버튼 active 표시
+        const btn = Array.from(document.querySelectorAll('.tabs .tab-btn'))
+          .find(b => (b.getAttribute('onclick')||'').includes(id));
+        if (btn) btn.classList.add('active');
+        return;
+      }
     }
+    // 해시가 없으면 Full YouTube Channel 기본 오픈
+    const channelBtn = Array.from(document.querySelectorAll('.tabs .tab-btn'))
+      .find(b => (b.getAttribute('onclick')||'').includes('channel'));
+    openTab('channel', channelBtn);
   })();
 
-  // ===== 영어 PDF 자동 탐지 & GDocs 미리보기 강제 =====
+  // ===== 영어 PDF 자동 탐지 & GDocs 미리보기 =====
   (function(){
     const BASES = [
       '',              // ./ (index와 같은 폴더)
@@ -227,7 +242,7 @@
         `Ep${n}-English.pdf`, `Ep${nn}-English.pdf`,
         `Ep${n}.en.pdf`, `Ep${nn}.en.pdf`,
         `${n}.en.pdf`, `${nn}.en.pdf`,
-        // 최후의 수단(번호만 동일한 파일 연결)
+        // 최후 수단: 번호만 동일
         `${n}.pdf`, `${nn}.pdf`,
       ];
     }
