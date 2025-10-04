@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>YouTube Videos & “Conversation with Oneness God” Series</title>
 
-  <!-- Open Graph -->
+  <!-- Open Graph (Facebook/카카오) -->
   <meta property="og:url" content="https://bykim5710.github.io/series/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="YouTube Videos & “Conversation with Oneness God” Series">
   <meta property="og:description" content="English & Korean video archive with PDF series.">
-  <meta property="og:image" content="https://bykim5710.github.io/series.kr/ep.16-koor.png" />
+  <meta property="og:image" content="https://bykim5710.github.io/series/ep.16-enor.png?v=20251003">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://bykim5710.github.io/series/ep.16-enor.png?v=20251003" />
 
   <style>
     :root{ --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2; --link:#78b7ff; --border:#27305e; }
@@ -22,7 +28,6 @@
     header{ margin:0 0 18px; }
     h1{ font-size:clamp(22px,3.8vw,30px); margin:0 0 10px; }
     .lead{ color:var(--muted); margin:8px 0 14px; }
-
     .tabs{ display:flex; gap:10px; flex-wrap:wrap; margin:18px 0; }
     .tab-btn{
       display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px;
@@ -53,18 +58,34 @@
     <h1>YouTube Videos & “Conversation with Oneness God” Series</h1>
     <p class="lead">Choose a tab below. Only the selected content will be shown.</p>
 
-    <!-- Tabs --><div class="tabs">
-     <!-- English Videos -->
+   <!-- Tabs -->
+   <!-- English Videos -->
     <button class="tab-btn" onclick="openTab('videos-en', this)">
-    <img class="flag" src="americanflag.jpg" alt="미국 성조기" /> English Videos </button>
-    <button class="tab-btn" onclick="openTab('videos-kr', this)">
-    <img class="flag" src="koreanflag.jpg" alt="대한민국 태극기" /> 한국어 영상 </button>
-    <button class="tab-btn" onclick="openTab('channel', this)">📺 Full YouTube Channel (@BYIM-c2s) </button>
-    <button class="tab-btn" onclick="openTab('kr-pdf', this)">📄 Conversation with Oneness God — English PDF Series </button>
-    </div>
-  </header>
+  <img class="flag" src="americanflag.jpg" alt="미국 성조기" />
+  English Videos
+  </button>
 
-  <!-- English Videos -->
+   <div class="tabs">
+  <!-- 한국어 영상 -->
+  <button class="tab-btn" onclick="openTab('videos-kr', this)">
+  <img class="flag" src="koreanflag.jpg" alt="대한민국 태극기" />
+  한국어 영상
+  </button>
+
+   <!-- 전체 채널 -->
+   <button class="tab-btn" onclick="openTab('channel', this)">
+      📺 유튜브 전체 채널(@BYIM-c2s)
+    </button>
+
+    <!-- PDF 연재물 -->
+    <button class="tab-btn" onclick="openTab('kr-pdf', this)">
+      📄 Conversation with Oneness God — English PDF Series
+    </button>
+  </div>
+</header>
+ 
+ 
+    <!-- English Videos -->
   <section id="videos-en" class="section">
     <div class="title-left">🇺🇸 English Videos</div>
     <ul class="list">
