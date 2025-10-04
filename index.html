@@ -35,8 +35,11 @@
       text-decoration:none; cursor:pointer; font-weight:700;
     }
     .tab-btn.active,.tab-btn:hover{ outline:1px solid #39528e; }
-    .flag{ height:16px; width:auto; display:inline-block; vertical-align:middle; border-radius:2px; visibility:hidden; }
-    /* onload에서 visible로 바뀜. 로드 실패 시 remove()로 완전히 삭제 */
+
+    /* Flag: emoji fallback + image */
+    .flag-wrap{ display:inline-flex; align-items:center; gap:6px; }
+    .flag-emoji{ font-size:16px; line-height:1; display:inline-block; }
+    .flag-img{ height:16px; width:auto; display:inline-block; vertical-align:middle; border-radius:2px; }
 
     section.section{ display:none; }
     section.section.active{ display:block; }
@@ -63,24 +66,34 @@
     <!-- Tabs -->
     <div class="tabs">
       <!-- English Videos -->
-      <button class="tab-btn" onclick="openTab('videos-en', this)">
-        <img class="flag" src="flag_of_the_united_states.jpg" alt="" onload="this.style.visibility='visible'" onerror="this.remove()" />
+      <button type="button" class="tab-btn" onclick="openTab('videos-en', this)">
+        <span class="flag-wrap">
+          <span class="flag-emoji" aria-hidden="true">🇺🇸</span>
+          <img class="flag-img" src="flag_of_the_united_states.jpg" alt="United States flag"
+               onload="this.previousElementSibling.style.display='none'"
+               onerror="this.style.display='none'">
+        </span>
         English Videos
       </button>
 
       <!-- 한국어 영상 -->
-      <button class="tab-btn" onclick="openTab('videos-kr', this)">
-        <img class="flag" src="flag_of_south_korea.jpg" alt="" onload="this.style.visibility='visible'" onerror="this.remove()" />
+      <button type="button" class="tab-btn" onclick="openTab('videos-kr', this)">
+        <span class="flag-wrap">
+          <span class="flag-emoji" aria-hidden="true">🇰🇷</span>
+          <img class="flag-img" src="flag_of_south_korea.jpg" alt="South Korea flag"
+               onload="this.previousElementSibling.style.display='none'"
+               onerror="this.style.display='none'">
+        </span>
         한국어 영상
       </button>
 
       <!-- Full YouTube Channel -->
-      <button class="tab-btn" onclick="openTab('channel', this)">
+      <button type="button" class="tab-btn" onclick="openTab('channel', this)">
         📺 Full YouTube Channel (@BYKIM-c2s)
       </button>
 
       <!-- 영어 PDF 연재물 -->
-      <button class="tab-btn" onclick="openTab('en-pdf', this)">
+      <button type="button" class="tab-btn" onclick="openTab('en-pdf', this)">
         📄 Conversation with Oneness God — English PDF Series
       </button>
     </div>
@@ -144,9 +157,8 @@
   <section id="en-pdf" class="section">
     <div class="title-left">📄 Conversation with Oneness God — English PDF Series</div>
     <ul class="list" id="en-pdf-list">
-      <!-- 회차당 한 줄 (01~34) — 00은 제거 -->
       <li class="item"><span class="title">01. Author & Book Introduction</span><a data-ep="1" href="#" target="_blank" rel="noopener">📄 View English PDF</a></li>
-      <li class="item"><span class="title">01-1. Foreword by Prof. Jongrok Lee, Biblical Scholar</span><a data-ep="1-1" href="#" target="_blank" rel="noopener">📄 View English PDF</a></li>
+      <li class="item"><span class="title">01-1. Foreword by Prof. Jongrok Lee, Biblical Scholar</span><a data-ep="01-1" href="#" target="_blank" rel="noopener">📄 View English PDF</a></li>
       <li class="item"><span class="title">02. The Great Flood & Exodus</span><a data-ep="2" href="#" target="_blank" rel="noopener">📄 View English PDF</a></li>
       <li class="item"><span class="title">03. Creation vs. Evolution</span><a data-ep="3" href="#" target="_blank" rel="noopener">📄 View English PDF</a></li>
       <li class="item"><span class="title">04. Errors in the Old Testament – Part I</span><a data-ep="4" href="#" target="_blank" rel="noopener">📄 View English PDF</a></li>
@@ -199,28 +211,13 @@
     history.replaceState(null,'','#'+id);
   }
 
-  // 초기화: 날짜, 해시가 없으면 'channel'을 기본으로 오픈
+  // 초기화: 섹션은 닫고(버튼만 보임), 해시 제거
   (function(){
-    const d = new Date(); const z = n => String(n).padStart(2,'0');
-    const ts = document.getElementById('ts'); if (ts) ts.textContent = d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate());
-
-    if (location.hash) {
-      const id = location.hash.slice(1);
-      const sec = document.getElementById(id);
-      if (sec) {
-        // 해시 지정된 경우 해당 탭만
-        sec.classList.add('active');
-        // 버튼 active 표시
-        const btn = Array.from(document.querySelectorAll('.tabs .tab-btn'))
-          .find(b => (b.getAttribute('onclick')||'').includes(id));
-        if (btn) btn.classList.add('active');
-        return;
-      }
-    }
-    // 해시가 없으면 Full YouTube Channel 기본 오픈
-    const channelBtn = Array.from(document.querySelectorAll('.tabs .tab-btn'))
-      .find(b => (b.getAttribute('onclick')||'').includes('channel'));
-    openTab('channel', channelBtn);
+    const d = new Date(), z = n => String(n).padStart(2,'0');
+    const ts = document.getElementById('ts'); 
+    if (ts) ts.textContent = d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate());
+    hideAll();
+    if (location.hash) history.replaceState(null,'',location.pathname + location.search);
   })();
 
   // ===== 영어 PDF 자동 탐지 & GDocs 미리보기 =====
@@ -233,8 +230,7 @@
       'pdfs/en/',      // ./pdfs/en/
     ];
     function candidates(ep){
-      const n = String(ep);
-      const nn = n.padStart(2,'0'); // 01 형식
+      const n = String(ep), nn = n.padStart(2,'0');
       return [
         `${n}-en.pdf`, `${nn}-en.pdf`,
         `${n}_en.pdf`, `${nn}_en.pdf`,
@@ -242,7 +238,7 @@
         `Ep${n}-English.pdf`, `Ep${nn}-English.pdf`,
         `Ep${n}.en.pdf`, `Ep${nn}.en.pdf`,
         `${n}.en.pdf`, `${nn}.en.pdf`,
-        // 최후 수단: 번호만 동일
+        // 최후 수단
         `${n}.pdf`, `${nn}.pdf`,
       ];
     }
@@ -263,9 +259,8 @@
       }
       return null;
     }
-    function toGView(absUrl){
-      return `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(absUrl)}`;
-    }
+    function toGView(abs){ return `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(abs)}`; }
+
     (async function wire(){
       const links = document.querySelectorAll('#en-pdf-list a[data-ep]');
       for (const a of links){
