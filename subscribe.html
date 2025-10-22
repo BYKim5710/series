@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>NCG Religious Revolution Series — Subscribe / Share Guide</title>
+
+  <!-- Canonical / Robots -->
+  <link rel="canonical" href="https://bykim5710.github.io/series/subscribe.html">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0d1117">
+  <link rel="icon" href="/favicon.ico">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Subscribe / Share — NCG Religious Revolution Series" />
+  <meta property="og:description" content="How to subscribe to the channel and share the NCG Religious Revolution Series with others." />
+  <meta property="og:url" content="https://bykim5710.github.io/series/subscribe.html" />
+  <meta property="og:image" content="https://bykim5710.github.io/series/subscribe_en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://bykim5710.github.io/series/subscribe_en.png" />
+
+  <style>
+    :root{ --bg:#0d1117; --panel:#0f172a; --text:#e6edf3; --muted:#a3b3c4; --accent:#3b82f6; --btn:#2563eb; --border:#1e293b; }
+    *{ box-sizing:border-box }
+    html, body{ margin:0; padding:0; background:var(--bg); color:var(--text);
+      font-family:"Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif; line-height:1.6 }
+    .wrap{ max-width:860px; margin:28px auto; padding:0 16px }
+    header{ background:var(--accent); color:#fff; text-align:center; padding:16px 0 }
+    header h1{ margin:0; font-size:clamp(18px,2.6vw,28px) }
+    header small{ opacity:.9 }
+
+    section.card{ background:var(--panel); border:1px solid var(--border); border-radius:12px;
+      padding:20px; margin-top:18px; box-shadow:0 2px 6px rgba(0,0,0,.35) }
+    .title{ font-weight:800; margin:0 0 8px; font-size:1.05rem }
+    .lead{ color:var(--muted); margin:8px 0 12px }
+    .btn{ display:inline-block; padding:12px 18px; border-radius:10px; background:var(--btn);
+      color:#fff; text-decoration:none; font-weight:700 }
+    .btn:hover{ filter:brightness(1.05) }
+    .row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px }
+    code.copy{ background:#111827; border:1px solid var(--border); padding:10px; border-radius:8px; display:block; overflow:auto }
+    .copy-wrap{ display:flex; gap:10px; align-items:center; margin-top:10px }
+    .ghost{ background:#18202f; color:#e6edf3 }
+    footer{ color:var(--muted); text-align:center; margin:24px 0 30px }
+    .right{ float:right } @media (max-width:560px){ .right{float:none; display:block; margin-top:6px} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Subscribe / Share Guide</h1>
+      <small>NCG Religious Revolution Series · BY Kim · New Consilience Group (NCG)</small>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- Step 1 -->
+    <section class="card">
+      <p class="title">1) Subscribe to the official YouTube channel</p>
+      <p class="lead">Please subscribe and turn on the notification bell so you won’t miss new uploads.</p>
+      <div class="row">
+        <a class="btn" href="https://www.youtube.com/@BYKIM-c2s" target="_blank" rel="noopener">🔔 Go to @BYKIM-c2s</a>
+        <a class="btn ghost" href="https://bykim5710.github.io/series/" target="_blank" rel="noopener">📚 View the Series Page</a>
+      </div>
+    </section>
+
+    <!-- Step 2 -->
+    <section class="card">
+      <p class="title">2) Read the booklets (PDF) & watch the themed batches</p>
+      <p class="lead">Start with the Trilogy & Profile, and see the seven curated batches (Ep.01–16).</p>
+      <div class="row">
+        <a class="btn" href="./religious-revolution-trilogy_en.pdf" target="_blank" rel="noopener">📖 Trilogy & Profile (PDF)</a>
+        <a class="btn ghost" href="https://bykim5710.github.io/series/#batches" target="_blank" rel="noopener">🗂️ Batch Guide</a>
+      </div>
+    </section>
+
+    <!-- Step 3 -->
+    <section class="card">
+      <p class="title">3) Share with your community</p>
+      <p class="lead">Share the series link below with friends, family, or community groups.</p>
+
+      <div class="copy-wrap">
+        <button id="copyBtn" class="btn" type="button">📋 Copy Series Link</button>
+        <span id="copyMsg" class="lead" style="margin:0"></span>
+      </div>
+      <code class="copy" id="seriesLink">https://bykim5710.github.io/series/</code>
+
+      <p class="lead" style="margin-top:12px">Suggested share message (you can edit as you wish):</p>
+      <code class="copy" id="shareTxt">
+NCG Religious Revolution Series (English)
+• YouTube channel: https://www.youtube.com/@BYKIM-c2s
+• Series page (videos + PDFs): https://bykim5710.github.io/series/
+      </code>
+      <div class="row">
+        <button id="copyShare" class="btn" type="button">📋 Copy Message</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="title">Need Korean?</p>
+      <div class="row">
+        <a class="btn ghost" href="https://bykim5710.github.io/series.kr/" target="_blank" rel="noopener">🇰🇷 시리즈(한국어) 바로가기</a>
+      </div>
+    </section>
+
+    <footer>
+      © BY Kim · New Consilience Group (NCG)
+      <span class="right" id="ts"></span>
+    </footer>
+  </main>
+
+  <script>
+    // Date stamp
+    (function(){
+      const d=new Date(), z=n=>String(n).padStart(2,'0');
+      document.getElementById('ts').textContent =
+        `Last updated: ${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())}`;
+    })();
+
+    // Copy helpers
+    function copyText(elId, doneId){
+      const t=document.getElementById(elId).textContent.trim();
+      navigator.clipboard.writeText(t).then(()=>{
+        const m=document.getElementById(doneId); if(!m) return;
+        m.textContent="Copied!";
+        setTimeout(()=>m.textContent="",1400);
+      });
+    }
+    document.getElementById('copyBtn').addEventListener('click', ()=>copyText('seriesLink','copyMsg'));
+    document.getElementById('copyShare').addEventListener('click', ()=>copyText('shareTxt','copyMsg'));
+
+    // Mobile PDF viewer (open in-tab)
+    (function() {
+      var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      if (!isMobile) return;
+      var a = document.querySelector('a[href="./religious-revolution-trilogy_en.pdf"]');
+      if(!a) return;
+      var abs = new URL(a.getAttribute('href'), location.href).href;
+      var viewer = 'https://mozilla.github.io/pdf.js/web/viewer.html?file=' + encodeURIComponent(abs);
+      a.setAttribute('href', viewer);
+      a.setAttribute('target', '_self');
+    })();
+  </script>
+</body>
+</html>
