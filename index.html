@@ -3,86 +3,63 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YouTube Videos & “Conversation with Oneness God” Series</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
- <!-- Open Graph -->
-<meta property="og:url" content="https://bykim5710.github.io/series/">
-<meta property="og:type" content="website"> 
-<meta property="og:title" content="YouTube Videos & “Conversation with Oneness God” Series">
-<meta property="og:description" content="English & Korean video archive with PDF series.">
-<meta property="og:image" content="https://bykim5710.github.io/series/ep.01-enor.png?v=20251004b">
-<meta property="og:image:secure_url" content="https://bykim5710.github.io/series/ep.01-enor.png?v=20251004b">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+  <!-- 0) Redirect to the English guide (hard refresh-safe) -->
+  <meta http-equiv="refresh" content="0; url=/NCG_Series_Guide_EN/guide.html?v=3">
+  <script>
+    (function () {
+      var target = "/NCG_Series_Guide_EN/guide.html?v=3";
+      if (window.location.pathname !== target) {
+        window.location.replace(target);
+      }
+    })();
+  </script>
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://bykim5710.github.io/series/ep.01-enor.png?v=20251004b">
-  
-  <style>
-    :root{ --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2; --link:#78b7ff; --border:#27305e; }
-    *{box-sizing:border-box}
-    body{ margin:0; background:var(--bg); color:var(--text);
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,Helvetica,Arial,sans-serif;
-      line-height:1.6; }
-    .wrap{ max-width:980px; margin:28px auto; padding:0 16px; }
-    header{ margin:0 0 18px; }
-    h1{ font-size:clamp(22px,3.8vw,30px); margin:0 0 10px; }
-    .lead{ color:var(--muted); margin:8px 0 14px; }
-    .badge{display:inline-block; padding:6px 10px; border-radius:8px; background:#0b2042; color:#cfe2ff; font-weight:600}
-    .tabs{ display:flex; gap:10px; flex-wrap:wrap; margin:18px 0; }
-    .tab-btn{
-      display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px;
-      background:#1a1f34; border:1px solid var(--border); color:#dfe9ff;
-      text-decoration:none; cursor:pointer; font-weight:700;
-    }
-    .tab-btn.active,.tab-btn:hover{ outline:1px solid #39528e; }
+  <!-- 1) Canonical / robots -->
+  <link rel="canonical" href="https://bykim5710.github.io/NCG_Series_Guide_EN/guide.html?v=3" />
+  <meta name="robots" content="index, follow" />
 
-    /* Flag: emoji fallback + image */
-    .flag-wrap{ display:inline-flex; align-items:center; gap:6px; }
-    .flag-emoji{ font-size:16px; line-height:1; display:inline-block; }
-    .flag-img{ height:16px; width:auto; display:inline-block; vertical-align:middle; border-radius:2px; }
+  <!-- 2) Basic SEO -->
+  <title>NCG Religious Revolution Series — English Guide</title>
+  <meta name="description" content="Explore the Religious Revolution Series by Byung Youn Kim, Chairman of the New Consilience Group (NCG): videos, PDFs, endorsements, and curated thematic guides (English)." />
+  <meta name="keywords" content="NCG, Religious Revolution, Byung Youn Kim, New Consilience Group, Nosome, Soul and Zero, Conversation with Oneness God, English" />
+  <meta name="author" content="Byung Youn Kim, Chairman of the New Consilience Group (NCG)" />
 
-    section.section{ display:none; }
-    section.section.active{ display:block; }
+  <!-- 3) Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NCG Religious Revolution Series — English Guide" />
+  <meta property="og:description" content="Videos, PDFs, endorsements, and curated thematic guides for the Religious Revolution Series (English)." />
+  <meta property="og:url" content="https://bykim5710.github.io/series/" />
+  <meta property="og:site_name" content="NCG Religious Revolution Series" />
+  <!-- If you already have an English OG image, set it here (1200×630 recommended). 
+       Replace the URL below with your actual asset and keep it absolute. -->
+  <!-- <meta property="og:image" content="https://bykim5710.github.io/series/og/series_en.png" /> -->
 
-    .section{ background:var(--panel); border:1px solid #212744; border-radius:10px; padding:14px; margin:16px 0; }
-    .title-left{ font-weight:700; margin-bottom:8px; }
-    ul.list{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-    @media (max-width:760px){ ul.list{ grid-template-columns:1fr; } }
-    li.item{ background:#0f1328; border:1px solid #1e274a; border-radius:10px; padding:12px; }
-    .item .title{ font-weight:700; margin-bottom:6px; display:block; }
-    .item a{ color:var(--link); text-decoration:none; }
-    .item a:hover{ text-decoration:underline; }
-    .disabled{ opacity:.6; pointer-events:none; }
-    footer{ color:var(--muted); font-size:12px; margin:24px 0 10px; text-align:right; }
+  <!-- 4) Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NCG Religious Revolution Series — English Guide" />
+  <meta name="twitter:description" content="English guide to videos, PDFs, and endorsements for the Religious Revolution Series." />
+  <!-- <meta name="twitter:image" content="https://bykim5710.github.io/series/og/series_en.png" /> -->
 
-   /* ===== CTA: View Series Guide (KR 레이아웃과 동일) ===== */
-.hero-cta {
-  margin: 28px 0 10px;
-  text-align: center;
-}
-.btn-cta {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 12px;
-  background: #2b6cb0;   /* 기본 파랑 */
-  color: #fff;
-  font-weight: 800;
-  font-size: 1.05rem;
-  text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,.18);
-  transition: background .2s;
-}
-.btn-cta:hover { background: #244f8f; }
-.cta-sub {
-  margin-top: 8px;
-  color: #b7c7e6;
-  font-size: .95rem; 
-  </style>
+  <!-- 5) Hints / icons (optional but helpful) -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://bykim5710.github.io" crossorigin />
+  <link rel="prefetch" href="/NCG_Series_Guide_EN/guide.html?v=3" as="document" />
+  <meta name="theme-color" content="#0b0f14" />
 </head>
-
 <body>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/NCG_Series_Guide_EN/guide.html?v=3" />
+    <p style="padding:16px; font-family:system-ui,Segoe UI,Arial,sans-serif;">
+      Redirecting to the English guide… If you are not redirected, click
+      <a href="/NCG_Series_Guide_EN/guide.html?v=3">here</a>.
+    </p>
+  </noscript>
+</body>
+</html>
+<body>
+  
 <div class="wrap">
   <header>
     <h1>YouTube Videos & “Conversation with Oneness God” Series</h1>
