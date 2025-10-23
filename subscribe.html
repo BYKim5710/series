@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Subscribe / Share Guide — NCG Religious Revolution Series</title>
 
   <!-- Canonical / Robots -->
@@ -12,7 +11,7 @@
   <meta name="theme-color" content="#0d1117" />
   <link rel="icon" href="/favicon.ico" />
 
-  <!-- Open Graph / Twitter (Episode 02 thumbnail) -->
+  <!-- Open Graph / Twitter (Ep.02 English thumbnail) -->
   <meta property="og:url" content="https://bykim5710.github.io/series/subscribe.html" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="NCG Religious Revolution Series — Subscribe / Share Guide" />
@@ -20,16 +19,13 @@
   <meta property="og:image" content="https://bykim5710.github.io/series/ep.02-enor.png?v=02" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="NCG Series Episode 02 Thumbnail" />
-
+  <meta property="og:image:alt" content="NCG Series Episode 02 Thumbnail (EN)" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://bykim5710.github.io/series/ep.02-enor.png?v=02" />
 
   <style>
-    :root{
-      --bg:#0d1117; --panel:#0f172a; --text:#e6edf3; --muted:#a3b3c4;
-      --accent:#3b82f6; --btn:#1e293b; --border:#334155;
-    }
+    :root{ --bg:#0d1117; --panel:#0f172a; --text:#e6edf3; --muted:#a3b3c4;
+           --accent:#3b82f6; --btn:#1e293b; --border:#1e293b; }
     *{ box-sizing:border-box }
     html,body{ margin:0; padding:0; background:var(--bg); color:var(--text);
       font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6 }
@@ -41,7 +37,7 @@
     .grid{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin-top:8px }
     .btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px;
       width:100%; text-decoration:none; padding:14px 16px; border-radius:12px;
-      background:var(--btn); color:#fff; border:1px solid var(--border); font-weight:600 }
+      background:var(--btn); color:#fff; border:1px solid #334155; font-weight:600 }
     .btn:hover{ background:#111827; border-color:#475569 }
     .note{ color:var(--muted); font-size:.95rem; margin-top:10px }
     .muted{ color:var(--muted) }
@@ -59,24 +55,29 @@
     <section class="panel">
       <h2>1) Subscribe</h2>
       <div class="grid">
-        <a class="btn" href="https://www.youtube.com/@bykim" target="_blank" rel="noopener">▶️ Subscribe on YouTube (EN/KR)</a>
-        <a class="btn" href="https://bykim.github.io/series/" target="_blank" rel="noopener">🌐 Main Series (English)</a>
-        <a class="btn" href="https://bykim.github.io/series.kr/" target="_blank" rel="noopener">🌐 메인 시리즈 (Korean)</a>
+        <a class="btn" href="https://www.youtube.com/@BYKIM-c2s" target="_blank" rel="noopener">▶️ Subscribe on YouTube (EN/KR)</a>
+        <a class="btn" href="https://bykim5710.github.io/series/" target="_blank" rel="noopener">🌐 Main Series (English)</a>
+        <a class="btn" href="https://bykim5710.github.io/series.kr/" target="_blank" rel="noopener">🌐 메인 시리즈 (Korean)</a>
       </div>
-      <p class="note">After subscribing, turn on 🔔 notifications to get alerts for new episodes.</p>
+      <p class="note">
+        After subscribing, turn on the <b>bell (🔔)</b> to receive new episode alerts.<br>
+        👉 On YouTube, tap <b>Subscribe</b> and then enable <b>All Notifications</b>.
+      </p>
     </section>
 
     <!-- 2) Share -->
     <section class="panel">
       <h2>2) Share</h2>
-      <p class="muted">Share these links with friends, groups, and communities.</p>
+      <p class="muted">Use the buttons below to copy links or share directly to your groups and social channels.</p>
       <div class="grid">
-        <a class="btn" href="https://bykim.github.io/series/" target="_blank" rel="noopener">Share: English Series</a>
-        <a class="btn" href="https://bykim5710.github.io/series.kr/" target="_blank" rel="noopener">Share: Korean Series</a>
+        <a class="btn" href="https://bykim5710.github.io/series/" target="_blank" rel="noopener">Share: English Series</a>
+        <a class="btn" href="https://bykim5710.github.io/series.kr/" target="_blank" rel="noopener">공유: 한국어 시리즈</a>
         <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbykim5710.github.io%2Fseries%2F" target="_blank" rel="noopener">Share to Facebook (EN)</a>
         <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbykim5710.github.io%2Fseries.kr%2F" target="_blank" rel="noopener">페이스북 공유 (KR)</a>
       </div>
-      <p class="note">If a thumbnail doesn’t update in KakaoTalk, use Facebook Sharing Debugger’s “Scrape Again,” then repost.</p>
+      <p class="note">
+        If a thumbnail doesn’t update, refresh and share again or use Facebook’s “Sharing Debugger → Scrape Again”.
+      </p>
     </section>
 
     <!-- 3) Contact / Follow -->
@@ -94,8 +95,6 @@
     </footer>
   </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
