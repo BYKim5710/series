@@ -1,84 +1,132 @@
 ---
-layout: none
+layout: null
+lang: en
+ep: "01"          # default episode (optional)
 ---
-{% assign ep = site.ep | default: '01' %}
-{% assign cur = site.data.episodes[ep] %}
-{% assign title_fallback_en = "NCG Religious Revolution Series" %}
-{% assign watch_url = cur.youtube | default: site.playlist.en | default: "https://www.youtube.com/" %}
-{% assign thumb_en = cur.thumb_en | default: "ep." | append: ep | append: "-enor.png" %}
 
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ title_fallback_en }} — Ep.{{ ep }}{% if cur.title_en %}: {{ cur.title_en }}{% endif %}</title>
 
-  <!-- Canonical / Robots -->
-  <link rel="canonical" href="{{ site.bases.en }}/" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0d1117" />
-  <link rel="icon" href="/favicon.ico" />
+  {% assign ep = page.ep | default: site.ep | default: '01' %}
+  {% assign base_og = site.base_og | default: '/assets/og' %}
+  {% assign guide_url = site.guide_en | default: '/NCG_Series_Guide_EN/guide.html' %}
+  {% assign og_img = base_og | append: '/ep.' | append: ep | append: '-enor.png' %}
 
-  <!-- Open Graph / Twitter (auto by ep) -->
-  <meta property="og:url" content="{{ site.bases.en }}/" />
+  <title>NCG Religious Revolution Series</title>
+  <meta name="description" content="Videos, PDFs, endorsements, and batch guides by BY Kim (NCG)" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NCG Religious Revolution Series" />
+  <meta property="og:description" content="Videos, PDFs, endorsements, and batch guides by BY Kim (NCG)" />
+  <meta property="og:image" content="{{ og_img }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="NCG Series — Ep.{{ ep }}{% if cur.title_en %}: {{ cur.title_en }}{% endif %}" />
-  <meta property="og:description" content="Follow the NCG Religious Revolution Series. Watch Ep.{{ ep }} and subscribe for updates." />
-  <meta property="og:image" content="{{ site.bases.en }}/{{ thumb_en }}?v={{ ep }}" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="NCG Series Ep.{{ ep }} Thumbnail (EN)" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="{{ site.bases.en }}/{{ thumb_en }}?v={{ ep }}" />
+  <meta name="twitter:title" content="NCG Religious Revolution Series" />
+  <meta name="twitter:description" content="Videos, PDFs, endorsements, and batch guides by BY Kim (NCG)" />
+  <meta name="twitter:image" content="{{ og_img }}" />
 
   <style>
-    :root{ --bg:#0d1117; --panel:#0f172a; --text:#e6edf3; --muted:#a3b3c4;
-           --accent:#3b82f6; --btn:#1e293b; --border:#1e293b; }
-    *{ box-sizing:border-box }
-    html,body{ margin:0; padding:0; background:var(--bg); color:var(--text);
-      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6 }
-    .wrap{ max-width:1100px; margin:28px auto; padding:0 16px }
-    header{ display:grid; grid-template-columns: 1.4fr 1fr; gap:20px; align-items:center }
-    .hero{ background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:20px }
-    .thumb{ width:100%; border-radius:12px; display:block }
-    .badge{ display:inline-block; font-weight:700; background:#111827; color:#fff; padding:6px 10px; border-radius:999px; font-size:.9rem; margin-bottom:10px }
-    h1{ margin:.2rem 0 0; font-size:clamp(22px,3.2vw,34px) }
-    .muted{ color:var(--muted) }
-    .grid{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:14px }
-    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px; text-decoration:none;
-      padding:14px 16px; border-radius:12px; background:var(--btn); color:#fff; border:1px solid #334155; font-weight:600 }
-    .btn:hover{ background:#111827; border-color:#475569 }
-    footer{ text-align:center; color:var(--muted); font-size:.9rem; margin:32px 0 16px }
-    @media (max-width: 900px){ header{ grid-template-columns:1fr; } }
+    :root{--bg:#0b0b0c;--fg:#eaecef;--muted:#a7acb5;--accent:#9be864}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif}
+    header{padding:20px 16px;border-bottom:1px solid #222}
+    .wrap{max-width:980px;margin:0 auto}
+    .hero{display:grid;gap:16px;align-items:center;padding:32px 16px}
+    .thumb{width:100%;max-width:680px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    a.btn{display:inline-block;padding:12px 16px;border-radius:999px;text-decoration:none;font-weight:600}
+    a.primary{background:var(--accent);color:#0b0b0c}
+    a.ghost{border:1px solid #333;color:var(--fg)}
+    .muted{color:var(--muted);font-size:.95rem}
+    @media (min-width: 860px){.hero{grid-template-columns: 1.1fr .9fr}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="hero">
-        <span class="badge">Episode {{ ep }}</span>
-        <h1>NCG Religious Revolution Series{% if cur.title_en %}: {{ cur.title_en }}{% endif %}</h1>
-        <p class="muted">Watch the latest episode, subscribe, and share the message.</p>
-        <div class="grid">
-          <a class="btn" href="{{ watch_url }}" target="_blank" rel="noopener">▶️ Watch Ep.{{ ep }}</a>
-          <a class="btn" href="{{ site.bases.en }}/subscribe.html?v={{ ep }}" target="_blank" rel="noopener">🔔 Subscribe / Share</a>
-          <a class="btn" href="https://www.youtube.com/{{ site.youtube_handle }}" target="_blank" rel="noopener">YouTube Channel</a>
-          <a class="btn" href="{{ site.bases.kr }}/" target="_blank" rel="noopener">메인 시리즈 (Korean)</a>
-        </div>
+  <header>
+    <div class="wrap" role="navigation" aria-label="Top">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <strong>NCG</strong>
+        <nav style="display:flex;gap:14px;align-items:center">
+          <a class="muted" href="{{ guide_url }}">Series Guide</a>
+          <span class="muted">EP<span aria-hidden="true">.</span><span id="ep-badge">{{ ep }}</span></span>
+        </nav>
       </div>
-      <a href="{{ watch_url }}" target="_blank" rel="noopener">
-        <img class="thumb" src="{{ site.bases.en }}/{{ thumb_en }}?v={{ ep }}" alt="Ep.{{ ep }} Thumbnail" />
-      </a>
-    </header>
+    </div>
+  </header>
 
-    <!-- 여기에 섹션/목차 등을 추가하셔도 자동 회차는 유지됩니다 -->
+  <!-- ===== Unified Hero Section (before episodes list) ===== -->
+  <main>
+    <section class="wrap hero" id="intro">
+      <img class="thumb" id="hero-thumb" alt="Episode {{ ep }} thumbnail" src="{{ og_img }}">
+      <div>
+        <h1 style="margin:0 0 8px">Episode <span id="h1-ep">{{ ep }}</span> — Introduction</h1>
+        <p class="muted" style="margin:0 0 18px">
+          Where philosophy, science, and spirituality converge for a true Religious Revolution.
+        </p>
+        <div class="actions">
+          <a class="btn primary" id="watch-btn" href="{{ guide_url }}" target="_blank" rel="noopener">Watch Video →</a>
+          <a class="btn ghost" href="{{ guide_url }}">Series Guide</a>
+        </div>
+        <p class="muted" style="margin-top:10px">
+          Append <code>?ep=03</code> to the URL to switch on-page labels to Episode 03.
+        </p>
+      </div>
+    </section>
+  </main>
 
-    <footer>
-      © <span id="year"></span> Byung Youn Kim, Chairman of the New Consilience Group (NCG).
-    </footer>
-  </div>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+  (function(){
+    const qs = new URLSearchParams(location.search);
+    const epQS = qs.get('ep');
+    const ep = epQS || "{{ ep }}";
+
+    document.getElementById('ep-badge').textContent = ep;
+    document.getElementById('h1-ep').textContent = ep;
+
+    // 섬네일 교체 (koor: 한국어판 / enor: 영어판)
+    var baseOg = "{{ base_og }}";
+    var suffix = "{{ lang }}" === "en" ? "-enor.png" : "-koor.png";
+    var img = baseOg + "/ep." + ep + suffix;
+    document.getElementById('hero-thumb').setAttribute('src', img);
+
+    // ===== 회차별 영상 링크 (01~16) =====
+    var links = {
+      "01": https://youtu.be/xqgxrhM1r24
+      "02": https://youtu.be/IniMUGC3T9Q
+      "03": https://youtu.be/lWkN4CYJzeY
+      "04": https://youtu.be/2o4DQlfseJE
+      "05": https://youtu.be/CChiJ5zqBUE
+      "06": https://youtu.be/dUE4oor84dI
+      "07": https://youtu.be/RJLy0bdgQoQ
+      "08": https://youtu.be/NmZ9FxixN48
+      "09": https://youtu.be/v9fF42xvwWE
+      "10": https://youtu.be/uTzE24vYqco
+      "11": https://youtu.be/rLPyRIOK8AA
+      "12": https://youtu.be/4zlMaEBqaNU
+      "13": https://youtu.be/gMURqKiDlEk
+      "14": https://youtu.be/X9QygC6bXqE
+      "15": https://youtu.be/7tGGKBsqghk
+      "16": https://youtu.be/WiTOupqxrfw
+    };
+
+    // ===== 연결 로직 =====
+    var a = document.getElementById('watch-btn');
+    a.href = links[ep] || "{{ guide_url }}";
+  })();
+</script>
+
+  <!-- ===== Keep existing episodes/articles below ===== -->
+  <!-- <section id="episodes"> ... existing content ... </section> -->
+
+  <footer class="wrap" style="padding:24px 16px 48px">
+    <p class="muted">© {{ 'now' | date: '%Y' }} NCG — BY Kim</p>
+  </footer>
 </body>
 </html>
 
