@@ -18,68 +18,66 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://bykim5710.github.io/series/ep.01-enor.png?v=20251023">
 
-<style>
-  :root{
-    --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2; --link:#78b7ff; --border:#27305e;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);
-       font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
-  a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline} a:visited{color:var(--link)}
+  <style>
+    :root{ --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2; --link:#78b7ff; --border:#27305e; }
+    *{box-sizing:border-box}
+    body{ margin:0; background:var(--bg); color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,Helvetica,Arial,sans-serif;
+      line-height:1.6; }
+    .wrap{ max-width:980px; margin:28px auto; padding:0 16px; }
+    header{ margin:0 0 18px; }
+    h1{ font-size:clamp(22px,3.8vw,30px); margin:0 0 10px; }
+    .lead{ color:var(--muted); margin:8px 0 14px; }
+    .badge{display:inline-block; padding:6px 10px; border-radius:8px; background:#0b2042; color:#cfe2ff; font-weight:600}
+    .tabs{ display:flex; gap:10px; flex-wrap:wrap; margin:18px 0; }
+    .tab-btn{
+      display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px;
+      background:#1a1f34; border:1px solid var(--border); color:#dfe9ff;
+      text-decoration:none; cursor:pointer; font-weight:700;
+    }
+    .tab-btn.active,.tab-btn:hover{ outline:1px solid #39528e; }
 
-  .wrap{max-width:980px;margin:28px auto;padding:0 16px}
-  header{margin:0 0 18px}
-  h1{font-size:clamp(22px,3.8vw,30px);margin:0 0 10px}
-  .lead{color:var(--muted);margin:8px 0 14px}
+    /* Flag: emoji fallback + image */
+    .flag-wrap{ display:inline-flex; align-items:center; gap:6px; }
+    .flag-emoji{ font-size:16px; line-height:1; display:inline-block; }
+    .flag-img{ height:16px; width:auto; display:inline-block; vertical-align:middle; border-radius:2px; }
 
-  .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
-  .tab-btn{
-    display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
-    background:#1a1f34;border:1px solid var(--border);color:#dfe9ff;cursor:pointer;font-weight:700;
-  }
-  .tab-btn.active,.tab-btn:hover{outline:1px solid #39528e}
-  .flag{width:22px;height:16px;display:inline-block;vertical-align:middle}
+    section.section{ display:none; }
+    section.section.active{ display:block; }
 
-  section.section{display:none}
-  section.section.active{display:block}
+    .section{ background:var(--panel); border:1px solid #212744; border-radius:10px; padding:14px; margin:16px 0; }
+    .title-left{ font-weight:700; margin-bottom:8px; }
+    ul.list{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    @media (max-width:760px){ ul.list{ grid-template-columns:1fr; } }
+    li.item{ background:#0f1328; border:1px solid #1e274a; border-radius:10px; padding:12px; }
+    .item .title{ font-weight:700; margin-bottom:6px; display:block; }
+    .item a{ color:var(--link); text-decoration:none; }
+    .item a:hover{ text-decoration:underline; }
+    .disabled{ opacity:.6; pointer-events:none; }
+    footer{ color:var(--muted); font-size:12px; margin:24px 0 10px; text-align:right; }
 
-  .section{background:var(--panel);border:1px solid #212744;border-radius:10px;padding:14px;margin:16px 0}
-  .title-left{font-weight:700;margin-bottom:8px}
-  ul.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  @media (max-width:760px){ ul.list{grid-template-columns:1fr} }
-  li.item{background:#0f1328;border:1px solid #1e274a;border-radius:10px;padding:12px}
-  .item .title{font-weight:700;margin-bottom:6px;display:block}
-  .item a{color:var(--link)}
-
-  footer{color:var(--muted);font-size:12px;margin:24px 0 10px;text-align:right}
-
-  /* ===== KakaoTalk / Mobile view fix ===== */
-@media (max-width: 768px) {
-  table {
-    table-layout: auto !important;
-    width: 100% !important;
-  }
-  th, td {
-    white-space: normal !important;
-    word-break: keep-all !important;
-    overflow-wrap: anywhere !important;
-    vertical-align: top !important;
-    line-height: 1.6 !important;
-  }
-  .col-set, .col-yt, [class*="col-"] {
-    width: auto !important;
-  }
-  th:nth-child(1), td:nth-child(1) { width: 25% !important; } /* 세트 */
-  th:nth-child(2), td:nth-child(2) { width: 55% !important; } /* 제목 */
-  th:nth-child(3), td:nth-child(3) { width: 20% !important; } /* 링크 */
+   /* ===== CTA: View Series Guide (KR 레이아웃과 동일) ===== */
+.hero-cta {
+  margin: 28px 0 10px;
+  text-align: center;
 }
- 모바일에서는 항상 오른쪽 하단에
- .footer-actions {
-  margin-top: 18px;
-  display: flex;
-  justify-content: center;
-} 
-/* ===== /KakaoTalk / Mobile view fix ===== */
+.btn-cta {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 12px;
+  background: #2b6cb0;   /* 기본 파랑 */
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  transition: background .2s;
+}
+.btn-cta:hover { background: #244f8f; }
+.cta-sub {
+  margin-top: 8px;
+  color: #b7c7e6;
+  font-size: .95rem; 
 </style>
 </head>
 
@@ -92,20 +90,47 @@
     <!-- Tabs -->
     <div class="tabs">
       <!-- English Videos -->
-      <button class="tab-btn" onclick="openTab('videos-en', this)"><img class="flag" src="americanflag.jpg" alt="미국 성조기" /> English Videos
+      <button type="button" class="tab-btn" onclick="openTab('videos-en', this)">
+        <span class="flag-wrap">
+          <span class="flag-emoji" aria-hidden="true">🇺🇸</span>
+          <img class="flag-img" src="flag_of_the_united_states.jpg" alt="United States flag"
+               onload="this.previousElementSibling.style.display='none'"
+               onerror="this.style.display='none'">
+        </span>
+        English Videos
       </button>
 
-      <!-- Korean Videos -->
-      <button class="tab-btn" onclick="openTab('videos-kr', this)">
-      <img class="flag" src="koreanflag.jpg" alt="대한민국 태극기" /> Koean Videos
+      <!-- 한국어 영상 -->
+      <button type="button" class="tab-btn" onclick="openTab('videos-kr', this)">
+        <span class="flag-wrap">
+          <span class="flag-emoji" aria-hidden="true">🇰🇷</span>
+          <img class="flag-img" src="flag_of_south_korea.jpg" alt="South Korea flag"
+               onload="this.previousElementSibling.style.display='none'"
+               onerror="this.style.display='none'">
+        </span>
+        한국어 영상
       </button>
 
-      <!-- Full channel -->
-      <button class="tab-btn" onclick="openTab('channel', this)">📺 Full YouTube Channel (@BYKIM-c2s)</button>
-
-      <!-- PDFs -->
-      <button class="tab-btn" onclick="openTab('en-pdf', this)">📄 Conversation with Oneness God (PDF)</button>
+      <!-- Full YouTube Channel -->
+      <button type="button" class="tab-btn" onclick="openTab('channel', this)">
+        📺 Full YouTube Channel (@BYKIM-c2s)
+      </button>
+           
+      <!-- 영어 PDF 연재물 -->
+      <button type="button" class="tab-btn" onclick="openTab('en-pdf', this)">
+        📄 Conversation with Oneness God — English PDF Series
+      </button>
     </div>
+
+    <!-- 🔷 View Series Guide (크게, 가운데) -->
+<div class="hero-cta">
+  <a class="btn-cta" href="https://bykim5710.github.io/NCG_Series_Guide_EN/guide.html">
+    📘 View Series Guide
+  </a>
+  <div class="cta-sub">
+    See the full English guide to videos, PDFs, and press materials.
+  </div>
+</div>
   </header>
 
   <!-- English Videos -->
