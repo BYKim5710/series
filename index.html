@@ -1,137 +1,86 @@
-<!DOCTYPE html>
+---
+layout: none
+---
+{% assign ep = site.ep | default: '01' %}
+{% assign cur = site.data.episodes[ep] %}
+{% assign title_fallback_en = "NCG Religious Revolution Series" %}
+{% assign watch_url = cur.youtube | default: site.playlist.en | default: "https://www.youtube.com/" %}
+{% assign thumb_en = cur.thumb_en | default: "ep." | append: ep | append: "-enor.png" %}
+
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>YouTube Videos & “Conversation with Oneness God” Series</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title_fallback_en }} — Ep.{{ ep }}{% if cur.title_en %}: {{ cur.title_en }}{% endif %}</title>
 
-<!-- Open Graph (Facebook/카카오) -->
-<meta property="og:url" content="https://bykim5710.github.io/series/">
-<meta property="og:type" content="website">
-<meta property="og:title" content='YouTube Videos & “Conversation with Oneness God” Series'>
-<meta property="og:description" content="Series overview and links to English/Korean videos and PDFs.">
-<meta property="og:image" content="https://bykim5710.github.io/series/ep.02-enor.png?v=20251023">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+  <!-- Canonical / Robots -->
+  <link rel="canonical" href="{{ site.bases.en }}/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="icon" href="/favicon.ico" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://bykim5710.github.io/series/ep.02-enor.png?v=20251023">
+  <!-- Open Graph / Twitter (auto by ep) -->
+  <meta property="og:url" content="{{ site.bases.en }}/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NCG Series — Ep.{{ ep }}{% if cur.title_en %}: {{ cur.title_en }}{% endif %}" />
+  <meta property="og:description" content="Follow the NCG Religious Revolution Series. Watch Ep.{{ ep }} and subscribe for updates." />
+  <meta property="og:image" content="{{ site.bases.en }}/{{ thumb_en }}?v={{ ep }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="NCG Series Ep.{{ ep }} Thumbnail (EN)" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="{{ site.bases.en }}/{{ thumb_en }}?v={{ ep }}" />
 
   <style>
-    :root{ --bg:#0b0b10; --panel:#141724; --text:#eef3ff; --muted:#9aa3b2; --link:#78b7ff; --border:#27305e; }
-    *{box-sizing:border-box}
-    body{ margin:0; background:var(--bg); color:var(--text);
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,Helvetica,Arial,sans-serif;
-      line-height:1.6; }
-    .wrap{ max-width:980px; margin:28px auto; padding:0 16px; }
-    header{ margin:0 0 18px; } 
-    h1{ font-size:clamp(22px,3.8vw,30px); margin:0 0 10px; }
-    .lead{ color:var(--muted); margin:8px 0 14px; }
-    .badge{display:inline-block; padding:6px 10px; border-radius:8px; background:#0b2042; color:#cfe2ff; font-weight:600}
-    .tabs{ display:flex; gap:10px; flex-wrap:wrap; margin:18px 0; }
-    .tab-btn{
-      display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px;
-      background:#1a1f34; border:1px solid var(--border); color:#dfe9ff;
-      text-decoration:none; cursor:pointer; font-weight:700;
-    }
-    .tab-btn.active,.tab-btn:hover{ outline:1px solid #39528e; }
-
-    /* Flag: emoji fallback + image */
-    .flag-wrap{ display:inline-flex; align-items:center; gap:6px; }
-    .flag-emoji{ font-size:16px; line-height:1; display:inline-block; }
-    .flag-img{ height:16px; width:auto; display:inline-block; vertical-align:middle; border-radius:2px; }
-
-    section.section{ display:none; }
-    section.section.active{ display:block; }
-
-    .section{ background:var(--panel); border:1px solid #212744; border-radius:10px; padding:14px; margin:16px 0; }
-    .title-left{ font-weight:700; margin-bottom:8px; }
-    ul.list{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-    @media (max-width:760px){ ul.list{ grid-template-columns:1fr; } }
-    li.item{ background:#0f1328; border:1px solid #1e274a; border-radius:10px; padding:12px; }
-    .item .title{ font-weight:700; margin-bottom:6px; display:block; }
-    .item a{ color:var(--link); text-decoration:none; }
-    .item a:hover{ text-decoration:underline; }
-    .disabled{ opacity:.6; pointer-events:none; }
-    footer{ color:var(--muted); font-size:12px; margin:24px 0 10px; text-align:right; }
-
-   /* ===== CTA: View Series Guide (KR 레이아웃과 동일) ===== */
-.hero-cta {
-  margin: 28px 0 10px;
-  text-align: center;
-}
-.btn-cta {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 12px;
-  background: #2b6cb0;   /* 기본 파랑 */
-  color: #fff;
-  font-weight: 800;
-  font-size: 1.05rem;
-  text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,.18);
-  transition: background .2s;
-}
-.btn-cta:hover { background: #244f8f; }
-.cta-sub {
-  margin-top: 8px;
-  color: #b7c7e6;
-  font-size: .95rem; 
-</style>
+    :root{ --bg:#0d1117; --panel:#0f172a; --text:#e6edf3; --muted:#a3b3c4;
+           --accent:#3b82f6; --btn:#1e293b; --border:#1e293b; }
+    *{ box-sizing:border-box }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--text);
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6 }
+    .wrap{ max-width:1100px; margin:28px auto; padding:0 16px }
+    header{ display:grid; grid-template-columns: 1.4fr 1fr; gap:20px; align-items:center }
+    .hero{ background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:20px }
+    .thumb{ width:100%; border-radius:12px; display:block }
+    .badge{ display:inline-block; font-weight:700; background:#111827; color:#fff; padding:6px 10px; border-radius:999px; font-size:.9rem; margin-bottom:10px }
+    h1{ margin:.2rem 0 0; font-size:clamp(22px,3.2vw,34px) }
+    .muted{ color:var(--muted) }
+    .grid{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:14px }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px; text-decoration:none;
+      padding:14px 16px; border-radius:12px; background:var(--btn); color:#fff; border:1px solid #334155; font-weight:600 }
+    .btn:hover{ background:#111827; border-color:#475569 }
+    footer{ text-align:center; color:var(--muted); font-size:.9rem; margin:32px 0 16px }
+    @media (max-width: 900px){ header{ grid-template-columns:1fr; } }
+  </style>
 </head>
- 
 <body>
-<div class="wrap">
-  <header>
-    <h1>YouTube Videos & “Conversation with Oneness God” Series</h1>
-    <p class="lead">Choose a tab below. Only the selected content will be shown.</p>
+  <div class="wrap">
+    <header>
+      <div class="hero">
+        <span class="badge">Episode {{ ep }}</span>
+        <h1>NCG Religious Revolution Series{% if cur.title_en %}: {{ cur.title_en }}{% endif %}</h1>
+        <p class="muted">Watch the latest episode, subscribe, and share the message.</p>
+        <div class="grid">
+          <a class="btn" href="{{ watch_url }}" target="_blank" rel="noopener">▶️ Watch Ep.{{ ep }}</a>
+          <a class="btn" href="{{ site.bases.en }}/subscribe.html?v={{ ep }}" target="_blank" rel="noopener">🔔 Subscribe / Share</a>
+          <a class="btn" href="https://www.youtube.com/{{ site.youtube_handle }}" target="_blank" rel="noopener">YouTube Channel</a>
+          <a class="btn" href="{{ site.bases.kr }}/" target="_blank" rel="noopener">메인 시리즈 (Korean)</a>
+        </div>
+      </div>
+      <a href="{{ watch_url }}" target="_blank" rel="noopener">
+        <img class="thumb" src="{{ site.bases.en }}/{{ thumb_en }}?v={{ ep }}" alt="Ep.{{ ep }} Thumbnail" />
+      </a>
+    </header>
 
-    <!-- Tabs -->
-    <div class="tabs">
-      <!-- English Videos -->
-      <button type="button" class="tab-btn" onclick="openTab('videos-en', this)">
-        <span class="flag-wrap">
-          <span class="flag-emoji" aria-hidden="true">🇺🇸</span>
-          <img class="flag-img" src="flag_of_the_united_states.svg=20251023" alt="United States flag"
-               onload="this.previousElementSibling.style.display='none'" 
-               onerror="this.style.display='none'">
-        </span>
-        English Videos
-      </button>
+    <!-- 여기에 섹션/목차 등을 추가하셔도 자동 회차는 유지됩니다 -->
 
-      <!-- 한국어 영상 -->
-      <button type="button" class="tab-btn" onclick="openTab('videos-kr', this)">
-        <span class="flag-wrap">
-          <span class="flag-emoji" aria-hidden="true">🇰🇷</span>
-          <img class="flag-img" src="flag_of_south_korea.svg=20251023" alt="South Korea flag"
-               onload="this.previousElementSibling.style.display='none'"
-               onerror="this.style.display='none'">
-        </span>
-        한국어 영상
-      </button>
-
-      <!-- Full YouTube Channel -->
-      <button type="button" class="tab-btn" onclick="openTab('channel', this)">
-        📺 Full YouTube Channel (@BYKIM-c2s)
-      </button>
-           
-      <!-- 영어 PDF 연재물 -->
-      <button type="button" class="tab-btn" onclick="openTab('en-pdf', this)">
-        📄 Conversation with Oneness God — English PDF Series
-      </button>
-    </div>
-
-    <!-- 🔷 View Series Guide (크게, 가운데) -->
-<div class="hero-cta">
-  <a class="btn-cta" href="https://bykim5710.github.io/NCG_Series_Guide_EN/guide.html">
-    📘 View Series Guide
-  </a>
-  <div class="cta-sub">
-    See the full English guide to videos, PDFs, and press materials.
+    <footer>
+      © <span id="year"></span> Byung Youn Kim, Chairman of the New Consilience Group (NCG).
+    </footer>
   </div>
-</div>
-  </header>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
   <!-- English Videos -->
   <section id="videos-en" class="section">
