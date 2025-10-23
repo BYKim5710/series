@@ -188,7 +188,7 @@
     </ul>
   </section>
 
-  <footer>Last updated: <span id="ts">—</span></footer>
+    <footer>Last updated: <span id="ts">—</span></footer>
 </div>
 
 <script>
@@ -199,81 +199,42 @@
   function openTab(id, btn){
     hideAll();
     const sec = document.getElementById(id);
-    if (sec) sec.classList.add('active');
-    if (btn) btn.classList.add('active');
+    if(sec) sec.classList.add('active');
+    if(btn) btn.classList.add('active');
     history.replaceState(null,'','#'+id);
   }
-
-  // 초기화: 섹션은 닫고(버튼만 보임), 해시 제거
+  // 초기엔 아무 섹션도 자동 표시하지 않음. 해시가 있으면 그 섹션만 열기
   (function(){
-    const d = new Date(), z = n => String(n).padStart(2,'0');
-    const ts = document.getElementById('ts'); 
-    if (ts) ts.textContent = d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate());
     hideAll();
-    if (location.hash) history.replaceState(null,'',location.pathname + location.search);
+    const h = location.hash && location.hash.replace('#','');
+    if(h){
+      const btn = document.querySelector('.tab-btn[onclick*="'+h+'"]');
+      openTab(h, btn);
+    }
   })();
 
-  // ===== 영어 PDF 자동 탐지 & GDocs 미리보기 =====
+  // 간단한 날짜
   (function(){
-    const BASES = [
-      '',              // ./ (index와 같은 폴더)
-      'pdfs/',         // ./pdfs/
-      'pdf/',          // ./pdf/
-      'en/',           // ./en/
-      'pdfs/en/',      // ./pdfs/en/
-    ];
-    function candidates(ep){
-      const n = String(ep), nn = n.padStart(2,'0');
-      return [
-        `${n}-en.pdf`, `${nn}-en.pdf`,
-        `${n}_en.pdf`, `${nn}_en.pdf`,
-        `${n}-english.pdf`, `${nn}-english.pdf`,
-        `Ep${n}-English.pdf`, `Ep${nn}-English.pdf`,
-        `Ep${n}.en.pdf`, `Ep${nn}.en.pdf`,
-        `${n}.en.pdf`, `${nn}.en.pdf`,
-        // 최후 수단
-        `${n}.pdf`, `${nn}.pdf`,
-      ];
-    }
-    async function exists(url){
-      try{
-        const r = await fetch(url, {method:'HEAD', cache:'no-store'});
-        const ok = r.ok;
-        const ct = (r.headers.get('content-type')||'').toLowerCase();
-        return ok && ct.includes('pdf');
-      }catch(e){ return false; }
-    }
-    async function findFirst(ep){
-      for (const base of BASES){
-        for (const name of candidates(ep)){
-          const url = base ? `${base}${name}` : name;
-          if (await exists(url)) return url;
-        }
-      }
-      return null;
-    }
-    function toGView(abs){ return `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(abs)}`; }
-
-    (async function wire(){
-      const links = document.querySelectorAll('#en-pdf-list a[data-ep]');
-      for (const a of links){
-        const ep = a.getAttribute('data-ep');
-        a.textContent = '🔎 Checking…';
-        const found = await findFirst(ep);
-        if (found){
-          const abs = new URL(found, location.href).href;
-          a.href = toGView(abs);
-          a.textContent = '📄 View English PDF';
-          a.classList.remove('disabled');
-        }else{
-          a.removeAttribute('href');
-          a.textContent = '⚠️ English PDF not found';
-          a.classList.add('disabled');
-          a.title = '영어판 PDF 파일을 찾지 못했습니다. 파일명을 확인해 주세요.';
-        }
-      }
-    })();
+    const d = new Date(); const z = n => String(n).padStart(2,'0');
+    document.getElementById('ts').textContent =
+      d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate());
   })();
 </script>
 </body>
 </html>
+
+<script>
+/* 모든 .pdf 링크를 Google Docs Viewer로 열도록 변환 */
+(function () {
+  // pdf 링크만 선택 (한국/영문 PDF 섹션 모두 자동 처리)
+  document.querySelectorAll('a[href$=".pdf"]').forEach(function (a) {
+    // 상대경로를 절대경로로 변환
+    var absolute = new URL(a.getAttribute('href'), location.href).href;
+    // gview URL로 치환
+    var gview = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(absolute);
+    a.setAttribute('href', gview);
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener');
+  });
+})();
+</script>
