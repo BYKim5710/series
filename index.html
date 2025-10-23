@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>YouTube Videos & “Conversation with Oneness God” Series</title>
 
-<!-- Open Graph -->
+<!-- Open Graph (Facebook/카카오) -->
 <meta property="og:url" content="https://bykim5710.github.io/series/">
 <meta property="og:type" content="website">
 <meta property="og:title" content='YouTube Videos & “Conversation with Oneness God” Series'>
 <meta property="og:description" content="Series overview and links to English/Korean videos and PDFs.">
-<meta property="og:image" content="https://bykim5710.github.io/series/og/series_en.png?v=20251023">
+<meta property="og:image" content="https://bykim5710.github.io/series/ep.01-enor.png?v=20251023">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://bykim5710.github.io/series/og/series_en.png?v=20251023" />
+<meta name="twitter:image" content="https://bykim5710.github.io/series/ep.01-enor.png?v=20251023">
 
 <style>
   :root{
@@ -53,16 +53,33 @@
 
   footer{color:var(--muted);font-size:12px;margin:24px 0 10px;text-align:right}
 
-  /* ===== KakaoTalk / Mobile table safety ===== */
-  @media (max-width: 768px) {
-    table { table-layout:auto !important; width:100% !important; }
-    th, td { white-space:normal !important; word-break:keep-all !important;
-             overflow-wrap:anywhere !important; vertical-align:top !important; line-height:1.6 !important; }
-    .col-set, .col-yt, [class*="col-"] { width:auto !important; }
-    th:nth-child(1), td:nth-child(1) { width:25% !important; }
-    th:nth-child(2), td:nth-child(2) { width:55% !important; }
-    th:nth-child(3), td:nth-child(3) { width:20% !important; }
+  /* ===== KakaoTalk / Mobile view fix ===== */
+@media (max-width: 768px) {
+  table {
+    table-layout: auto !important;
+    width: 100% !important;
   }
+  th, td {
+    white-space: normal !important;
+    word-break: keep-all !important;
+    overflow-wrap: anywhere !important;
+    vertical-align: top !important;
+    line-height: 1.6 !important;
+  }
+  .col-set, .col-yt, [class*="col-"] {
+    width: auto !important;
+  }
+  th:nth-child(1), td:nth-child(1) { width: 25% !important; } /* 세트 */
+  th:nth-child(2), td:nth-child(2) { width: 55% !important; } /* 제목 */
+  th:nth-child(3), td:nth-child(3) { width: 20% !important; } /* 링크 */
+}
+ 모바일에서는 항상 오른쪽 하단에
+ .footer-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+} 
+/* ===== /KakaoTalk / Mobile view fix ===== */
 </style>
 </head>
 
@@ -74,18 +91,17 @@
 
     <!-- Tabs -->
     <div class="tabs">
-      <!-- English Videos (default) -->
-      <button class="tab-btn active" onclick="openTab('videos-en', this)">
-        <img class="flag" src="americanflag.jpg" alt="USA flag" /> English Videos
+      <!-- English Videos -->
+      <button class="tab-btn" onclick="openTab('videos-en', this)"><img class="flag" src="americanflag.jpg" alt="미국 성조기" /> English Videos
       </button>
 
       <!-- Korean Videos -->
       <button class="tab-btn" onclick="openTab('videos-kr', this)">
-        <img class="flag" src="koreanflag.jpg" alt="Korea flag" /> 한국어 영상
+      <img class="flag" src="koreanflag.jpg" alt="대한민국 태극기" /> Koean Videos
       </button>
 
       <!-- Full channel -->
-      <button class="tab-btn" onclick="openTab('channel', this)">📺 Full YouTube Channel (@BYIM-c2s)</button>
+      <button class="tab-btn" onclick="openTab('channel', this)">📺 Full YouTube Channel (@BYKIM-c2s)</button>
 
       <!-- PDFs -->
       <button class="tab-btn" onclick="openTab('en-pdf', this)">📄 Conversation with Oneness God (PDF)</button>
@@ -220,10 +236,8 @@
       d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate());
   })();
 </script>
-</body>
-</html>
 
-<script>
+  <script>
 /* 모든 .pdf 링크를 Google Docs Viewer로 열도록 변환 */
 (function () {
   // pdf 링크만 선택 (한국/영문 PDF 섹션 모두 자동 처리)
@@ -238,3 +252,7 @@
   });
 })();
 </script>
+
+</body>
+</html>
+
