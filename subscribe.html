@@ -62,6 +62,10 @@
 
     a.link { color:#93c5fd; text-decoration:none; }
     a.link:hover { text-decoration:underline; }
+
+    .row { display:flex; flex-wrap:wrap; gap:10px; position:relative; }
+.btn { display:inline-flex; position:relative; z-index:1; }   /* 클릭 오버레이 방지 */
+.row + .row { margin-top:8px; }
   </style>
 </head>
 <body>
