@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Subscribe / Share Guide – NCG Religious Revolution Series (Ep.02)</title> 
+  <title>Subscribe / Share Guide – NCG Religious Revolution Series (Ep.02)</title>
 
+  <!-- Canonical / Robots -->
   <link rel="canonical" href="https://bykim5710.github.io/series/subscribe.html" />
   <meta name="robots" content="index, follow" />
 
@@ -26,42 +27,97 @@
 
   <style>
     :root { color-scheme: light dark; }
-    html,body { height:100%; margin:0; }
+    html, body { height: 100%; margin: 0; }
     body {
-      display:grid; place-items:center;
+      display: grid; place-items: start center;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:#0d1117; color:#e5e7eb;
     }
-    .card {
-      width:min(720px, 92vw);
+    .wrap { width:min(980px, 92vw); padding: 34px 20px 80px; }
+    .hero {
       background:#111827; border:1px solid #1f2937; border-radius:16px;
-      box-shadow:0 6px 24px rgba(0,0,0,.25);
-      padding:28px 28px 24px; text-align:center;
+      padding:26px 20px; text-align:center; box-shadow:0 6px 24px rgba(0,0,0,.15);
+      margin-bottom:24px;
     }
-    h1 { margin:0 0 10px; font-size:28px; }
-    p  { margin:0 0 18px; color:#cbd5e1; }
-    .row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
-    a.btn {
-      display:inline-block; padding:12px 16px; border-radius:12px;
-      text-decoration:none; font-weight:700;
-      background:#10b981; color:#071a12;
+    h1 { margin:0 0 6px; font-size:28px; }
+    .sub { margin:0; color:#9ca3af; }
+    .row { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:16px; }
+
+    .section {
+      background:#111827; border:1px solid #1f2937; border-radius:16px;
+      padding:22px 20px; margin-top:16px; box-shadow:0 6px 24px rgba(0,0,0,.12);
     }
+    .section h2 { margin:0 0 12px; font-size:22px; }
+
+    .btn {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:12px 16px; border-radius:12px; text-decoration:none;
+      border:1px solid #263040; background:#0d5b81; color:#fff; font-weight:700;
+    }
+    .btn.outline { background:#0d1117; border:1px solid #2b3a50; color:#e5e7eb; }
+    .btn.small { padding:10px 14px; font-weight:600; }
+    .hint { color:#9ca3af; font-size:14px; margin-top:10px; }
+
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:10px; }
+
     a.link { color:#93c5fd; text-decoration:none; }
     a.link:hover { text-decoration:underline; }
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1>Subscribe / Share Guide (Ep.02)</h1>
-    <p>Use this page to subscribe to the channel and share the series easily.</p>
+  <div class="wrap">
+    <!-- TOP: Title -->
+    <div class="hero">
+      <h1>Subscribe / Share Guide (Ep.02)</h1>
+      <p class="sub">Use this page to subscribe and share the series easily.</p>
 
-    <div class="row" style="margin-top:6px;">
-      <a class="btn" href="https://www.youtube.com/@BYKIM-c2s?sub_confirmation=1">🔔 Subscribe on YouTube</a>
+      <div class="row">
+        <!-- Subscribe (popup) -->
+        <a class="btn" href="https://www.youtube.com/@BYKIM-c2s?sub_confirmation=1">🔔 Subscribe on YouTube</a>
+
+        <!-- Main series links -->
+        <a class="btn outline" href="https://bykim5710.github.io/series/">🌐 Main Series (English)</a>
+        <a class="btn outline" href="https://bykim5710.github.io/series.kr/">🌐 Main Series (Korean)</a>
+      </div>
     </div>
 
-    <div class="row" style="margin-top:6px;">
-      <a class="link" href="https://bykim5710.github.io/series/">⟵ Full Series (EN)</a>
+    <!-- SHARE: same layout as KR page, but English text -->
+    <div class="section">
+      <h2>2) Share</h2>
+      <p>Use the buttons below to copy links or share to Facebook.</p>
+
+      <div class="grid" style="margin-top:8px;">
+        <!-- Copy English series link -->
+        <a class="btn small outline" href="#" onclick="copyText('https://bykim5710.github.io/series/'); return false;">🔗 Copy: English Series</a>
+
+        <!-- Copy Korean series link (optional but symmetrical) -->
+        <a class="btn small outline" href="#" onclick="copyText('https://bykim5710.github.io/series.kr/'); return false;">🔗 Copy: Korean Series</a>
+
+        <!-- Facebook share (EN) -->
+        <a class="btn small" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbykim5710.github.io%2Fseries%2Fsubscribe.html%3Fv%3D02" target="_blank" rel="noopener">📘 Facebook Share (EN)</a>
+      </div>
+
+      <p class="hint">If the thumbnail doesn’t refresh on Facebook, run “Scrape Again” in the Facebook Sharing Debugger after updating.</p>
     </div>
-  </main>
+
+    <!-- Back links -->
+    <div class="section">
+      <h2>3) Go back</h2>
+      <div class="grid">
+        <a class="btn small outline" href="https://bykim5710.github.io/series/">← Full Series (EN)</a>
+        <a class="btn small outline" href="https://bykim5710.github.io/series.kr/">← 전체 시리즈 (KR)</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function copyText(text){
+      navigator.clipboard.writeText(text).then(function(){
+        alert('Copied: ' + text);
+      }, function(){
+        prompt('Copy this link:', text);
+      });
+    }
+  </script>
 </body>
 </html>
