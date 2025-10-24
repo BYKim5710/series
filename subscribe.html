@@ -67,20 +67,35 @@
 .btn { display:inline-flex; position:relative; z-index:1; }   /* 클릭 오버레이 방지 */
 .row + .row { margin-top:8px; }
   </style>
+  
+  <<style>
+  /* 기존에 있던 것 유지 */
+  .row { display:flex; flex-wrap:wrap; gap:10px; position:relative; }
+  .btn { display:inline-flex; position:relative; z-index:1; } /* 클릭 오버레이 방지 */
+  .row + .row { margin-top:8px; }
+
+  /* 아래 두 줄만 추가로 유지 */
+  .hero    { position: relative; isolation: isolate; margin-bottom: 12px; }
+  .section { position: relative; z-index: 2; }
+</style>
 </head>
 <body>
   <div class="wrap">
-    <!-- TOP: Title -->
-    <div class="hero">
-      <h1>Subscribe / Share Guide (Ep.02)</h1>
-      <p class="sub">Use this page to subscribe and share the series easily.</p>
+   <!-- TOP: Title -->
+<div class="hero">
+  <h1>Subscribe / Share Guide (Ep.02)</h1>
+  <p class="sub">Use this page to subscribe and share the series easily.</p>
 
-      <div class="row">
-      <!-- Subscribe (popup) -->
-<div class="row">
-  <button class="btn" type="button"
-          onclick="window.open('https://www.youtube.com/@BYKIM-c2s?sub_confirmation=1','_blank','noopener')">
-    🔔 Subscribe on YouTube
+  <!-- Subscribe (popup) -->
+  <div class="row">
+    <a class="btn"
+       href="https://www.youtube.com/@BYKIM-c2s?sub_confirmation=1"
+       target="_blank" rel="noopener">
+      🔔 Subscribe on YouTube
+    </a>
+  </div>
+</div>
+
   </button>
 </div>
 
@@ -95,7 +110,7 @@
       <h2>2) Share</h2>
       <p>Use the buttons below to copy links or share to Facebook.</p>
 
-      <div class="grid" style="margin-top:8px;">
+      <div class="grid" ="margin-top:8px;">
         <!-- Copy English series link -->
         <a class="btn small outline" href="#" onclick="copyText('https://bykim5710.github.io/series/'); return false;">🔗 Copy: English Series</a>
 
@@ -138,7 +153,7 @@
       </div>
     </div>
 
-    <footer style="margin-top:40px;text-align:center;color:#9ca3af;font-size:13px;">
+    <footer ="margin-top:40px;text-align:center;color:#9ca3af;font-size:13px;">
       © 2025 Byung Youn Kim, Chairman of the New Consilience Group (NCG). All rights reserved.
     </footer>
 </body>
