@@ -3,158 +3,162 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Subscribe / Share Guide – NCG Religious Revolution Series (Ep.02)</title>
-
-  <!-- Canonical / Robots -->
-  <link rel="canonical" href="https://bykim5710.github.io/series/subscribe.html" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph -->
-  <meta property="og:url" content="https://bykim5710.github.io/series/subscribe.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="NCG Religious Revolution Series — Subscribe / Share Guide (Ep.02)" />
-  <meta property="og:description" content="Visit this page to subscribe and easily share the NCG Religious Revolution Series." />
-  <meta property="og:image" content="https://bykim5710.github.io/series/ep.02-enor.png?v=02" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="NCG Series Episode 02 Thumbnail (EN)" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NCG Religious Revolution Series — Subscribe / Share Guide (Ep.02)" />
-  <meta name="twitter:description" content="Visit this page to subscribe and easily share the NCG Religious Revolution Series." />
-  <meta name="twitter:image" content="https://bykim5710.github.io/series/ep.02-enor.png?v=02" />
+  <title>Subscribe / Share Guide (Ep.02) — NCG Series (EN)</title>
+  <meta name="description" content="Use this page to subscribe and share the NCG Religious Revolution series easily. English & Korean main links, quick copy, and Facebook share." />
 
   <style>
-    :root { color-scheme: light dark; }
-    html, body { height: 100%; margin: 0; }
-    body {
-      display: grid; place-items: start center;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:#0d1117; color:#e5e7eb;
+    :root{
+      --bg:#0f1721;        /* page bg */
+      --panel:#0d1a28;     /* card bg */
+      --panel-2:#0b1723;   /* darker card */
+      --text:#e8f2ff;      /* main text */
+      --muted:#a7c4e3;     /* secondary text */
+      --accent:#2b9adf;    /* link/accent */
+      --btn:#17324a;       /* button bg */
+      --btn-outline:#0b2d45;
+      --hint:#7fa6cc;
+      --ok:#0ea5e9;
+      --warn:#fbbf24;
+      --border:#153754;
+      --shadow:0 8px 24px rgba(0,0,0,.35);
+      --radius:16px;
     }
-    .wrap { width:min(980px, 92vw); padding: 34px 20px 80px; }
-    .hero {
-      background:#111827; border:1px solid #1f2937; border-radius:16px;
-      padding:26px 20px; text-align:center; box-shadow:0 6px 24px rgba(0,0,0,.15);
-      margin-bottom:24px;
+
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+      line-height:1.55;
     }
-    h1 { margin:0 0 6px; font-size:28px; }
-    .sub { margin:0; color:#9ca3af; }
-    .row { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:16px; }
 
-    .section {
-      background:#111827; border:1px solid #1f2937; border-radius:16px;
-      padding:22px 20px; margin-top:16px; box-shadow:0 6px 24px rgba(0,0,0,.12);
+    a{ color:var(--accent); text-decoration:none }
+    a:hover{ text-decoration:underline }
+
+    /* Layout */
+    .wrap{ max-width:980px; margin:36px auto 80px; padding:0 16px }
+
+    .hero{
+      position:relative; isolation:isolate;
+      background:var(--panel); border:1px solid var(--border);
+      box-shadow:var(--shadow); border-radius:var(--radius);
+      padding:22px 20px; text-align:center; margin-bottom:24px;
     }
-    .section h2 { margin:0 0 12px; font-size:22px; }
+    .hero h1{ margin:6px 0 8px; font-size:30px }
+    .hero .sub{ margin:0; color:var(--muted) }
 
-    .btn {
-      display:inline-flex; align-items:center; gap:8px;
-      padding:12px 16px; border-radius:12px; text-decoration:none;
-      border:1px solid #263040; background:#0d5b81; color:#fff; font-weight:700;
+    .section{
+      position:relative; z-index:2;
+      background:var(--panel-2); border:1px solid var(--border);
+      border-radius:var(--radius); padding:18px 18px; margin:18px 0;
+      box-shadow:var(--shadow);
     }
-    .btn.outline { background:#0d1117; border:1px solid #2b3a50; color:#e5e7eb; }
-    .btn.small { padding:10px 14px; font-weight:600; }
-    .hint { color:#9ca3af; font-size:14px; margin-top:10px; }
+    .section h2{ margin:6px 0 8px; font-size:22px }
+    .hint{ color:var(--hint); font-size:14px; margin-top:8px }
 
-    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:10px; }
+    .row{ display:flex; flex-wrap:wrap; gap:10px; position:relative }
+    .row + .row{ margin-top:8px }
 
-    a.link { color:#93c5fd; text-decoration:none; }
-    a.link:hover { text-decoration:underline; }
+    .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:10px }
 
-    .row { display:flex; flex-wrap:wrap; gap:10px; position:relative; }
-.btn { display:inline-flex; position:relative; z-index:1; }   /* 클릭 오버레이 방지 */
-.row + .row { margin-top:8px; }
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      background:var(--btn); color:var(--text);
+      border:1px solid var(--border); border-radius:14px;
+      padding:12px 16px; font-weight:600; box-shadow:0 6px 20px rgba(0,0,0,.25);
+      position:relative; z-index:1; /* prevent overlay capture */
+      text-decoration:none;
+    }
+    .btn:hover{ text-decoration:none; filter:brightness(1.06) }
+    .btn.small{ padding:10px 12px; font-weight:600; font-size:14px }
+    .btn.outline{ background:var(--btn-outline) }
+    .btn.warn{ background:#1f2b06; border-color:#3b4a11; }
+    .btn .dot{ width:8px; height:8px; background:var(--ok); border-radius:999px; display:inline-block }
+
+    /* Lists inside section */
+    .list{ display:block; padding:10px 12px; border-radius:10px; background:transparent; border:1px dashed var(--border) }
   </style>
-  
-  <<style>
-  /* 기존에 있던 것 유지 */
-  .row { display:flex; flex-wrap:wrap; gap:10px; position:relative; }
-  .btn { display:inline-flex; position:relative; z-index:1; } /* 클릭 오버레이 방지 */
-  .row + .row { margin-top:8px; }
-
-  /* 아래 두 줄만 추가로 유지 */
-  .hero    { position: relative; isolation: isolate; margin-bottom: 12px; }
-  .section { position: relative; z-index: 2; }
-</style>
 </head>
 <body>
   <div class="wrap">
-   <!-- TOP: Title -->
-<div class="hero">
-  <h1>Subscribe / Share Guide (Ep.02)</h1>
-  <p class="sub">Use this page to subscribe and share the series easily.</p>
 
-  <!-- Subscribe (popup) -->
-  <div class="row">
-    <a class="btn"
-       href="https://www.youtube.com/@BYKIM-c2s?sub_confirmation=1"
-       target="_blank" rel="noopener">
-      🔔 Subscribe on YouTube
-    </a>
-  </div>
-</div>
+    <!-- ========== HERO ========== -->
+    <div class="hero">
+      <h1>Subscribe / Share Guide (Ep.02)</h1>
+      <p class="sub">Use this page to subscribe and share the series easily.</p>
 
-  </button>
-</div>
+      <div class="row" style="margin-top:14px">
+        <a class="btn warn" href="https://www.youtube.com/@BYKIM-c2s?sub_confirmation=1" target="_blank" rel="noopener">
+          🔔 Subscribe on YouTube
+        </a>
+      </div>
+    </div>
 
-<!-- Main series links -->
-<div class="row">
-  <a class="btn outline" href="https://bykim5710.github.io/series/" target="_self">📁 Main Series (English)</a>
-  <a class="btn outline" href="https://bykim5710.github.io/series.kr/" target="_self">📁 Main Series (Korean)</a>
-</div>
-
-    <!-- SHARE: same layout as KR page, but English text -->
+    <!-- ========== MAIN SERIES LINKS (separate section) ========== -->
     <div class="section">
+      <div class="row" aria-label="Main series links">
+        <a class="btn outline" href="https://bykim5710.github.io/series/" target="_self">🌐 Main Series (English)</a>
+        <a class="btn outline" href="https://bykim5710.github.io/series.kr/" target="_self">🌐 Main Series (Korean)</a>
+      </div>
+    </div>
+
+    <!-- ========== SHARE ========== -->
+    <div class="section" id="share">
       <h2>2) Share</h2>
       <p>Use the buttons below to copy links or share to Facebook.</p>
 
-      <div class="grid" ="margin-top:8px;">
-        <!-- Copy English series link -->
-        <a class="btn small outline" href="#" onclick="copyText('https://bykim5710.github.io/series/'); return false;">🔗 Copy: English Series</a>
+      <div class="grid" style="margin-top:8px">
+        <!-- Copy English -->
+        <a class="btn small outline" href="#"
+           onclick="copyText('https://bykim5710.github.io/series/'); return false;">🔗 Copy: English Series</a>
 
-        <!-- Copy Korean series link (optional but symmetrical) -->
-        <a class="btn small outline" href="#" onclick="copyText('https://bykim5710.github.io/series.kr/'); return false;">🔗 Copy: Korean Series</a>
+        <!-- Copy Korean -->
+        <a class="btn small outline" href="#"
+           onclick="copyText('https://bykim5710.github.io/series.kr/'); return false;">🔗 Copy: Korean Series</a>
 
-        <!-- Facebook share (EN) -->
-        <a class="btn small" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbykim5710.github.io%2Fseries%2Fsubscribe.html%3Fv%3D02" target="_blank" rel="noopener">📘 Facebook Share (EN)</a>
+        <!-- Facebook Share (EN) — this page URL -->
+        <a class="btn small" target="_blank" rel="noopener"
+           href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbykim5710.github.io%2Fseries%2Fsubscribe.html">
+           <span class="dot"></span> Facebook Share (EN)
+        </a>
       </div>
 
       <p class="hint">If the thumbnail doesn’t refresh on Facebook, run “Scrape Again” in the Facebook Sharing Debugger after updating.</p>
     </div>
 
-    <!-- Back links -->
+    <!-- ========== BACK LINKS ========== -->
     <div class="section">
       <h2>3) Go back</h2>
-      <div class="grid">
-        <a class="btn small outline" href="https://bykim5710.github.io/series/">← Full Series (EN)</a>
-        <a class="btn small outline" href="https://bykim5710.github.io/series.kr/">← 전체 시리즈 (KR)</a>
+      <div class="row">
+        <a class="btn small outline" href="https://bykim5710.github.io/series/" target="_self">↩ Full Series (EN)</a>
+        <a class="btn small outline" href="https://bykim5710.github.io/series.kr/" target="_self">↩ 전체 시리즈 (KR)</a>
       </div>
     </div>
-  </div>
 
-  <script>
-    function copyText(text){
-      navigator.clipboard.writeText(text).then(function(){
-        alert('Copied: ' + text);
-      }, function(){
-        prompt('Copy this link:', text);
-      });
-    }
-  </script>
-<!-- CONTACT / FOLLOW -->
+    <!-- ========== CONTACT / FOLLOW ========== -->
     <div class="section">
       <h2>3) Contact / Follow</h2>
       <div class="grid">
-        <a class="btn small outline" href="mailto:bykim57@hanmail.net">📧 Email: bykim571020@gmail.com</a>
+        <a class="btn small outline" href="mailto:bykim571020@gmail.com">📧 Email: bykim571020@gmail.com</a>
         <a class="btn small outline" href="https://www.facebook.com/groups/964715097572990" target="_blank" rel="noopener">👥 Facebook Group (KR)</a>
         <a class="btn small outline" href="https://www.facebook.com/groups/814893414319740" target="_blank" rel="noopener">👥 Facebook Group (EN)</a>
       </div>
     </div>
 
-    <footer ="margin-top:40px;text-align:center;color:#9ca3af;font-size:13px;">
-      © 2025 Byung Youn Kim, Chairman of the New Consilience Group (NCG). All rights reserved.
-    </footer>
+  </div>
+
+  <script>
+    function copyText(text){
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function(){
+          alert('Copied: ' + text);
+        }, function(){
+          prompt('Copy this link:', text);
+        });
+      } else {
+        prompt('Copy this link:', text);
+      }
+    }
+  </script>
 </body>
 </html>
