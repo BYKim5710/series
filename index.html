@@ -90,24 +90,12 @@
     <!-- Tabs -->
     <div class="tabs">
       <!-- English Videos -->
-      <button type="button" class="tab-btn" onclick="openTab('videos-en', this)">
-        <span class="flag-wrap">
-          <span class="flag-emoji" aria-hidden="true">🇺🇸</span>
-         <img class="flag-img" src="{{ '/assets/flags/flag_of_the_united_states.svg' | relative_url }}" alt="United States flag"
-          onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
-        </span>
-        English Videos
-      </button>
-
-      <!-- 한국어 영상 -->
-      <button type="button" class="tab-btn" onclick="openTab('videos-kr', this)">
-        <span class="flag-wrap">
-          <span class="flag-emoji" aria-hidden="true">🇰🇷</span>
-          <img class="flag-img" src="{{ '/assets/flags/flag_of_south_korea.svg' | relative_url }}" alt="South Korea flag"
-           onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
-        </span>
-        한국어 영상
-      </button>
+    <button class="tab-btn" onclick="openTab('videos-en', this)"><img class="flag" src="americanflag.svg" alt="미국 성조기" /> English Videos
+    </button>
+ 
+     <!-- 한국어 영상 -->
+    <button class="tab-btn" onclick="openTab('videos-kr', this)"><img class="flag" src="koreanflag.svg" alt="대한민국 태극기" /> 한국어 영상
+     </button>
 
       <!-- Full YouTube Channel -->
       <button type="button" class="tab-btn" onclick="openTab('channel', this)">
