@@ -3,159 +3,161 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NCG Series – Ep.04: Back to the Basics</title>
 
-  <title>NCG Series – Episode 04</title>
-
-  <!-- 🧠 Open Graph for Facebook / Kakao -->
+  <!-- Open Graph for Facebook / Kakao -->
   <meta property="og:type" content="website" />
-  <meta property="og:title"
-        content="Ep.04 – Back to the Basics | NCG Religious Revolution Series" />
-  <meta property="og:description"
-        content="Why do we need the Religious Revolution? Watch Episode 04 — Back to the Basics." />
-  <meta property="og:image"
-        content="https://bykim5710.github.io/series/ep.04-enor.png" />
-  <meta property="og:url"
-        content="https://bykim5710.github.io/series/ep.04.html" />
+  <meta property="og:title" content="Ep.04 – Back to the Basics | NCG Religious Revolution Series" />
+  <meta property="og:description" content="Why do we need the Religious Revolution? Watch Episode 04 – Back to the Basics." />
+  <meta property="og:image" content="https://bykim5710.github.io/series/ep.04-enor.png" />
+  <meta property="og:url" content="https://bykim5710.github.io/series/ep.04.html" />
 
-  <!-- 🐦 Twitter Card -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title"
-        content="Ep.04 – Back to the Basics | NCG Series" />
-  <meta name="twitter:description"
-        content="Why do we need the Religious Revolution? Watch Episode 04 — Back to the Basics." />
-  <meta name="twitter:image"
-        content="https://bykim5710.github.io/series/ep.04-enor.png" />
-  <meta name="twitter:url"
-        content="https://bykim5710.github.io/series/ep.04.html" />
+  <meta name="twitter:title" content="Ep.04 – Back to the Basics | NCG Series" />
+  <meta name="twitter:description" content="Why do we need the Religious Revolution? Watch Episode 04 – Back to the Basics." />
+  <meta name="twitter:image" content="https://bykim5710.github.io/series/ep.04-enor.png" />
+  <meta name="twitter:url" content="https://bykim5710.github.io/series/ep.04.html" />
 
-  <!-- ✅ 이 페이지 전용 스타일 (style.css 안 씀) -->
   <style>
+    :root {
+      --bg: #05070d;
+      --text: #f5f5ff;
+      --btn-radius: 999px;
+      --btn-height: 64px;
+      --btn-width-max: 520px;
+      --btn-width-mobile: 92vw;
+      --shadow-soft: 0 12px 35px rgba(0, 0, 0, 0.55);
+      --blue: #2166ff;
+      --green: #14a44d;
+      --orange: #ff7a1a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      padding: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #101426 0, #020308 55%, #000 100%);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1080px;
+      padding: 24px 16px 64px;
+      margin: 0 auto;
       text-align: center;
     }
 
     .hero {
-      padding: 24px 0 8px;
-      background: #000;
+      margin: 0 auto 32px;
     }
 
     .hero img {
-      max-width: 100%;
+      display: block;
+      width: 100%;
       height: auto;
-      max-height: 60vh; /* 👉 썸네일 너무 커지지 않게 */
-      box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
     }
 
-    .main {
-      padding: 32px 16px 56px;
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      margin-top: 8px;
     }
 
-    .btn {
-      display: inline-flex;
+    .cta-btn {
+      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 34px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 1.05rem;
-      text-decoration: none;
+      gap: 10px;
+      height: var(--btn-height);
+      width: min(var(--btn-width-max), var(--btn-width-mobile));
+      border-radius: var(--btn-radius);
       border: none;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.02rem;
+      letter-spacing: 0.03em;
+      color: #fff;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, opacity 0.12s ease-out;
       cursor: pointer;
-      margin: 8px 10px;
-      white-space: nowrap;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-      transition: transform 0.12s ease-out,
-                  box-shadow 0.12s ease-out,
-                  opacity 0.12s;
     }
 
-    .btn:hover {
+    .cta-btn span.icon {
+      font-size: 1.25rem;
+    }
+
+    .cta-btn.blue  { background: var(--blue); }
+    .cta-btn.green { background: var(--green); }
+    .cta-btn.orange{ background: var(--orange); }
+
+    .cta-btn:hover,
+    .cta-btn:active {
       transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
-      opacity: 0.95;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+      opacity: 0.97;
     }
 
-    .btn-main {
-      background: #2563eb;
-      color: #fff;
-      margin-bottom: 24px;
-    }
-
-    .btn-series {
-      background: #16a34a;
-      color: #fff;
-    }
-
-    .btn-sub {
-      background: #f97316;
-      color: #fff;
-    }
-
-    .btn-row {
-      margin-top: 12px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    @media (max-width: 600px) {
-      .btn {
-        width: 100%;
-        max-width: 360px;
+    /* 데스크톱에서 살짝 여백 조정 */
+    @media (min-width: 900px) {
+      .page {
+        padding-top: 40px;
+      }
+      .hero {
+        margin-bottom: 28px;
+      }
+      .cta-group {
+        gap: 20px;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- 🎨 상단 섬네일 -->
-  <header class="hero">
-    <img
-      src="ep.04-enor.png"
-      alt="Ep. 4 – Why the Religious Revolution? Back to the Basics"
-    />
-  </header>
-
-  <main class="main">
-
-    <!-- 🎬 제4회 동영상 보기 -->
-    <a
-      class="btn btn-main"
-      href="https://youtu.be/2o4DQlfseJE"
-      target="_blank"
-      rel="noopener"
-    >
-      🎬 WATCH EPISODE 4
-    </a>
-
-    <!-- 📚 전체 시리즈 / 🌐 구독·공유 -->
-    <div class="btn-row">
-      <a
-        class="btn btn-series"
-        href="https://bykim5710.github.io/series/"
-        target="_blank"
-        rel="noopener"
-      >
-        📚 View Full Series
-      </a>
-
-      <a
-        class="btn btn-sub"
-        href="https://bykim5710.github.io/series/subscribe.html?v=04"
-        target="_blank"
-        rel="noopener"
-      >
-        🌐 Subscribe / Share
-      </a>
+  <main class="page">
+    <!--  섬네일  -->
+    <div class="hero">
+      <img src="ep.04-enor.png"
+           alt="Ep. 04 – Why the Religious Revolution? Back to the Basics">
     </div>
 
+    <!--  세 개 버튼: 모두 동일 크기 + 가운데 정렬  -->
+    <div class="cta-group">
+      <a class="cta-btn blue"
+         href="https://youtu.be/2o4DQlfseJE"
+         target="_blank" rel="noopener">
+        <span class="icon">🎬</span>
+        <span>WATCH EPISODE 4</span>
+      </a>
+
+      <a class="cta-btn green"
+         href="https://bykim5710.github.io/series/"
+         target="_blank" rel="noopener">
+        <span class="icon">📚</span>
+        <span>View Full Series</span>
+      </a>
+
+      <a class="cta-btn orange"
+         href="https://bykim5710.github.io/series/subscribe.html?v=04"
+         target="_blank" rel="noopener">
+        <span class="icon">🌐</span>
+        <span>Subscribe / Share</span>
+      </a>
+    </div>
   </main>
 </body>
 </html>
