@@ -6,9 +6,6 @@
 
   <title>NCG Series – Episode 04</title>
 
-  <!-- (선택) 기존 공통 스타일이 필요하면 유지 -->
-  <link rel="stylesheet" href="style.css" />
-
   <!-- 🧠 Open Graph for Facebook / Kakao -->
   <meta property="og:type" content="website" />
   <meta property="og:title"
@@ -31,38 +28,34 @@
   <meta name="twitter:url"
         content="https://bykim5710.github.io/series/ep.04.html" />
 
-  <!-- ✅ 이 페이지 전용 레이아웃 / 버튼 스타일 -->
+  <!-- ✅ 이 페이지 전용 스타일 (style.css 안 씀) -->
   <style>
-    body.simple-episode {
+    body {
       margin: 0;
       background: #000;
       color: #fff;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                    "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      text-align: center;
     }
 
-    .simple-hero {
+    .hero {
       padding: 24px 0 8px;
-      text-align: center;
       background: #000;
     }
 
-    .simple-hero-thumb {
+    .hero img {
       max-width: 100%;
       height: auto;
-      max-height: 60vh; /* 👉 썸네일 높이 한계 */
-      width: auto;
-      display: block;
-      margin: 0 auto;
+      max-height: 60vh; /* 👉 썸네일 너무 커지지 않게 */
       box-shadow: 0 18px 40px rgba(0,0,0,0.7);
     }
 
-    .simple-main {
+    .main {
       padding: 32px 16px 56px;
-      text-align: center;
     }
 
-    .simple-btn {
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -76,32 +69,34 @@
       margin: 8px 10px;
       white-space: nowrap;
       box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, opacity 0.12s;
+      transition: transform 0.12s ease-out,
+                  box-shadow 0.12s ease-out,
+                  opacity 0.12s;
     }
 
-    .simple-btn:hover {
+    .btn:hover {
       transform: translateY(-1px);
       box-shadow: 0 18px 40px rgba(0,0,0,0.6);
       opacity: 0.95;
     }
 
-    .simple-btn-main {
+    .btn-main {
       background: #2563eb;
       color: #fff;
       margin-bottom: 24px;
     }
 
-    .simple-btn-secondary {
+    .btn-series {
       background: #16a34a;
       color: #fff;
     }
 
-    .simple-btn-accent {
+    .btn-sub {
       background: #f97316;
       color: #fff;
     }
 
-    .simple-cta-row {
+    .btn-row {
       margin-top: 12px;
       display: flex;
       flex-wrap: wrap;
@@ -109,9 +104,8 @@
       gap: 12px;
     }
 
-    /* 작은 화면에서 버튼이 두 줄로 자연스럽게 줄바꿈되도록 */
     @media (max-width: 600px) {
-      .simple-btn {
+      .btn {
         width: 100%;
         max-width: 360px;
       }
@@ -119,22 +113,21 @@
   </style>
 </head>
 
-<body class="simple-episode">
+<body>
 
-  <!-- 🎨 상단 썸네일 -->
-  <header class="simple-hero">
+  <!-- 🎨 상단 섬네일 -->
+  <header class="hero">
     <img
       src="ep.04-enor.png"
       alt="Ep. 4 – Why the Religious Revolution? Back to the Basics"
-      class="simple-hero-thumb"
     />
   </header>
 
-  <main class="simple-main">
+  <main class="main">
 
-    <!-- 🎬 제4회 동영상 보기 (가장 크게, 중앙) -->
+    <!-- 🎬 제4회 동영상 보기 -->
     <a
-      class="simple-btn simple-btn-main"
+      class="btn btn-main"
       href="https://youtu.be/2o4DQlfseJE"
       target="_blank"
       rel="noopener"
@@ -143,9 +136,9 @@
     </a>
 
     <!-- 📚 전체 시리즈 / 🌐 구독·공유 -->
-    <div class="simple-cta-row">
+    <div class="btn-row">
       <a
-        class="simple-btn simple-btn-secondary"
+        class="btn btn-series"
         href="https://bykim5710.github.io/series/"
         target="_blank"
         rel="noopener"
@@ -154,7 +147,7 @@
       </a>
 
       <a
-        class="simple-btn simple-btn-accent"
+        class="btn btn-sub"
         href="https://bykim5710.github.io/series/subscribe.html?v=04"
         target="_blank"
         rel="noopener"
