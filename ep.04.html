@@ -6,12 +6,13 @@
 
   <title>NCG Series – Episode 04</title>
 
-  <!-- 🔗 공유용 스타일 공통 로드 -->
+  <!-- (선택) 기존 공통 스타일이 필요하면 유지 -->
   <link rel="stylesheet" href="style.css" />
 
   <!-- 🧠 Open Graph for Facebook / Kakao -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ep.04 – Back to the Basics | NCG Religious Revolution Series" />
+  <meta property="og:title"
+        content="Ep.04 – Back to the Basics | NCG Religious Revolution Series" />
   <meta property="og:description"
         content="Why do we need the Religious Revolution? Watch Episode 04 — Back to the Basics." />
   <meta property="og:image"
@@ -29,56 +30,138 @@
         content="https://bykim5710.github.io/series/ep.04-enor.png" />
   <meta name="twitter:url"
         content="https://bykim5710.github.io/series/ep.04.html" />
+
+  <!-- ✅ 이 페이지 전용 레이아웃 / 버튼 스타일 -->
+  <style>
+    body.simple-episode {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    }
+
+    .simple-hero {
+      padding: 24px 0 8px;
+      text-align: center;
+      background: #000;
+    }
+
+    .simple-hero-thumb {
+      max-width: 100%;
+      height: auto;
+      max-height: 60vh; /* 👉 썸네일 높이 한계 */
+      width: auto;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+    }
+
+    .simple-main {
+      padding: 32px 16px 56px;
+      text-align: center;
+    }
+
+    .simple-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 34px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      margin: 8px 10px;
+      white-space: nowrap;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, opacity 0.12s;
+    }
+
+    .simple-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+      opacity: 0.95;
+    }
+
+    .simple-btn-main {
+      background: #2563eb;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    .simple-btn-secondary {
+      background: #16a34a;
+      color: #fff;
+    }
+
+    .simple-btn-accent {
+      background: #f97316;
+      color: #fff;
+    }
+
+    .simple-cta-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    /* 작은 화면에서 버튼이 두 줄로 자연스럽게 줄바꿈되도록 */
+    @media (max-width: 600px) {
+      .simple-btn {
+        width: 100%;
+        max-width: 360px;
+      }
+    }
+  </style>
 </head>
 
-<body class="episode-page">
+<body class="simple-episode">
 
-  <!-- 🎨 상단 썸네일(16:9)만 크게 표시 -->
-  <header class="hero hero-episode">
-    <div class="hero-thumb">
-      <img
-        src="ep.04-enor.png"
-        alt="Ep. 4 – Why the Religious Revolution? Back to the Basics"
-      />
-    </div>
+  <!-- 🎨 상단 썸네일 -->
+  <header class="simple-hero">
+    <img
+      src="ep.04-enor.png"
+      alt="Ep. 4 – Why the Religious Revolution? Back to the Basics"
+      class="simple-hero-thumb"
+    />
   </header>
 
-  <main class="page">
+  <main class="simple-main">
 
-    <!-- 🎬 제4회 동영상 보기 (최상단 큰 버튼) -->
-    <section class="section section-center">
+    <!-- 🎬 제4회 동영상 보기 (가장 크게, 중앙) -->
+    <a
+      class="simple-btn simple-btn-main"
+      href="https://youtu.be/2o4DQlfseJE"
+      target="_blank"
+      rel="noopener"
+    >
+      🎬 WATCH EPISODE 4
+    </a>
+
+    <!-- 📚 전체 시리즈 / 🌐 구독·공유 -->
+    <div class="simple-cta-row">
       <a
-        class="btn-hero"
-        href="https://youtu.be/2o4DQlfseJE"
+        class="simple-btn simple-btn-secondary"
+        href="https://bykim5710.github.io/series/"
         target="_blank"
         rel="noopener"
       >
-        🎬 WATCH EPISODE 4
+        📚 View Full Series
       </a>
-    </section>
 
-    <!-- 📚 전체 시리즈 / 🌐 구독·공유 두 개 CTA만 배치 -->
-    <section class="section section-cta">
-      <div class="cta-row">
-        <a
-          class="btn-cta btn-secondary"
-          href="https://bykim5710.github.io/series/"
-          target="_blank"
-          rel="noopener"
-        >
-          📚 View Full Series
-        </a>
-
-        <a
-          class="btn-cta btn-accent"
-          href="https://bykim5710.github.io/series/subscribe.html?v=04"
-          target="_blank"
-          rel="noopener"
-        >
-          🌐 Subscribe / Share
-        </a>
-      </div>
-    </section>
+      <a
+        class="simple-btn simple-btn-accent"
+        href="https://bykim5710.github.io/series/subscribe.html?v=04"
+        target="_blank"
+        rel="noopener"
+      >
+        🌐 Subscribe / Share
+      </a>
+    </div>
 
   </main>
 </body>
