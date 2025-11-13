@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NCG Series – Episode</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Open Graph는 한 번에 한 장만 고정 가능합니다 (설명은 아래 참고) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NCG Religious Revolution Series">
+  <meta property="og:description"
+        content="NCG presents the Religious Revolution Series – truth, conscience, and spiritual awakening.">
+  <meta property="og:image"
+        content="https://bykim5710.github.io/series/ep.04-enor.png">
+  <meta property="og:url"
+        content="https://bykim5710.github.io/series/episode.html">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      text-align: center;
+    }
+    .hero {
+      background: #000;
+      padding: 24px 8px 16px;
+    }
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .buttons {
+      padding: 24px 16px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+      min-width: 260px;
+      max-width: 420px;
+      box-shadow: 0 0 24px rgba(0,0,0,.6);
+      border: none;
+    }
+    .btn-primary   { background: #2563eb; }
+    .btn-secondary { background: #16a34a; }
+    .btn-accent    { background: #f97316; }
+
+    @media (min-width: 768px) {
+      .hero { padding-top: 32px; }
+      .buttons { padding-top: 32px; gap: 20px; }
+      .btn { font-size: 1.05rem; padding: 18px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 섬네일 -->
+  <div class="hero">
+    <img id="hero-image"
+         src="ep.04-enor.png"
+         alt="NCG Series Episode Thumbnail">
+  </div>
+
+  <!-- 버튼 3개 -->
+  <div class="buttons">
+    <a id="watch-btn" href="https://youtu.be/2o4DQlfseJE"
+       target="_blank" rel="noopener" class="btn btn-primary">
+      🎬 WATCH EPISODE <span id="ep-title-num">04</span>
+    </a>
+
+    <a id="view-series-btn"
+       href="https://bykim5710.github.io/series/?v=04"
+       target="_blank" rel="noopener" class="btn btn-secondary">
+      📚 View Full Series
+    </a>
+
+    <a id="subscribe-btn"
+       href="https://bykim5710.github.io/series/subscribe.html?v=04"
+       target="_blank" rel="noopener" class="btn btn-accent">
+      🌐 Subscribe / Share
+    </a>
+  </div>
+
+  <script>
+    // 1) ep 파라미터 읽기
+    const params = new URLSearchParams(window.location.search);
+    let ep = params.get('ep') || '04';
+
+    // 형식이 이상하면(예: ep=test) 안전하게 04로 되돌리기
+    if (!/^\d{2}$/.test(ep)) ep = '04';
+
+    // 2) 섬네일 파일명 자동 구성 (ep.04-enor.png)
+    const thumbUrl = `ep.${ep}-enor.png`;
+    document.getElementById('hero-image').src = thumbUrl;
+
+    // 3) 회차별 유튜브 ID 매핑
+    const youtubeMap = {
+      '02': 'IniMUGC3T9Q',
+      '03': 'lWkN4CYJZeY',
+      '04': '2o4DQlfseJE',
+      // 앞으로 계속 추가:
+      // '05': '......',
+      // '06': '......',
+    };
+    const defaultEp = '04';
+    const youtubeId = youtubeMap[ep] || youtubeMap[defaultEp];
+
+    // 4) 버튼 링크들 업데이트
+    document.getElementById('watch-btn').href =
+      `https://youtu.be/${youtubeId}`;
+
+    document.getElementById('view-series-btn').href =
+      `https://bykim5710.github.io/series/?v=${ep}`;
+
+    document.getElementById('subscribe-btn').href =
+      `https://bykim5710.github.io/series/subscribe.html?v=${ep}`;
+
+    // 5) 버튼 안의 회차 번호 텍스트도 변경
+    document.getElementById('ep-title-num').textContent = ep;
+  </script>
+</body>
+</html>
