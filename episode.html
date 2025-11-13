@@ -1,140 +1,305 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NCG Series – Episode</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Open Graph는 한 번에 한 장만 고정 가능합니다 (설명은 아래 참고) -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="NCG Religious Revolution Series">
+  <!-- Open Graph (SNS preview는 하나만 가능하므로 대표 이미지 사용) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NCG Religious Revolution Series – Episode" />
   <meta property="og:description"
-        content="NCG presents the Religious Revolution Series – truth, conscience, and spiritual awakening.">
+        content="NCG Religious Revolution Series – Watch individual episodes, view the full series, or subscribe and share." />
   <meta property="og:image"
-        content="https://bykim5710.github.io/series/ep.04-enor.png">
+        content="https://bykim5710.github.io/series/ep.04-enor.png" />
   <meta property="og:url"
-        content="https://bykim5710.github.io/series/episode.html">
+        content="https://bykim5710.github.io/series/episode.html" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NCG Religious Revolution Series – Episode" />
+  <meta name="twitter:description"
+        content="Watch individual episodes of the NCG Religious Revolution Series." />
+  <meta name="twitter:image"
+        content="https://bykim5710.github.io/series/ep.04-enor.png" />
 
   <style>
+    :root {
+      --bg: #000000;
+      --text: #f9fafb;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --secondary: #16a34a;
+      --secondary-hover: #15803d;
+      --accent: #f97316;
+      --accent-hover: #ea580c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      background: #000;
-      color: #fff;
+      background: var(--bg);
+      color: var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
                    "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
     }
+
+    .page {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
     .hero {
+      width: 100%;
+      text-align: center;
       background: #000;
-      padding: 24px 8px 16px;
     }
+
     .hero img {
       max-width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
     }
-    .buttons {
-      padding: 24px 16px 40px;
+
+    main {
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px 64px;
+    }
+
+    .button-wrap {
+      width: 100%;
+      max-width: 640px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      align-items: center;
-      justify-content: center;
+      gap: 20px;
+      align-items: stretch;
     }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 16px 32px;
-      border-radius: 999px;
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
-      color: #fff;
-      min-width: 260px;
-      max-width: 420px;
-      box-shadow: 0 0 24px rgba(0,0,0,.6);
-      border: none;
-    }
-    .btn-primary   { background: #2563eb; }
-    .btn-secondary { background: #16a34a; }
-    .btn-accent    { background: #f97316; }
 
-    @media (min-width: 768px) {
-      .hero { padding-top: 32px; }
-      .buttons { padding-top: 32px; gap: 20px; }
-      .btn { font-size: 1.05rem; padding: 18px 40px; }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
+                  background-color 0.12s ease-out, filter 0.12s ease-out;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .btn span {
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+      color: #ffffff;
+    }
+
+    .btn-secondary:hover {
+      background: var(--secondary-hover);
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-accent:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 24px 16px 48px;
+      }
+      .btn {
+        font-size: 1rem;
+        padding: 16px 20px;
+      }
     }
   </style>
 </head>
+
 <body>
+  <div class="page">
+    <!-- 🔹 Episode thumbnail -->
+    <header class="hero">
+      <img id="hero-image" src="ep.04-enor.png" alt="NCG Series Episode Thumbnail">
+    </header>
 
-  <!-- 섬네일 -->
-  <div class="hero">
-    <img id="hero-image"
-         src="ep.04-enor.png"
-         alt="NCG Series Episode Thumbnail">
-  </div>
+    <!-- 🔹 Main buttons -->
+    <main>
+      <div class="button-wrap">
+        <a id="btn-watch" class="btn btn-primary"
+           href="https://youtu.be/2o4DQlfseJE" target="_blank" rel="noopener">
+          🎬 <span id="btn-watch-label">WATCH EPISODE 04</span>
+        </a>
 
-  <!-- 버튼 3개 -->
-  <div class="buttons">
-    <a id="watch-btn" href="https://youtu.be/2o4DQlfseJE"
-       target="_blank" rel="noopener" class="btn btn-primary">
-      🎬 WATCH EPISODE <span id="ep-title-num">04</span>
-    </a>
+        <a id="btn-series" class="btn btn-secondary"
+           href="https://bykim5710.github.io/series/?v=04" target="_blank" rel="noopener">
+          📚 <span>View Full Series</span>
+        </a>
 
-    <a id="view-series-btn"
-       href="https://bykim5710.github.io/series/?v=04"
-       target="_blank" rel="noopener" class="btn btn-secondary">
-      📚 View Full Series
-    </a>
-
-    <a id="subscribe-btn"
-       href="https://bykim5710.github.io/series/subscribe.html?v=04"
-       target="_blank" rel="noopener" class="btn btn-accent">
-      🌐 Subscribe / Share
-    </a>
+        <a id="btn-subscribe" class="btn btn-accent"
+           href="https://bykim5710.github.io/series/subscribe.html?v=04"
+           target="_blank" rel="noopener">
+          🌐 <span>Subscribe / Share</span>
+        </a>
+      </div>
+    </main>
   </div>
 
   <script>
-    // 1) ep 파라미터 읽기
-    const params = new URLSearchParams(window.location.search);
-    let ep = params.get('ep') || '04';
-
-    // 형식이 이상하면(예: ep=test) 안전하게 04로 되돌리기
-    if (!/^\d{2}$/.test(ep)) ep = '04';
-
-    // 2) 섬네일 파일명 자동 구성 (ep.04-enor.png)
-    const thumbUrl = `ep.${ep}-enor.png`;
-    document.getElementById('hero-image').src = thumbUrl;
-
-    // 3) 회차별 유튜브 ID 매핑
-    const youtubeMap = {
-      '02': 'IniMUGC3T9Q',
-      '03': 'lWkN4CYJZeY',
-      '04': '2o4DQlfseJE',
-      // 앞으로 계속 추가:
-      // '05': '......',
-      // '06': '......',
+    // Episode data for 1–16 (YouTube + thumbnail filename)
+    const episodes = {
+      "1": {
+        num: "01",
+        title: "Ep. 01 — Introduction of BY Kim and NCG",
+        youtube: "https://youtu.be/xqgxrhM1r24"
+      },
+      "2": {
+        num: "02",
+        title: "Ep. 02 — Why do we need Religious Revolution — Christian Democracy",
+        youtube: "https://youtu.be/IniMUGC3T9Q"
+      },
+      "3": {
+        num: "03",
+        title: "Ep. 03 — Why a Religious Revolution beyond the Reformation",
+        youtube: "https://youtu.be/lWkN4CYJzeY"
+      },
+      "4": {
+        num: "04",
+        title: "Ep. 04 — Why a Religious Revolution — Back to the Basics",
+        youtube: "https://youtu.be/2o4DQlfseJE"
+      },
+      "5": {
+        num: "05",
+        title: "Ep. 05 — Letters sent to the Christian World",
+        youtube: "https://youtu.be/CChiJ5zqBUE"
+      },
+      "6": {
+        num: "06",
+        title: "Ep. 06 — Declaration of Religious Revolution",
+        youtube: "https://youtu.be/dUE4oor84dI"
+      },
+      "7": {
+        num: "07",
+        title: "Ep. 07 — Nosome and Transmigration",
+        youtube: "https://youtu.be/RJLy0bdgQoQ"
+      },
+      "8": {
+        num: "08",
+        title: "Ep. 08 — ENZ: Nosome and Quark",
+        youtube: "https://youtu.be/NmZ9FxixN48"
+      },
+      "9": {
+        num: "09",
+        title: "Ep. 09 — Afterlife vs. Transmigration Field",
+        youtube: "https://youtu.be/v9fF42xvwWE"
+      },
+      "10": {
+        num: "10",
+        title: "Ep. 10 — Oneness",
+        youtube: "https://youtu.be/uTzE24vYqco"
+      },
+      "11": {
+        num: "11",
+        title: "Ep. 11 — Rebuttal to Roman Curia and Christianity",
+        youtube: "https://youtu.be/ROc29mrzC8w"
+      },
+      "12": {
+        num: "12",
+        title: "Ep. 12 — Yahweh vs. Jesus' God(hood)",
+        youtube: "https://youtu.be/4zlMaEBqaNU"
+      },
+      "13": {
+        num: "13",
+        title: "Ep. 13 — Tithe",
+        youtube: "https://youtu.be/gMURqKiDlEk"
+      },
+      "14": {
+        num: "14",
+        title: "Ep. 14 — The Afterlife",
+        youtube: "https://youtu.be/X9QygC6bXqE"
+      },
+      "15": {
+        num: "15",
+        title: "Ep. 15 — Moses' Exodus",
+        youtube: "https://youtu.be/7tGGKBsqghk"
+      },
+      "16": {
+        num: "16",
+        title: "Ep. 16 — Illusion of David and Solomon's Empire",
+        youtube: "https://youtu.be/WiTOupqxrfw"
+      }
     };
-    const defaultEp = '04';
-    const youtubeId = youtubeMap[ep] || youtubeMap[defaultEp];
 
-    // 4) 버튼 링크들 업데이트
-    document.getElementById('watch-btn').href =
-      `https://youtu.be/${youtubeId}`;
+    // Read ?v= parameter
+    const params = new URLSearchParams(window.location.search);
+    let v = params.get("v");
 
-    document.getElementById('view-series-btn').href =
-      `https://bykim5710.github.io/series/?v=${ep}`;
+    // Default: Episode 4 if no or wrong value
+    if (!episodes[v]) {
+      v = "4";
+    }
 
-    document.getElementById('subscribe-btn').href =
-      `https://bykim5710.github.io/series/subscribe.html?v=${ep}`;
+    const ep = episodes[v];
 
-    // 5) 버튼 안의 회차 번호 텍스트도 변경
-    document.getElementById('ep-title-num').textContent = ep;
+    // Update thumbnail
+    const heroImg = document.getElementById("hero-image");
+    heroImg.src = `ep.${ep.num}-enor.png`;
+    heroImg.alt = ep.title;
+
+    // Update WATCH button
+    const btnWatch = document.getElementById("btn-watch");
+    const btnWatchLabel = document.getElementById("btn-watch-label");
+    btnWatch.href = ep.youtube;
+    btnWatchLabel.textContent = `WATCH EPISODE ${ep.num}`;
+
+    // Update Series / Subscribe links with matching ?v
+    const btnSeries = document.getElementById("btn-series");
+    const btnSubscribe = document.getElementById("btn-subscribe");
+    btnSeries.href = `https://bykim5710.github.io/series/?v=${ep.num}`;
+    btnSubscribe.href = `https://bykim5710.github.io/series/subscribe.html?v=${ep.num}`;
+
+    // Update document title for clarity
+    document.title = `${ep.title} | NCG Series – Episode`;
   </script>
 </body>
 </html>
