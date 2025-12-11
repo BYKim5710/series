@@ -2,40 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>YouTube Videos & “Conversation with Oneness God” Series</title>
+  <title>NCG Series – Batch 3</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 🔥 OG meta (필요하면 수정) -->
+  <!-- 🔥 Open Graph for Facebook/Kakao -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="YouTube Videos & Conversation with Oneness God Series">
+  <meta property="og:title" content="NCG Series – Batch 3">
   <meta property="og:description"
-        content="Watch the Religious Revolution videos and read the Conversation with Oneness God English PDF series.">
+        content="NCG Series, Batch 3: What is the Religious Revolution? A call to break free from distorted doctrines and restore the true essence of all beings.">
   <meta property="og:image"
-        content="https://bykim5710.github.io/NCG_Series_Guide_EN/og-latest.png">
+        content="https://bykim5710.github.io/series/batch.03-enor.png?v=03"><!-- ★ ENG Batch 3 thumbnail -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url"
-        content="https://bykim5710.github.io/">
+        content="https://bykim5710.github.io/series/batch/batch3.html"><!-- ★ this file URL -->
 
-  <!-- 🐦 Twitter -->
+  <!-- 🐦 Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="YouTube Videos & Conversation with Oneness God Series">
+  <meta name="twitter:title" content="NCG Series – Batch 3">
   <meta name="twitter:description"
-        content="Watch the Religious Revolution videos and read the Conversation with Oneness God English PDF series.">
+        content="NCG Series, Batch 3: What is the Religious Revolution? A call to break free from distorted doctrines and restore the true essence of all beings.">
   <meta name="twitter:image"
-        content="https://bykim5710.github.io/NCG_Series_Guide_EN/og-latest.png">
+        content="https://bykim5710.github.io/series/batch.03-enor.png?v=03">
 
   <style>
     :root {
-      --bg: #020617;
-      --bg-alt: #020617;
-      --card: #0b1220;
-      --card-alt: #020617;
-      --border: #1f2937;
-      --accent: #3b82f6;
-      --accent-soft: #1d4ed8;
-      --accent-pill: #111827;
-      --text: #e5e7eb;
+      --bg: #000000;
+      --text: #f5f5f5;
+      --accent: #ffd54f;
+      --accent2: #ff5252;
+      --card: #111827;
+      --border: #374151;
       --muted: #9ca3af;
-      --danger: #f97373;
     }
 
     * {
@@ -45,502 +43,238 @@
     body {
       margin: 0;
       padding: 0;
-      background: radial-gradient(circle at top, #0f172a 0, #020617 55%);
+      background: var(--bg);
       color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        "Apple SD Gothic Neo", "맑은 고딕", sans-serif;
+                   "Apple SD Gothic Neo", "맑은 고딕", sans-serif;
       line-height: 1.6;
     }
 
     .wrap {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 20px 16px 40px;
+      max-width: 980px;
+      margin: 0 auto 40px;
+      padding: 0 16px 40px;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 18px;
+    .hero {
+      margin: 0 auto 24px;
     }
 
-    header h1 {
-      font-size: 1.7rem;
-      margin: 4px 0 8px;
-    }
-
-    header p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    /* 탭 버튼들 */
-    .tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 18px 0 18px;
-    }
-
-    .tab-btn {
-      flex: 1 1 180px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 9px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: var(--accent-pill);
-      color: var(--text);
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      user-select: none;
-      transition: background 0.15s ease, border-color 0.15s ease,
-        transform 0.08s ease;
-      gap: 6px;
-      text-align: center;
-    }
-
-    .tab-btn span.flag {
-      font-size: 1.1rem;
-    }
-
-    .tab-btn.active {
-      background: var(--accent);
-      border-color: #60a5fa;
-      transform: translateY(-1px);
-    }
-
-    .tab-btn:hover {
-      border-color: #4b5563;
-    }
-
-    /* 상단 큰 버튼 */
-    .guide-cta {
-      margin: 14px 0 20px;
-      text-align: center;
-    }
-
-    .guide-cta p {
-      margin: 4px 0 12px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .btn-primary-lg {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 22px;
-      border-radius: 999px;
-      border: none;
-      background: var(--accent);
-      color: #ffffff;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.45);
-      gap: 8px;
-      transition: background 0.12s ease, transform 0.08s ease,
-        box-shadow 0.12s ease;
-    }
-
-    .btn-primary-lg:hover {
-      background: var(--accent-soft);
-      transform: translateY(-1px);
-      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.55);
-    }
-
-    /* 탭 컨텐츠 공통 */
-    .tab-panel {
-      display: none;
-      margin-top: 4px;
-    }
-
-    .tab-panel.active {
+    .hero img {
       display: block;
+      width: 100%;
+      height: auto;
     }
 
-    .section-title {
-      font-size: 1.1rem;
+    h1 {
+      font-size: 1.9rem;
+      margin: 0 0 4px;
+      text-align: center;
+    }
+
+    .tagline {
+      text-align: center;
       font-weight: 600;
-      margin: 6px 0 10px;
+      color: var(--accent);
+      margin-bottom: 20px;
     }
 
-    .cards {
+    p {
+      margin: 4px 0;
+    }
+
+    .quote {
+      margin: 16px 0 20px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent2);
+      background: rgba(17, 24, 39, 0.85);
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin: 26px 0 12px;
+    }
+
+    .episodes {
+      margin-top: 8px;
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 10px;
+      gap: 16px;
     }
 
-    .card {
-      border-radius: 14px;
+    .episode-card {
       border: 1px solid var(--border);
-      background: radial-gradient(circle at top left, #111827 0, #020617 70%);
-      padding: 12px 14px 12px;
+      border-radius: 10px;
+      padding: 14px 16px;
+      background: linear-gradient(135deg, #020617, #111827);
     }
 
-    .card h3 {
-      margin: 0 0 6px;
-      font-size: 0.98rem;
-    }
-
-    .card p {
-      margin: 0 0 8px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      padding: 1px 8px;
-      border-radius: 999px;
-      background: rgba(148, 163, 184, 0.15);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      color: var(--muted);
-      font-size: 0.72rem;
+    .episode-title {
+      font-weight: 600;
       margin-bottom: 4px;
-      gap: 4px;
     }
 
-    .card-actions {
-      margin-top: 6px;
+    .episode-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 10px;
     }
 
-    .btn-small {
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 6px 11px;
+      padding: 8px 14px;
       border-radius: 999px;
       border: 1px solid var(--border);
       background: #111827;
       color: var(--text);
-      font-size: 0.86rem;
-      font-weight: 500;
       text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
       cursor: pointer;
-      gap: 6px;
-      transition: background 0.12s ease, border-color 0.12s ease,
-        transform 0.08s ease;
+      transition: background 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
     }
 
-    .btn-small.primary {
+    .btn.primary {
       background: #2563eb;
       border-color: #3b82f6;
     }
 
-    .btn-small:hover {
+    .btn:hover {
       background: #1f2937;
-      border-color: #4b5563;
       transform: translateY(-1px);
+      border-color: #4b5563;
     }
 
-    .btn-small.primary:hover {
+    .btn.primary:hover {
       background: #1d4ed8;
       border-color: #60a5fa;
     }
 
-    .note {
-      margin-top: 10px;
-      font-size: 0.83rem;
-      color: var(--muted);
+    .btn-row {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    footer {
-      margin-top: 26px;
-      padding-top: 12px;
+    .footer {
+      margin-top: 30px;
+      padding-top: 16px;
       border-top: 1px solid var(--border);
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--muted);
-      text-align: right;
+      text-align: center;
     }
 
-    footer .brand {
-      float: left;
-      text-align: left;
-    }
-
-    @media (min-width: 700px) {
-      .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 1.55rem;
       }
-    }
-
-    @media (max-width: 500px) {
-      header h1 {
-        font-size: 1.35rem;
-      }
-      .btn-primary-lg {
-        width: 100%;
-      }
-      .tab-btn {
-        font-size: 0.85rem;
-        padding-inline: 8px;
+      .episode-card {
+        padding: 12px 12px;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <header>
-      <h1>YouTube Videos &amp; “Conversation with Oneness God” Series</h1>
-      <p>Choose a tab below. Only the selected content will be shown.</p>
-    </header>
-
-    <!-- 탭 버튼 -->
-    <div class="tabs" role="tablist">
-      <button class="tab-btn active" data-tab="videos-en" type="button">
-        <span class="flag">🇺🇸</span>
-        English Videos
-      </button>
-      <button class="tab-btn" data-tab="videos-ko" type="button">
-        <span class="flag">🇰🇷</span>
-        한국어 영상
-      </button>
-      <button class="tab-btn" data-tab="channel" type="button">
-        📺 Full YouTube Channel (@BYKIM-c2s)
-      </button>
-      <button class="tab-btn" data-tab="pdf-en" type="button">
-        📄 Conversation with Oneness God — English PDF Series
-      </button>
+    <!-- Hero banner -->
+    <div class="hero">
+      <img src="../batch.03-enor.png" alt="NCG Series – Batch 3 (English)">
     </div>
 
-    <!-- 상단 시리즈 가이드 버튼 -->
-    <div class="guide-cta">
-      <a class="btn-primary-lg"
-         href="https://bykim5710.github.io/NCG_Series_Guide_EN/guide.html"
+    <!-- Title + Tagline -->
+    <h1>NCG Series, Batch 3: “What is the Religious Revolution?”</h1>
+    <div class="tagline">
+      The first step to seeking Truth and realizing Godhood is the Religious Revolution.
+    </div>
+
+    <!-- Main copy -->
+    <p>Across history, religions have often become hollow shells, and faith has drifted away from living Truth.</p>
+
+    <p>The Religious Revolution is not about attacking anyone’s belief,  
+       but about breaking free from distorted doctrines, power structures,  
+       and fear-based teachings that have concealed the true essence of all beings.</p>
+
+    <p>The New Consilience Group (NCG) declares:</p>
+
+    <div class="quote">
+      “The first step to seeking Truth and realizing Godhood is the Religious Revolution.”
+    </div>
+
+    <p><strong>The Religious Revolution is a call to restore Buddhahood, Godhood, and Heavenhood  
+       within every human being, and to build a Spiritual Field (Heaven) on Earth.</strong></p>
+
+    <!-- Episodes section -->
+    <h2>🧭 What is the Religious Revolution? — Ep.05, Ep.11, Ep.06</h2>
+
+    <div class="episodes">
+      <!-- 1️⃣ No.5 – Letters sent to the Christianity World -->
+      <div class="episode-card">
+        <div class="episode-title">1️⃣ No.5 – Letters sent to the Christianity World</div>
+        <div class="episode-desc">
+          An open letter to the global Christian world, asking why religions have failed to free the human mind,  
+          and inviting sincere believers to reflect on the need for a true Religious Revolution.
+        </div>
+        <a class="btn primary"
+           href="https://youtu.be/CChiJ5zqBUE"
+           target="_blank" rel="noopener">
+          ▶ Watch Episode 5
+        </a>
+      </div>
+
+      <!-- 2️⃣ Ep.11 – Rebuttal to Roman Curia and Christianity -->
+      <div class="episode-card">
+        <div class="episode-title">2️⃣ Ep.11 – Rebuttal to Roman Curia and Christianity</div>
+        <div class="episode-desc">
+          Ten rebuttal points addressed to the Roman Curia and contemporary Christianity,  
+          exposing how the original Gospel of Christ has been distorted by institutional power and dogma.
+        </div>
+        <a class="btn primary"
+           href="https://youtu.be/rLPyRIOK8AA"
+           target="_blank" rel="noopener">
+          ▶ Watch Episode 11
+        </a>
+      </div>
+
+      <!-- 3️⃣ No.6 – Declaration of Religious Revolution -->
+      <div class="episode-card">
+        <div class="episode-title">3️⃣ No.6 – Declaration of Religious Revolution</div>
+        <div class="episode-desc">
+          The official Declaration of the Religious Revolution by NCG —  
+          proclaiming that reformation has failed, and that a new, science-and-spirit-based Religious Revolution  
+          is needed to correct long-standing distortions in all established religions.
+        </div>
+        <a class="btn primary"
+           href="https://youtu.be/dUE4oor84dI"
+           target="_blank" rel="noopener">
+          ▶ Watch Episode 6
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom buttons -->
+    <div class="btn-row">
+      <a class="btn primary"
+         href="https://bykim5710.github.io/series/"
          target="_blank" rel="noopener">
-        📘 View Series Guide
+        📚 View Full Series
       </a>
-      <p>See the full English guide to videos, PDFs, and press materials.</p>
+
+      <a class="btn"
+         href="https://bykim5710.github.io/series/subscribe.html?v=04"
+         target="_blank" rel="noopener">
+        🌐 Subscribe / Share
+      </a>
     </div>
 
-    <!-- 🧩 English Videos 탭 -->
-    <section id="videos-en" class="tab-panel active" aria-label="English Videos">
-      <div class="section-title">English Religious Revolution Videos</div>
-      <div class="cards">
-        <div class="card">
-          <span class="chip">Ep.05 • Letters to the Christianity World</span>
-          <h3>What is the Religious Revolution?</h3>
-          <p>
-            An open letter to Christians around the world, asking why distorted doctrines
-            still dominate, and inviting sincere believers to join the Religious Revolution.
-          </p>
-          <div class="card-actions">
-            <a class="btn-small primary"
-               href="https://youtu.be/CChiJ5zqBUE"
-               target="_blank" rel="noopener">
-              ▶ Watch Ep.05
-            </a>
-          </div>
-        </div>
-
-        <div class="card">
-          <span class="chip">Ep.11 • Rebuttal to Roman Curia</span>
-          <h3>NCG’s 10 Rebuttals</h3>
-          <p>
-            Ten rebuttal points to the Roman Curia and today's Christianity,
-            challenging doctrinal distortions and calling for a true Religious Revolution.
-          </p>
-          <div class="card-actions">
-            <a class="btn-small primary"
-               href="https://youtu.be/rLPyRIOK8AA"
-               target="_blank" rel="noopener">
-              ▶ Watch Ep.11
-            </a>
-          </div>
-        </div>
-
-        <div class="card">
-          <span class="chip">Ep.06 • Declaration</span>
-          <h3>Declaration of Religious Revolution</h3>
-          <p>
-            The official declaration of the Religious Revolution: why reformation failed
-            and why a new, science-and-spirit-based revolution is necessary.
-          </p>
-          <div class="card-actions">
-            <a class="btn-small primary"
-               href="https://youtu.be/dUE4oor84dI"
-               target="_blank" rel="noopener">
-              ▶ Watch Ep.06
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 🧩 한국어 영상 탭 (간단 요약) -->
-    <section id="videos-ko" class="tab-panel" aria-label="Korean Videos">
-      <div class="section-title">신통신통회 종교혁명 시리즈 (한국어)</div>
-      <div class="cards">
-        <div class="card">
-          <span class="chip">제5회 • 기독교계에 보낸 편지</span>
-          <h3>종교혁명이란 무엇인가?</h3>
-          <p>왜곡된 교리의 문제를 짚고, 21세기 참된 종교혁명의 필요성을 제기합니다.</p>
-          <div class="card-actions">
-            <a class="btn-small primary"
-               href="https://youtu.be/KtU5ww--3kg"
-               target="_blank" rel="noopener">
-              ▶ 제5회 영상 보기
-            </a>
-          </div>
-        </div>
-
-        <div class="card">
-          <span class="chip">제11회 • 교황청과 기독교계에 대한 반박</span>
-          <h3>열 가지 반박문</h3>
-          <p>로마 교황청과 오늘날 기독교 교리의 왜곡을 열 가지 반박문 형식으로 비판합니다.</p>
-          <div class="card-actions">
-            <a class="btn-small primary"
-               href="https://youtu.be/xWXteiQq25E"
-               target="_blank" rel="noopener">
-              ▶ 제11회 영상 보기
-            </a>
-          </div>
-        </div>
-
-        <div class="card">
-          <span class="chip">제6회 • 종교혁명선언서</span>
-          <h3>종교혁명 선언</h3>
-          <p>“개혁은 실패했다. 이제는 혁명이다.” 신통신통회의 핵심 선언을 담은 영상입니다.</p>
-          <div class="card-actions">
-            <a class="btn-small primary"
-               href="https://youtu.be/l-Cw7woND8I"
-               target="_blank" rel="noopener">
-              ▶ 제6회 영상 보기
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 🧩 전체 채널 탭 -->
-    <section id="channel" class="tab-panel" aria-label="Full YouTube Channel">
-      <div class="section-title">Full YouTube Channel (@BYKIM-c2s)</div>
-      <div class="cards">
-        <div class="card">
-          <h3>Visit the full channel</h3>
-          <p>
-            Watch all episodes of the Religious Revolution Series, shorts, and related lectures
-            on the official YouTube channel.
-          </p>
-          <div class="card-actions">
-            <a class="btn-small primary"
-               href="https://www.youtube.com/@BYKIM-c2s"
-               target="_blank" rel="noopener">
-              ▶ Go to YouTube Channel
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 🧩 English PDF Series 탭 (문제였던 부분, 전체 교체) -->
-    <section id="pdf-en" class="tab-panel" aria-label="English PDF Series">
-      <div class="section-title">Conversation with Oneness God — English PDF Series</div>
-      <div class="cards">
-        <div class="card">
-          <span class="chip">PDF 01</span>
-          <h3>Author &amp; Book Introduction</h3>
-          <p>Overview of the author, the vision of the Religious Revolution, and the structure of the series.</p>
-          <div class="card-actions">
-            <a class="btn-small primary"
-               href="YOUR_PDF_URL_01"
-               target="_blank" rel="noopener">
-              📄 View English PDF
-            </a>
-          </div>
-        </div>
-
-        <div class="card">
-          <span class="chip">PDF 01-1</span>
-          <h3>Foreword by Prof. Jongrok Lee, Biblical Scholar</h3>
-          <p>A foreword from Prof. Jongrok Lee, offering a biblical scholar’s perspective on the work.</p>
-          <div class="card-actions">
-            <a class="btn-small primary"
-               href="YOUR_PDF_URL_01_1"
-               target="_blank" rel="noopener">
-              📄 View English PDF
-            </a>
-          </div>
-        </div>
-
-        <div class="card">
-          <span class="chip">PDF 02</span>
-          <h3>The Essence of All Beings (Nosome)</h3>
-          <p>Explains Nosome as the essence of all beings, expressed as Buddhahood, Godhood, and Heavenhood.</p>
-          <div class="card-actions">
-            <a class="btn-small primary"
-               href="YOUR_PDF_URL_02"
-               target="_blank" rel="noopener">
-              📄 View English PDF
-            </a>
-          </div>
-        </div>
-
-        <div class="card">
-          <span class="chip">PDF 03</span>
-          <h3>Transmigration &amp; the Structure of Existence</h3>
-          <p>Describes transmigration, the structure of existence, and the evolution of consciousness.</p>
-          <div class="card-actions">
-            <a class="btn-small primary"
-               href="YOUR_PDF_URL_03"
-               target="_blank" rel="noopener">
-              📄 View English PDF
-            </a>
-          </div>
-        </div>
-
-        <div class="card">
-          <span class="chip">PDF 04</span>
-          <h3>The Spiritual Field (Heaven) on Earth</h3>
-          <p>How awakening the inherent essence in all beings can create a Spiritual Field (Heaven) on Earth.</p>
-          <div class="card-actions">
-            <a class="btn-small primary"
-               href="YOUR_PDF_URL_04"
-               target="_blank" rel="noopener">
-              📄 View English PDF
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <p class="note">
-        ※ Please replace <code>YOUR_PDF_URL_…</code> with the actual PDF URLs in your GitHub repositories.
-      </p>
-    </section>
-
-    <footer>
-      <div class="brand">
-        New Consilience Group (新統神通會, NCG) – Religious Revolution Project
-      </div>
-      Last updated: 2025-12-11
-    </footer>
+    <div class="footer">
+      New Consilience Group (NCG) – Religious Revolution Series, Batch 3 (Ep.05, 11, 06)<br>
+      “Reformation failed to free the human mind. Only the Religious Revolution can restore Truth.”
+    </div>
   </div>
-
-  <!-- 탭 전환 스크립트 (PDF 링크와는 독립) -->
-  <script>
-    (function () {
-      const buttons = document.querySelectorAll(".tab-btn");
-      const panels = document.querySelectorAll(".tab-panel");
-
-      buttons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const target = btn.getAttribute("data-tab");
-
-          buttons.forEach((b) => b.classList.remove("active"));
-          panels.forEach((p) => p.classList.remove("active"));
-
-          btn.classList.add("active");
-          const panel = document.getElementById(target);
-          if (panel) panel.classList.add("active");
-        });
-      });
-    })();
-  </script>
 </body>
 </html>
