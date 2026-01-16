@@ -182,166 +182,155 @@
   </div>
 
   <script>
-    // 1~16회 영어 에피소드 정보
-    const episodes = [
-  {
-    id: 1,
-    title: "Ep.1 — Introduction of BY Kim and NCG",
-    thumb: "ep.01-enor.png",
-    youtube: "https://youtu.be/xqgxrhM1r24",
-  },
-  {
-    id: 2,
-    title: "Ep.2 — Why We Need a Religious Revolution — Christian Democracy",
-    thumb: "ep.02-enor.png",
-    youtube: "https://youtu.be/IniMUGC3T9Q",
-  },
-  {
-    id: 3,
-    title: "Ep.3 — Why a Religious Revolution beyond the Reformation",
-    thumb: "ep.03-enor.png",
-    youtube: "https://youtu.be/lWkN4CYJzeY",
-  },
-  {
-    id: 4,
-    title: "Ep.4 — Why a Religious Revolution — Back to the Basics",
-    thumb: "ep.04-enor.png",
-    youtube: "https://youtu.be/2o4DQlfseJE",
-  },
-  {
-    id: 5,
-    title: "Ep.5 — The Letter to the Church That Has Betrayed Jesus",
-    thumb: "ep.05-enor-01.png",
-    youtube: "https://youtu.be/CChiJ5zqBUE",
-  },
-  {
-    id: 6,
-    title: "Ep.6 — Declaration of the Religious Revolution",
-    thumb: "ep.06-enor.png",
-    youtube: "https://youtu.be/dUE4oor84dI",
-  },
-  {
-    id: 7,
-    title: "Ep.7 — Nosome and Transmigration",
-    thumb: "ep.07-enor.png",
-    youtube: "https://youtu.be/RJLy0bdgQoQ",
-  },
-  {
-    id: 8,
-    title: "Ep.8 — ENZ: Nosome and Quarks",
-    thumb: "ep.08-enor.png",
-    youtube: "https://youtu.be/NmZ9FxixN48",
-  },
-  {
-    id: 9,
-    title: "Ep.9 — Afterlife vs. Transmigration Field",
-    thumb: "ep.09-enor.png",
-    youtube: "https://youtu.be/v9fF42xvwWE",
-  },
-  {
-    id: 10,
-    title: "Ep.10 — Oneness (Hanaim)",
-    thumb: "ep.10-enor.png",
-    youtube: "https://youtu.be/uTzE24vYqco",
-  },
-  {
-    id: 11,
-    title: "Ep.11 — Rebuttal to the Roman Curia and Christianity",
-    thumb: "ep.11-enor.png",
-    youtube: "https://youtu.be/rLPyRIOK8AA",
-  },
-  {
-    id: 12,
-    title: "Ep.12 — Yahweh vs. Jesus’ Godhood",
-    thumb: "ep.12-enor.png",
-    youtube: "https://youtu.be/4zlMaEBqaNU",
-  },
-  {
-    id: 13,
-    title: "Ep.13 — Tithes",
-    thumb: "ep.13-enor.png",
-    youtube: "https://youtu.be/gMURqKiDlEk",
-  },
-  {
-    id: 14,
-    title: "Ep.14 — The Afterlife",
-    thumb: "ep.14-enor.png",
-    youtube: "https://youtu.be/X9QygC6bXqE",
-  },
-  {
-    id: 15,
-    title: "Ep.15 — Moses’ Exodus",
-    thumb: "ep.15-enor.png",
-    youtube: "https://youtu.be/7tGGKBsqghk",
-  },
-  {
-    id: 16,
-    title: "Ep.16 — Illusion of David and Solomon’s Empire",
-    thumb: "ep.16-enor.png",
-    youtube: "https://youtu.be/WiTOupqxrfw",
-  },
-  {
-    id: 17,
-    title: "Ep.17 — Creation in Genesis A Critical Reading",
-    thumb: "ep.17-enor.png",
-    youtube: "https://youtu.be/NQ2KN1JpdY4",
-  },
-     id: 18,
-    title: "Ep.18 — Jesus' Birth and Life",
-    thumb: "ep.18-enor.png",
-    youtube: "https://youtu.be/N08utWgr5uQ",
-  }, 
-    id: 19,
-   title: "Ep.19 — The Death, Resurrection and Ascension of Jesus", 
-   thumb: "ep.19-enor.png",
-   youtube: "https://youtu.be/7V2btJF6nOA",
-  }, 
- ];
+  // 1~19회 영어 에피소드 정보
+  const episodes = [
+    {
+      id: 1,
+      title: "Ep.1 — Introduction of BY Kim and NCG",
+      thumb: "ep.01-enor.png",
+      youtube: "https://youtu.be/xqgxrhM1r24",
+    },
+    {
+      id: 2,
+      title: "Ep.2 — Why We Need a Religious Revolution — Christian Democracy",
+      thumb: "ep.02-enor.png",
+      youtube: "https://youtu.be/IniMUGC3T9Q",
+    },
+    {
+      id: 3,
+      title: "Ep.3 — Why a Religious Revolution beyond the Reformation",
+      thumb: "ep.03-enor.png",
+      youtube: "https://youtu.be/lWkN4CYJzeY",
+    },
+    {
+      id: 4,
+      title: "Ep.4 — Why a Religious Revolution — Back to the Basics",
+      thumb: "ep.04-enor.png",
+      youtube: "https://youtu.be/2o4DQlfseJE",
+    },
+    {
+      id: 5,
+      title: "Ep.5 — The Letter to the Church That Has Betrayed Jesus",
+      thumb: "ep.05-enor-01.png",
+      youtube: "https://youtu.be/CChiJ5zqBUE",
+    },
+    {
+      id: 6,
+      title: "Ep.6 — Declaration of the Religious Revolution",
+      thumb: "ep.06-enor.png",
+      youtube: "https://youtu.be/dUE4oor84dI",
+    },
+    {
+      id: 7,
+      title: "Ep.7 — Nosome and Transmigration",
+      thumb: "ep.07-enor.png",
+      youtube: "https://youtu.be/RJLy0bdgQoQ",
+    },
+    {
+      id: 8,
+      title: "Ep.8 — ENZ: Nosome and Quarks",
+      thumb: "ep.08-enor.png",
+      youtube: "https://youtu.be/NmZ9FxixN48",
+    },
+    {
+      id: 9,
+      title: "Ep.9 — Afterlife vs. Transmigration Field",
+      thumb: "ep.09-enor.png",
+      youtube: "https://youtu.be/v9fF42xvwWE",
+    },
+    {
+      id: 10,
+      title: "Ep.10 — Oneness (Hanaim)",
+      thumb: "ep.10-enor.png",
+      youtube: "https://youtu.be/uTzE24vYqco",
+    },
+    {
+      id: 11,
+      title: "Ep.11 — Rebuttal to the Roman Curia and Christianity",
+      thumb: "ep.11-enor.png",
+      youtube: "https://youtu.be/rLPyRIOK8AA",
+    },
+    {
+      id: 12,
+      title: "Ep.12 — Yahweh vs. Jesus’ Godhood",
+      thumb: "ep.12-enor.png",
+      youtube: "https://youtu.be/4zlMaEBqaNU",
+    },
+    {
+      id: 13,
+      title: "Ep.13 — Tithes",
+      thumb: "ep.13-enor.png",
+      youtube: "https://youtu.be/gMURqKiDlEk",
+    },
+    {
+      id: 14,
+      title: "Ep.14 — The Afterlife",
+      thumb: "ep.14-enor.png",
+      youtube: "https://youtu.be/X9QygC6bXqE",
+    },
+    {
+      id: 15,
+      title: "Ep.15 — Moses’ Exodus",
+      thumb: "ep.15-enor.png",
+      youtube: "https://youtu.be/7tGGKBsqghk",
+    },
+    {
+      id: 16,
+      title: "Ep.16 — Illusion of David and Solomon’s Empire",
+      thumb: "ep.16-enor.png",
+      youtube: "https://youtu.be/WiTOupqxrfw",
+    },
+    {
+      id: 17,
+      title: "Ep.17 — Creation in Genesis A Critical Reading",
+      thumb: "ep.17-enor.png",
+      youtube: "https://youtu.be/NQ2KN1JpdY4",
+    },
+    {
+      id: 18,
+      title: "Ep.18 — Jesus' Birth and Life",
+      thumb: "ep.18-enor.png",
+      youtube: "https://youtu.be/N08utWgr5uQ",
+    },
+    {
+      id: 19,
+      title: "Ep.19 — The Death, Resurrection and Ascension of Jesus",
+      thumb: "ep.19-enor.png",
+      youtube: "https://youtu.be/7V2btJF6nOA",
+    },
+  ];
 
-    function getEpisodeIdFromQuery() {
-      const params = new URLSearchParams(window.location.search);
-      const raw = params.get("v");
+  function getEpisodeIdFromQuery() {
+    const params = new URLSearchParams(window.location.search);
+    const raw = params.get("v");
+    if (!raw) return episodes[episodes.length - 1].id;
 
-      // v 파라미터가 없으면 마지막 회차로
-      if (!raw) return episodes[episodes.length - 1].id;
+    const id = parseInt(raw, 10);
+    const found = episodes.find((e) => e.id === id);
+    return found ? found.id : episodes[episodes.length - 1].id;
+  }
 
-      const id = parseInt(raw, 10);
-      const found = episodes.find((e) => e.id === id);
-      // 없는 번호가 들어오면 마지막 회차로
-      return found ? found.id : episodes[episodes.length - 1].id;
-    }
+  (function initEpisodePage() {
+    const id = getEpisodeIdFromQuery();
+    const ep = episodes.find((e) => e.id === id);
+    if (!ep) return;
 
-    (function initEpisodePage() {
-      const id = getEpisodeIdFromQuery();
-      const ep = episodes.find((e) => e.id === id);
+    const padded = String(ep.id).padStart(2, "0");
 
-      if (!ep) return;
+    document.title = `${ep.title} | NCG Religious Revolution Series`;
 
-      const padded = String(ep.id).padStart(2, "0");
+    const heroImg = document.getElementById("hero-image");
+    heroImg.src = ep.thumb;
+    heroImg.alt = ep.title;
 
-      // 문서 타이틀
-      document.title = `${ep.title} | NCG Religious Revolution Series`;
+    const watchBtn = document.getElementById("watch-button");
+    const watchLabel = document.getElementById("watch-label");
+    watchBtn.href = ep.youtube;
+    watchLabel.textContent = `🎬 Watch Episode ${padded}`;
 
-      // 섬네일 이미지
-      const heroImg = document.getElementById("hero-image");
-      heroImg.src = ep.thumb;
-      heroImg.alt = ep.title;
-
-      // 시청 버튼
-      const watchBtn = document.getElementById("watch-button");
-      const watchLabel = document.getElementById("watch-label");
-      watchBtn.href = ep.youtube;
-      watchLabel.textContent = `🎬 Watch Episode ${padded}`;
-
-      // 전체 시리즈 / 구독 링크
-      const seriesBtn = document.getElementById("series-button");
-      const subscribeBtn = document.getElementById("subscribe-button");
-
-      seriesBtn.href =
-        "https://bykim5710.github.io/series/?v=" + padded;
-      subscribeBtn.href =
-        "https://bykim5710.github.io/series/subscribe.html?v=" + padded;
-    })();
-  </script>
-</body>
-</html>
+    const seriesBtn = document.getElementById("series-button");
+    const subscribeBtn = document.getElementById("subscribe-button");
+    seriesBtn.href = "https://bykim5710.github.io/series/?v=" + padded;
+    subscribeBtn.href = "https://bykim5710.github.io/series/subscribe.html?v=" + padded;
+  })();
+</script>
