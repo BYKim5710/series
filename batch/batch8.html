@@ -10,134 +10,264 @@
   <meta property="og:title" content="NCG Series – Batch 8">
   <meta property="og:description" content="Who Was Jesus? — The Birth, Life, Death, and Resurrection of Jesus">
   <meta property="og:image" content="https://bykim5710.github.io/series/batch.08-enor.png?v=08">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="NCG Series – Batch 8 Thumbnail">
   <meta property="og:url" content="https://bykim5710.github.io/series/batch/batch8.html">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NCG Series – Batch 8">
+  <meta name="twitter:description" content="Who Was Jesus? — The Birth, Life, Death, and Resurrection of Jesus">
+  <meta name="twitter:image" content="https://bykim5710.github.io/series/batch.08-enor.png?v=08">
 
   <style>
+    :root {
+      --bg: #000000;
+      --text: #f5f5f5;
+      --accent: #ffd54f;
+      --accent2: #ff5252;
+      --card: #111827;
+      --border: #374151;
+      --muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: #000;
-      color: #f5f5f5;
-      font-family: sans-serif;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Arial, sans-serif;
       line-height: 1.7;
     }
+
     .wrap {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 20px;
+      max-width: 980px;
+      margin: 0 auto 40px;
+      padding: 0 16px 40px;
     }
+
+    .hero {
+      margin: 0 auto 24px;
+    }
+
     .hero img {
+      display: block;
       width: 100%;
+      height: auto;
     }
+
     h1 {
+      font-size: 1.9rem;
+      margin: 0 0 6px;
       text-align: center;
     }
+
     .tagline {
       text-align: center;
-      color: #ffd54f;
-      margin-bottom: 20px;
       font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 18px;
     }
+
+    p {
+      margin: 8px 0;
+    }
+
     .quote {
-      margin: 20px 0;
-      padding: 14px;
-      border-left: 4px solid #ff5252;
-      background: #111827;
+      margin: 18px 0 20px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent2);
+      background: rgba(17, 24, 39, 0.85);
       font-weight: 500;
     }
+
+    h2 {
+      font-size: 1.3rem;
+      margin: 28px 0 12px;
+    }
+
     .episodes {
+      margin-top: 8px;
       display: grid;
       gap: 16px;
     }
+
     .episode-card {
-      border: 1px solid #374151;
-      padding: 14px;
+      border: 1px solid var(--border);
       border-radius: 10px;
-      background: #111827;
+      padding: 14px 16px;
+      background: linear-gradient(135deg, #020617, #111827);
     }
+
+    .episode-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .episode-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
     .btn {
-      display: inline-block;
-      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 8px 14px;
-      background: #2563eb;
-      color: #fff;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #111827;
+      color: var(--text);
       text-decoration: none;
-      border-radius: 20px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease,
+                  transform 0.1s ease,
+                  border-color 0.15s ease;
     }
+
+    .btn.primary {
+      background: #2563eb;
+      border-color: #3b82f6;
+    }
+
+    .btn:hover {
+      background: #1f2937;
+      transform: translateY(-1px);
+      border-color: #4b5563;
+    }
+
+    .btn.primary:hover {
+      background: #1d4ed8;
+      border-color: #60a5fa;
+    }
+
+    .btn-row {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .footer {
-      text-align: center;
       margin-top: 30px;
-      color: #9ca3af;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 1.55rem;
+      }
+
+      .episode-card {
+        padding: 12px;
+      }
     }
   </style>
 </head>
 
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-  <div class="hero">
-    <img src="../batch.08-enor.png" alt="NCG Series – Batch 8">
+    <div class="hero">
+      <img src="../batch.08-enor.png"
+           alt="NCG Series – Batch 8 Thumbnail">
+    </div>
+
+    <h1>NCG Series – Batch 8: “Who Was Jesus?”</h1>
+    <div class="tagline">
+      The Birth and Life of Jesus · His Death and Resurrection
+    </div>
+
+    <p>We have believed in Jesus for two thousand years.</p>
+    <p>Yet one essential question has rarely been asked.</p>
+    <p>Who is the Jesus we believe in?</p>
+    <p>We do not even know what he really looked like.</p>
+
+    <div class="quote">
+      If the Jesus we know is not the real historical figure,<br>
+      <strong>what are we actually believing in?</strong>
+    </div>
+
+    <div class="quote">
+      If Jesus were to return,<br>
+      <strong>how would we recognize him?</strong>
+    </div>
+
+    <div class="quote">
+      <strong>Who has the authority to identify the real Jesus?</strong>
+    </div>
+
+    <h2>🧭 Batch 8 — Ep.18 · Ep.19</h2>
+
+    <div class="episodes">
+
+      <!-- Episode 18 -->
+      <div class="episode-card">
+        <div class="episode-title">
+          1️⃣ Ep.18 — The Birth and Life of Jesus
+        </div>
+        <div class="episode-desc">
+          Distorted Truth
+        </div>
+        <a class="btn primary"
+           href="https://bykim5710.github.io/series/episode.html?v=18"
+           target="_blank"
+           rel="noopener">
+          ▶ View Episode 18
+        </a>
+      </div>
+
+      <!-- Episode 19 -->
+      <div class="episode-card">
+        <div class="episode-title">
+          2️⃣ Ep.19 — The Death and Resurrection of Jesus
+        </div>
+        <div class="episode-desc">
+          History or Theology?
+        </div>
+        <a class="btn primary"
+           href="https://bykim5710.github.io/series/episode.html?v=19"
+           target="_blank"
+           rel="noopener">
+          ▶ View Episode 19
+        </a>
+      </div>
+
+    </div>
+
+    <div class="btn-row">
+      <a class="btn primary"
+         href="https://bykim5710.github.io/series/"
+         target="_blank"
+         rel="noopener">
+        📚 View Full Series
+      </a>
+
+      <a class="btn"
+         href="https://bykim5710.github.io/series/subscribe.html?v=08"
+         target="_blank"
+         rel="noopener">
+        🌐 Subscribe / Share
+      </a>
+    </div>
+
+    <div class="footer">
+      New Consilience Group (NCG) – The Religious Revolution Series
+    </div>
+
   </div>
-
-  <h1>NCG Series · Batch 8: “Who Was Jesus?”</h1>
-  <div class="tagline">The Birth and Life of Jesus · His Death and Resurrection</div>
-
-  <p>We have believed in Jesus for two thousand years.</p>
-  <p>Yet one essential question has rarely been asked.</p>
-
-  <p>Who is the Jesus we believe in?</p>
-
-  <p>We do not even know what he really looked like.</p>
-
-  <div class="quote">
-    If the Jesus we know is not the real historical figure,<br>
-    <strong>what are we actually believing in?</strong>
-  </div>
-
-  <div class="quote">
-    If Jesus were to return,<br>
-    <strong>how would we recognize him?</strong>
-  </div>
-
-  <div class="quote">
-    <strong>Who has the authority to identify the real Jesus?</strong>
-  </div>
-
-  <h2>🧭 Batch 8 (Ep.18 · Ep.19)</h2>
-
-<div class="episodes">
-
-  <!-- Episode 18 -->
-  <div class="episode-card">
-    <b>Episode 18</b><br>
-    The Birth and Life of Jesus — Distorted Truth<br>
-    <a class="btn" href="https://bykim5710.github.io/series/episode.html?v=18">
-      ▶ View
-    </a>
-  </div>
-
-  <!-- Episode 19 -->
-  <div class="episode-card">
-    <b>Episode 19</b><br>
-    The Death and Resurrection of Jesus — History or Theology?<br>
-    <a class="btn" href="https://bykim5710.github.io/series/episode.html?v=19">
-      ▶ View
-    </a>
-  </div>
-
-  </div>
-
-  <div style="margin-top:20px;">
-    <a class="btn" href="https://bykim5710.github.io/series/">Full Series</a>
-    <a class="btn" href="https://bykim5710.github.io/series/subscribe.html?v=08">Subscribe / Share</a>
-  </div>
-
-  <div class="footer">
-    New Consilience Group (NCG)
-  </div>
-
-</div>
 </body>
 </html>
